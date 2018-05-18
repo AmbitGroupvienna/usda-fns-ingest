@@ -1,0 +1,4 @@
+applications:
+- name: usda-fns-ingestor 
+  services:
+    - usda-fns-ingestor-db 

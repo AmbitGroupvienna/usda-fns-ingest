@@ -1,0 +1,19 @@
+[[source]]
+
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+name = "pypi"
+
+
+[packages]
+
+django = "==1.11"
+dj-database-url = "*"
+django-data-ingest = {git = "git://github.com/18F/django-data-ingest.git"}
+asyncpg = "*"
+"psycopg2" = "*"
+"d00232c" = {path = "/Volumes/exlinux/Users/catherine/werk/federation/django-data-ingest", editable = true}
+
+
+[dev-packages]
+

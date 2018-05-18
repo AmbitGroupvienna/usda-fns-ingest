@@ -1,0 +1,5 @@
+-e git+https://github.com/18F/django-data-ingest.git#egg=django-data-ingest
+django==1.11
+dj-database-url
+psycopg2
+goodtables
