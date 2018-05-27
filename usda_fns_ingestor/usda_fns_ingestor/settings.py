@@ -17,7 +17,6 @@ import dj_database_url
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
@@ -27,11 +26,7 @@ SECRET_KEY = '%*62cyo2f=qeo@fxf1veh8ns@=ea6ft70bqaj+q^end45w3y@_'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [
-    'localhost',
-    '.cloud.gov',
-]
-
+ALLOWED_HOSTS = ['localhost', '.cloud.gov', ]
 
 # Application definition
 
@@ -43,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'data_ingest',
+    'django_extensions',
 ]
 
 MIDDLEWARE = [
@@ -75,12 +71,11 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'usda_fns_ingestor.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
-DATABASES = {'default': dj_database_url.config(
-    default='postgres:///usda_fns_ingestor')}
+DATABASES = {'default':
+             dj_database_url.config(default='postgres:///usda_fns_ingestor')}
 #    default='postgres+asyncpg:///usda_fns_ingestor')}
 
 # Password validation
@@ -88,19 +83,22 @@ DATABASES = {'default': dj_database_url.config(
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        'NAME':
+        'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'NAME':
+        'django.contrib.auth.password_validation.MinimumLengthValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        'NAME':
+        'django.contrib.auth.password_validation.CommonPasswordValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        'NAME':
+        'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
@@ -115,17 +113,15 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 
-
 DATA_INGEST = {
-    'VALIDATION_SCHEMA': 'usda_fns.json',
-    # Alternately: 'VALIDATION_SCHEMA':
-    # 'https://raw.githubusercontent.com/18F/django-data-ingest/master/examples/p02_budgets/table_schema.json',
+    'VALIDATORS': {
+        # 'usda_fns.json': 'data_ingest.ingestors.GoodtablesValidator',
+        'usda_sql_rules.yml': 'data_ingest.ingestors.SqlValidator',
+    }
 }
-
