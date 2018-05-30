@@ -38,7 +38,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'data_ingest',
-    'django_extensions',
 ]
 
 MIDDLEWARE = [
@@ -123,5 +122,6 @@ DATA_INGEST = {
     'VALIDATORS': {
         # 'usda_fns.json': 'data_ingest.ingestors.GoodtablesValidator',
         'usda_sql_rules.yml': 'data_ingest.ingestors.SqlValidator',
-    }
+    },
+    'STREAM_ARGS': {'sheet': 'Data'}  # Uses the 'Data' sheet from workbook if .xlsx
 }
