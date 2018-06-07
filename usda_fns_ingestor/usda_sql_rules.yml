@@ -1,4 +1,4 @@
-- check_number: '1'
+- error_code: '1'
   check_origin: FPRS
   code: _16_11A_nonrcci_schl <= _16_11B_nonrcci_stud
   columns: [_16_11A_nonrcci_schl, _16_11B_nonrcci_stud]
@@ -6,7 +6,7 @@
     in school. (In other words, there cannot be more schools than students.) Please
     correct the numbers in fields 1-1:A and/or 1-1:B.
   severity: Error
-- check_number: '2'
+- error_code: '2'
   check_origin: FPRS
   code: _16_12A_rcci_schl <= _16_12B_rcci_stud
   columns: [_16_12A_rcci_schl, _16_12B_rcci_stud]
@@ -14,14 +14,14 @@
     there cannot be more RCCIs than students.) Please correct the numbers in fields
     1-2:A and/or 1-2:B.
   severity: Error
-- check_number: '3'
+- error_code: '3'
   check_origin: FPRS
   code: _16_12aA_rcci_day_schl <= _16_12A_rcci_schl
   columns: [_16_12aA_rcci_day_schl, _16_12A_rcci_schl]
   message: RCCIs with day students cannot be greater than total RCCIs. Please correct
     the numbers in fields 1-2:aA and/or 1-2:A.
   severity: Error
-- check_number: '4'
+- error_code: '4'
   check_origin: FPRS
   code: _16_12aA_rcci_day_schl <= _16_12aB_rcci_day_stud
   columns: [_16_12aA_rcci_day_schl, _16_12aB_rcci_day_stud]
@@ -29,21 +29,21 @@
     (In other words, there cannot be more RCCIs than students.) Please correct the
     numbers in fields 1-2:aA and/or 1-2:aB.
   severity: Error
-- check_number: '5'
+- error_code: '5'
   check_origin: FPRS
   code: _16_12aB_rcci_day_stud <= _16_12B_rcci_stud
   columns: [_16_12aB_rcci_day_stud, _16_12B_rcci_stud]
   message: Day students in RCCIs cannot be greater than total students in RCCIs. Please
     correct the numbers in fields 1-2:aB and/or 1-2:B.
   severity: Error
-- check_number: '6'
+- error_code: '6'
   check_origin: FPRS
   code: _16_12bA_rcci_nonday_schl <= _16_12A_rcci_schl
   columns: [_16_12bA_rcci_nonday_schl, _16_12A_rcci_schl]
   message: RCCIs with NO day students cannot be greater than total RCCIs. Please correct
     the numbers in fields 1-2:bA and/or 1-2:A.
   severity: Error
-- check_number: '7'
+- error_code: '7'
   check_origin: FPRS
   code: _16_12bA_rcci_nonday_schl <= _16_12bB_rcci_nonday_stud
   columns: [_16_12bA_rcci_nonday_schl, _16_12bB_rcci_nonday_stud]
@@ -51,14 +51,14 @@
     RCCIs. (In other words, there cannot be more RCCIs than students.) Please correct
     the numbers in fields 1-2:bA and/or 1-2:bB.
   severity: Error
-- check_number: '8'
+- error_code: '8'
   check_origin: FPRS
   code: _16_12bB_rcci_nonday_stud <= _16_12B_rcci_stud
   columns: [_16_12bB_rcci_nonday_stud, _16_12B_rcci_stud]
   message: Students in RCCIs with NO day students cannot be greater than total students
     in RCCIs. Please correct the numbers in fields 1-2:bB and/or 1-2:B.
   severity: "Error"
-- check_number: '9'
+- error_code: '9'
   check_origin: NEW check
   code: ((_16_11B_nonrcci_stud + _16_12B_rcci_stud) <= 0) or ((_16_11A_nonrcci_schl
     + _16_12A_rcci_schl) > 0)
@@ -68,7 +68,7 @@
     is greater than zero, but the number of schools and RCCIs is zero). Please correct
     the numbers in Section 1.
   severity: "Error"
-- check_number: '10'
+- error_code: '10'
   check_origin: 'Direct Cert Report check I (E) '
   code: (_16_12aA_rcci_day_schl + _16_12bA_rcci_nonday_schl) = _16_12A_rcci_schl
   columns: [_16_12aA_rcci_day_schl, _16_12bA_rcci_nonday_schl, _16_12A_rcci_schl]
@@ -76,7 +76,7 @@
     equal the total number of RCCIs. Please correct the numbers in fields 1-2:aA,
     1-2:bA and/or 1-2:A.
   severity: "Error"
-- check_number: '11'
+- error_code: '11'
   check_origin: Direct Cert Report check J (F)
   code: (_16_12aB_rcci_day_stud + _16_12bB_rcci_nonday_stud) <= _16_12B_rcci_stud
   columns: [_16_12aB_rcci_day_stud, _16_12bB_rcci_nonday_stud, _16_12B_rcci_stud]
@@ -84,7 +84,7 @@
     students must be less than or equal to the total number of students in RCCIs.
     Please correct the numbers in fields 1-2:aB, 1-2:bB and/or 1-2:B.
   severity: "Error"
-- check_number: '12'
+- error_code: '12'
   check_origin: NEW check
   code: (_16_11A_nonrcci_schl > 0) or (_16_12A_rcci_schl <= 0) or (_16_23A_cep_schl
     <= 0)
@@ -92,7 +92,7 @@
   message: RCCIs are not eligible to elect CEP. Please correct the numbers reported
     in 1-2:A and/or 2-3:A.
   severity: "Error"
-- check_number: 13W
+- error_code: 13W
   check_origin: NEW check
   code: >
     not
@@ -117,14 +117,14 @@
   message: The number of students per school is much higher than expected. Please
     confirm the numbers reported in Section 1.
   severity: Warning
-- check_number: 16W
+- error_code: 16W
   check_origin: NEW check
   code: ''
   columns: []
   message: The total number of schools in Section 1 is much higher than expected.
     Please confirm the numbers reported in 1-1:A and 1-2:A.
   severity: "Warning"
-- check_number: '17'
+- error_code: '17'
   check_origin: FPRS
   code: ''
   columns: []
@@ -132,7 +132,7 @@
     SBP cannot be greater than the number of students in those schools. Please correct
     the numbers in fields 2-1:A and/or 2-1:B.
   severity: "Error"
-- check_number: '18'
+- error_code: '18'
   check_origin: FPRS
   code: ''
   columns: []
@@ -140,7 +140,7 @@
     and SBP cannot be greater than the number of students in those schools. Please
     correct the numbers in fields 2-2:A and/or 2-2:B.
   severity: "Error"
-- check_number: '19'
+- error_code: '19'
   check_origin: FPRS
   code: ''
   columns: []
@@ -148,7 +148,7 @@
     year for NSLP and SBP cannot be greater than the total number of students in those
     schools. Please correct the numbers in fields 2-2a:B and/or 2-2:B.
   severity: "Error"
-- check_number: '20'
+- error_code: '20'
   check_origin: FPRS
   code: ''
   columns: []
@@ -157,7 +157,7 @@
     students in those schools. Please correct the numbers in fields 2-2b:B and/or
     2-2:B.
   severity: "Error"
-- check_number: '21'
+- error_code: '21'
   check_origin: FPRS
   code: ''
   columns: []
@@ -166,7 +166,7 @@
     number of students in those schools. Please correct the numbers in fields 2-3:A
     and/or 2-3:B.
   severity: "Error"
-- check_number: '22'
+- error_code: '22'
   check_origin: FPRS
   code: ''
   columns: []
@@ -174,7 +174,7 @@
     greater than the number of students in those schools. Please correct the numbers
     in fields 2-4:A and/or 2-4:B.
   severity: "Error"
-- check_number: '23'
+- error_code: '23'
   check_origin: FPRS
   code: ''
   columns: []
@@ -182,7 +182,7 @@
     ONLY NSLP cannot be greater than the number of students in those schools. Please
     correct the numbers in fields 2-5:A and/or 2-5:B.
   severity: "Error"
-- check_number: '24'
+- error_code: '24'
   check_origin: Direct Cert Report check K (G)
   code: ''
   columns: []
@@ -191,7 +191,7 @@
     number of students in those schools. Please correct the numbers in fields 2-2a:B,
     2-2b:B, and/or 2-2:B.
   severity: "Error"
-- check_number: '25'
+- error_code: '25'
   check_origin: Direct Cert Report check L (H)
   code: ''
   columns: []
@@ -200,7 +200,7 @@
     2-2:A + 2-3:A + 2-4:A + 2-5:A cannot be greater than the number of schools in
     1-1:A + 1-2:A.) Please correct the numbers in Section1 and/or Section 2.
   severity: "Error"
-- check_number: '26'
+- error_code: '26'
   check_origin: FPRS
   code: ''
   columns: []
@@ -208,7 +208,7 @@
     with SNAP, but you are also reporting students who were directly certified with
     SNAP. Please correct your numbers in 3-1 and/or 3-2:B.
   severity: "Error"
-- check_number: '27'
+- error_code: '27'
   check_origin: FPRS
   code: ''
   columns: []
@@ -216,7 +216,7 @@
     number of students in the SFA. Please correct the numbers in fields 1-1:B, 1-2:B,
     and/or 3-2:B.
   severity: "Error"
-- check_number: '28'
+- error_code: '28'
   check_origin: FPRS
   code: ''
   columns: []
@@ -224,7 +224,7 @@
     number of FREE students in the SFA. Please correct the numbers in fields 3-2:B
     and/or T-1.
   severity: "Error"
-- check_number: '29'
+- error_code: '29'
   check_origin: FPRS
   code: ''
   columns: []
@@ -232,7 +232,7 @@
     cannot exceed the total number of students in the SFA. Please correct the numbers
     in fields 1-1:B, 1-2:B, and/or 3-3:B.
   severity: "Error"
-- check_number: '30'
+- error_code: '30'
   check_origin: FPRS
   code: ''
   columns: []
@@ -240,7 +240,7 @@
     cannot exceed the total number of FREE students in the SFA. Please correct the
     numbers in fields 3-3:B and/or T-1.
   severity: "Error"
-- check_number: '31'
+- error_code: '31'
   check_origin: FPRS
   code: ''
   columns: []
@@ -248,7 +248,7 @@
     cannot exceed the total number of students in the SFA. Please correct the numbers
     in fields 1-1:B + 1-2:B + and/or 3-4:B.
   severity: "Error"
-- check_number: '32'
+- error_code: '32'
   check_origin: FPRS
   code: ''
   columns: []
@@ -256,7 +256,7 @@
     cannot exceed the total number of FREE students in the SFA. Please correct the
     numbers in fields 3-4:B and/or T-1.
   severity: "Error"
-- check_number: '33'
+- error_code: '33'
   check_origin: NEW check
   code: ''
   columns: []
@@ -265,7 +265,7 @@
     for the purposes of CEP is not considered Direct Certification for the purposes
     of reporting on this form.'
   severity: "Error"
-- check_number: '34'
+- error_code: '34'
   check_origin: Direct Cert Report check F (B) (modified)
   code: ''
   columns: []
@@ -274,7 +274,7 @@
     check the boxes in fields 3-1 and 5-1, complete fields T-1 and T-2, if applicable,
     and leave the rest of the fields in Sections 3, 4, and 5 blank.
   severity: "Error"
-- check_number: 35W
+- error_code: 35W
   check_origin: FPRS
   code: ''
   columns: []
@@ -284,7 +284,7 @@
     circumstances would result in more applications than students. Please confirm
     that the numbers in fields 4-1:A and 4-1:B are correct.
   severity: "Warning"
-- check_number: 36W
+- error_code: 36W
   check_origin: FPRS
   code: ''
   columns: []
@@ -294,7 +294,7 @@
     circumstances would result with more applications than students. Please confirm
     that the numbers if fields 4-2:A and 4-2:B are correct.
   severity: "Warning"
-- check_number: 37W
+- error_code: 37W
   check_origin: FPRS
   code: ''
   columns: []
@@ -304,7 +304,7 @@
     1 vs 31), only rare circumstances would result with more applications than students.
     Please confirm that the numbers if fields 4-3:A and 4-3:B are correct.
   severity: "Warning"
-- check_number: '38'
+- error_code: '38'
   check_origin: Direct Cert Report check G (C) (modified)
   code: ''
   columns: []
@@ -315,7 +315,7 @@
     + 1-2:B is greater than or equal to 2-2:B + 2-3:B + 2-4:B + 3-2:B + 3-3:B + 3-4:B
     + 4-1:B + 4-2:B + 4-3:B.
   severity: "Error"
-- check_number: '39'
+- error_code: '39'
   check_origin: NEW check
   code: ''
   columns: []
@@ -323,7 +323,7 @@
     of students in the SFA. Please correct the numbers in Sections 1 and 4 so that
     1-1:B + 1-2:B is greater than 4-1:A + 4-2:A + 4-3:A.
   severity: "Error"
-- check_number: 40W
+- error_code: 40W
   check_origin: NEW check
   code: ''
   columns: []
@@ -333,7 +333,7 @@
     numbers of students and applications reported in fields 4-1:A and 4-1:B are correct.
     Note: Do not report the same students in both Sections 3 and 4.'
   severity: Warning
-- check_number: '45'
+- error_code: '45'
   check_origin: NEW check
   code: ''
   columns: []
@@ -343,7 +343,7 @@
     of students and applications reported in fields 4-1:A and/or 4-1:B. Note: Do not
     report the same students in both Sections 3 and 4.'
   severity: Error
-- check_number: 48W
+- error_code: 48W
   check_origin: NEW check
   code: ''
   columns: []
@@ -352,7 +352,7 @@
     same. Please confirm that the numbers in Sections 3 and 4 are correct. Note: Do
     not report the same students in both sections.'
   severity: Warning
-- check_number: 49W
+- error_code: 49W
   check_origin: NEW check
   code: ''
   columns: []
@@ -361,7 +361,7 @@
     numbers in Sections 3 and 4 are correct. Note: Do not report the same students
     in both sections.'
   severity: Warning
-- check_number: 50W
+- error_code: 50W
   check_origin: NEW check
   code: ''
   columns: []
@@ -370,7 +370,7 @@
     that the numbers in Sections 3 and 4 are correct. Note: Do not report the same
     students in both sections.'
   severity: Warning
-- check_number: 51W
+- error_code: 51W
   check_origin: NEW check
   code: ''
   columns: []
@@ -378,7 +378,7 @@
     application is higher than expected. Please confirm that the numbers in Sections
     3 and 4 are correct. Note: Do not report the same students in both sections.'
   severity: Warning
-- check_number: 52W
+- error_code: 52W
   check_origin: NEW check
   code: ''
   columns: []
@@ -387,7 +387,7 @@
     and applications reported in field 4-1: Approved as categorically FREE eligible
     are correct.'
   severity: Warning
-- check_number: 56W
+- error_code: 56W
   check_origin: NEW check
   code: ''
   columns: []
@@ -396,7 +396,7 @@
     Please confirm the numbers in Sections 4. Note: Do not to report the same students
     in both Sections 3 & 4.'
   severity: Warning
-- check_number: '58'
+- error_code: '58'
   check_origin: NEW check
   code: ''
   columns: []
@@ -405,7 +405,7 @@
     fields (Oct 1 vs Oct 31), this is unexpectedly high. Please correct the number
     of students and applications reported in fields 4-2:A and/or 4-2:B.
   severity: Error
-- check_number: 59W
+- error_code: 59W
   check_origin: NEW check
   code: ''
   columns: []
@@ -414,7 +414,7 @@
     fields (Oct 1 vs Oct 31), this is unexpectedly high. Please confirm that the numbers
     of students and applications reported in fields 4-2:A and 4-2:B are correct.
   severity: Warning
-- check_number: '60'
+- error_code: '60'
   check_origin: NEW check
   code: ''
   columns: []
@@ -423,7 +423,7 @@
     fields (Oct 1 vs Oct 31), this is unexpectedly high. Please correct the number
     of students and applications reported in fields 4-2:A and/or 4-2:B.
   severity: Error
-- check_number: 61W
+- error_code: 61W
   check_origin: NEW check
   code: ''
   columns: []
@@ -432,7 +432,7 @@
     fields (Oct 1 vs Oct 31), this is unexpectedly high. Please confirm that the numbers
     of students and applications reported in fields 4-2:A and 4-2:B are correct.
   severity: Warning
-- check_number: '62'
+- error_code: '62'
   check_origin: NEW check
   code: ''
   columns: []
@@ -441,7 +441,7 @@
     fields (Oct 1 vs Oct 31), this is unexpectedly high. Please correct the number
     of students and applications reported in fields 4-3:A and/or 4-3:B.
   severity: Error
-- check_number: 63W
+- error_code: 63W
   check_origin: NEW check
   code: ''
   columns: []
@@ -450,7 +450,7 @@
     fields (Oct 1 vs Oct 31), this is unexpectedly high. Please confirm that the numbers
     of students and applications reported in fields 4-3:A and 4-3:B are correct.
   severity: Warning
-- check_number: '64'
+- error_code: '64'
   check_origin: NEW check
   code: ''
   columns: []
@@ -459,7 +459,7 @@
     fields (Oct 1 vs Oct 31), this is unexpectedly high. Please correct the number
     of students and applications reported in fields 4-3:A and/or 4-3:B.
   severity: Error
-- check_number: 65W
+- error_code: 65W
   check_origin: NEW check
   code: ''
   columns: []
@@ -468,7 +468,7 @@
     fields (Oct 1 vs Oct 31), this is unexpectedly high. Please confirm that the numbers
     of students and applications reported in fields 4-3:A and 4-3:B are correct.
   severity: Warning
-- check_number: '66'
+- error_code: '66'
   check_origin: NEW check
   code: ''
   columns: []
@@ -476,7 +476,7 @@
     FREE income applications. Please correct the number of students and applications
     reported in field 4-2: Approved as FREE eligible.'
   severity: Error
-- check_number: 67W
+- error_code: 67W
   check_origin: NEW check
   code: ''
   columns: []
@@ -484,7 +484,7 @@
     FREE income applications. Please confirm that the numbers of students and applications
     reported in field 4-2: Approved as FREE eligible are correct.'
   severity: Warning
-- check_number: '68'
+- error_code: '68'
   check_origin: NEW check
   code: ''
   columns: []
@@ -492,7 +492,7 @@
     reduced price applications. Please correct the number of students and applications
     reported in field 4-3: Approved as REDUCED PRICE eligible.'
   severity: Error
-- check_number: 69W
+- error_code: 69W
   check_origin: NEW check
   code: ''
   columns: []
@@ -500,7 +500,7 @@
     reduced price applications. Please confirm that the numbers of students and applications
     reported in field 4-3: Approved as REDUCED PRICE eligible are correct.'
   severity: Warning
-- check_number: '70'
+- error_code: '70'
   check_origin: NEW check
   code: ''
   columns: []
@@ -509,7 +509,7 @@
     categorically FREE eligible applications that would have been selected on or before
     October 1. Please correct the numbers in Sections 4 and/or the 5-8 fields.
   severity: "Error"
-- check_number: '71'
+- error_code: '71'
   check_origin: NEW check
   code: ''
   columns: []
@@ -519,7 +519,7 @@
     of students and applications reported in fields 4-1:A and/or 4-1:B. Note: Do not
     report the same students in both Sections 3 and 4."'
   severity: Error
-- check_number: 72W
+- error_code: 72W
   check_origin: NEW check
   code: ''
   columns: []
@@ -529,7 +529,7 @@
     of students and applications reported in fields 4-1:A and 4-1:B. Note: Do not
     report the same students in both Sections 3 and 4."'
   severity: "Warning"
-- check_number: '73'
+- error_code: '73'
   check_origin: NEW check
   code: ''
   columns: []
@@ -538,7 +538,7 @@
     that would have been selected on October 1. Please correct the numbers in Sections
     4 and in the 5-8 fields.
   severity: "Error"
-- check_number: '74'
+- error_code: '74'
   check_origin: NEW check
   code: ''
   columns: []
@@ -548,7 +548,7 @@
     and applications reported in fields 4-2:A and/or 4-2:B. Note: Do not report the
     same students in both Sections 3 and 4."'
   severity: Error
-- check_number: 75W
+- error_code: 75W
   check_origin: NEW check
   code: ''
   columns: []
@@ -558,7 +558,7 @@
     and applications reported in fields 4-2:A and 4-2:B. Note: Do not report the same
     students in both Sections 3 and 4."'
   severity: "Warning"
-- check_number: '76'
+- error_code: '76'
   check_origin: NEW check
   code: ''
   columns: []
@@ -567,7 +567,7 @@
     price applications that would have been selected on October 1. Please correct
     the numbers in Sections 4 and in the 5-8 fields.
   severity: "Error"
-- check_number: '77'
+- error_code: '77'
   check_origin: NEW check
   code: ''
   columns: []
@@ -577,7 +577,7 @@
     and applications reported in fields 4-3:A and/or 4-3:B. Note: Do not report the
     same students in both Sections 3 and 4."'
   severity: Error
-- check_number: 78W
+- error_code: 78W
   check_origin: NEW check
   code: ''
   columns: []
@@ -587,7 +587,7 @@
     and applications reported in fields 4-3:A and 4-3:B. Note: Do not report the same
     students in both Sections 3 and 4."'
   severity: "Warning"
-- check_number: '79'
+- error_code: '79'
   check_origin: FPRS
   code: ''
   columns: []
@@ -598,7 +598,7 @@
     (fields 4-1:B and 4-2:B). Please correct the student fields in far right column
     in Sections 2, 3, and 4, and/or field T-1.
   severity: "Error"
-- check_number: '80'
+- error_code: '80'
   check_origin: FPRS
   code: ''
   columns: []
@@ -608,7 +608,7 @@
     Please correct the student fields in far right column in Sections 2 and 4, and/or
     field T-2.
   severity: "Error"
-- check_number: '81'
+- error_code: '81'
   check_origin: NEW check
   code: ''
   columns: []
@@ -616,7 +616,7 @@
     number of students in the SFA. Please correct the numbers reported in fields 1-1:B,
     1-2:B, T-1, and/or T-2.
   severity: "Error"
-- check_number: 82W
+- error_code: 82W
   check_origin: NEW check
   code: ''
   columns: []
@@ -625,7 +625,7 @@
     with data in lieu of applications. Please confirm the information entered in Section
     2, as well as fields T-1 and T-2.
   severity: "Warning"
-- check_number: 83W
+- error_code: 83W
   check_origin: FPRS (modified)
   code: ''
   columns: []
@@ -633,7 +633,7 @@
     field 5-2, but you are also reporting results from verification. Please confirm
     your entry in field 5-2 and your results in 5-5, 5-7, 5-8, and VC-1.
   severity: Warning
-- check_number: '84'
+- error_code: '84'
   check_origin: FPRS (modified)
   code: ''
   columns: []
@@ -642,40 +642,40 @@
     verification (5-8) account for your entire sample size. Please correct your entry
     in field 5-2 and/or your results in 5-5, 5-7, 5-8, and VC-1.
   severity: Error
-- check_number: '85'
+- error_code: '85'
   check_origin: FPRS
   code: ''
   columns: []
   message: If you are NOT exempt from conducting verification you must answer when
     (or whether) you completed the verification process in field 5-2.
   severity: "Error"
-- check_number: '86'
+- error_code: '86'
   check_origin: FPRS
   code: ''
   columns: []
   message: If you are NOT exempt from conducting verification you must report what
     type of verification process you used in field 5-3.
   severity: "Error"
-- check_number: '87'
+- error_code: '87'
   check_origin: FPRS
   code: ''
   columns: []
   message: If you are exempt from conducting verification you should check the box
     in field 5-1 and leave the rest of Section 5 blank.
   severity: "Error"
-- check_number: '88'
+- error_code: '88'
   check_origin: FPRS
   code: ''
   columns: []
   message: Only one answer is allowed in field 5-2.
   severity: "Error"
-- check_number: '89'
+- error_code: '89'
   check_origin: FPRS
   code: ''
   columns: []
   message: Only one answer is allowed in field 5-3.
   severity: "Error"
-- check_number: '90'
+- error_code: '90'
   check_origin: FPRS
   code: ''
   columns: []
@@ -683,105 +683,105 @@
     5-5 is greater than the total approved applications in Section 4. Please correct
     the numbers in fields 5-5 and/or Section 4.
   severity: "Error"
-- check_number: '91'
+- error_code: '91'
   check_origin: FPRS
   code: ''
   columns: []
   message: If you did not conduct direct verification, you should check the box in
     field 5-6 and leave field 5-7:A blank.
   severity: "Error"
-- check_number: '92'
+- error_code: '92'
   check_origin: FPRS
   code: ''
   columns: []
   message: If you did not conduct direct verification, you should check the box in
     field 5-6 and leave field 5-7:B blank.
   severity: "Error"
-- check_number: '93'
+- error_code: '93'
   check_origin: FPRS
   code: ''
   columns: []
   message: Applications cannot be greater than students for the FREE- categorically
     eligible fields in 5-8:Aa and  5-8:Ab, 1. Responded, NO CHANGE.
   severity: Error
-- check_number: '94'
+- error_code: '94'
   check_origin: FPRS
   code: ''
   columns: []
   message: Applications cannot be greater than students for the FREE- categorically
     eligible fields in 5-8:Aa and  5-8:Ab, 2. Responded, Changed to REDUCED PRICE.
   severity: Error
-- check_number: '95'
+- error_code: '95'
   check_origin: FPRS
   code: ''
   columns: []
   message: Applications cannot be greater than students for the FREE-categorically
     eligible fields in 5-8:Aa and  5-8:Ab, 3. Responded, Changed to PAID.
   severity: Error
-- check_number: '96'
+- error_code: '96'
   check_origin: FPRS
   code: ''
   columns: []
   message: Applications cannot be greater than students for the FREE- categorically
     eligible fields in 5-8:Aa and  5-8:Ab, 4. NOT Responded, Changed to PAID.
   severity: Error
-- check_number: '97'
+- error_code: '97'
   check_origin: FPRS
   code: ''
   columns: []
   message: Applications cannot be greater than students for the FREE-income fields
     in 5-8:Ba and 5-8:Bb, 1. Responded, NO CHANGE.
   severity: Error
-- check_number: '98'
+- error_code: '98'
   check_origin: FPRS
   code: ''
   columns: []
   message: Applications cannot be greater than students for the FREE-income fields
     in 5-8:Ba and 5-8:Bb, 2. Responded, Changed to REDUCED PRICE.
   severity: Error
-- check_number: '99'
+- error_code: '99'
   check_origin: FPRS
   code: ''
   columns: []
   message: Applications cannot be greater than students for the FREE-income fields
     in 5-8:Ba and 5-8:Bb, 3. Responded, Changed to PAID.
   severity: Error
-- check_number: '100'
+- error_code: '100'
   check_origin: FPRS
   code: ''
   columns: []
   message: Applications cannot be greater than students for the FREE-income fields
     in 5-8:Ba and 5-8:Bb, 4. NOT Responded, Changed to PAID.
   severity: Error
-- check_number: '101'
+- error_code: '101'
   check_origin: FPRS
   code: ''
   columns: []
   message: Applications cannot be greater than students for the REDUCED PRICE-income
     fields in 5-8:Ca and 5-8:Cb, 1. Responded, NO CHANGE.
   severity: Error
-- check_number: '102'
+- error_code: '102'
   check_origin: FPRS
   code: ''
   columns: []
   message: Applications cannot be greater than students for the REDUCED PRICE-income
     fields in 5-8:Ca and 5-8:C, 3. Responded, Changed to FREE.
   severity: Error
-- check_number: '103'
+- error_code: '103'
   check_origin: FPRS
   code: ''
   columns: []
   message: Applications cannot be greater than students for the REDUCED PRICE-income
     fields in 5-8:Ca and 5-8:C, 3. Responded, Changed to PAID.
   severity: Error
-- check_number: '104'
+- error_code: '104'
   check_origin: FPRS
   code: ''
   columns: []
   message: Applications cannot be greater than students for theREDUCED PRICE-income
     fields in 5-8:Ca and 5-8:C, 4. NOT Responded, Changed to PAID.
   severity: Error
-- check_number: '105'
+- error_code: '105'
   check_origin: Direct Cert Report check P (L)  (modified)
   code: ''
   columns: []
@@ -790,7 +790,7 @@
     size in 5-5. Please correct the entries reported in fields 5-2, 5-5, 5-7:A, and/or
     5-8.
   severity: "Error"
-- check_number: 106W
+- error_code: 106W
   check_origin: Direct Cert Report check R (N)
   code: ''
   columns: []
@@ -798,7 +798,7 @@
     verification process and therefore you do not need to report the total number
     of error prone applications in field 5-4.
   severity: "Warning"
-- check_number: '107'
+- error_code: '107'
   check_origin: Direct Cert Report check U (Q)
   code: ''
   columns: []
@@ -808,7 +808,7 @@
     after October 1st, and for which there are no results yet to report. In this case,
     the difference must not be more than number of applications verified for cause.
   severity: "Error"
-- check_number: '108'
+- error_code: '108'
   check_origin: NEW check
   code: ''
   columns: []
@@ -816,7 +816,7 @@
     applications in fields 4-2 and 4-3. Please correct the numbers reported in fields
     4-2, 4-3, and/or 5-4.
   severity: Error
-- check_number: '109'
+- error_code: '109'
   check_origin: NEW check
   code: ''
   columns: []
@@ -824,21 +824,21 @@
     applications in fields 4-2 and 4-3. Please correct the numbes reported in fields
     4-2, 4-3, and/or  5-4.
   severity: Error
-- check_number: 110W
+- error_code: 110W
   check_origin: NEW check
   code: ''
   columns: []
   message: The number of error prone applications is higher than expected. Please
     confirm the number of error prone applications reported in field 5-4.
   severity: Warning
-- check_number: 113W
+- error_code: 113W
   check_origin: NEW check
   code: ''
   columns: []
   message: The number of error prone applications is lower than expected. Please confirm
     the number of error prone applications reported in field 5-4.
   severity: Warning
-- check_number: '114'
+- error_code: '114'
   check_origin: NEW check
   code: ''
   columns: []
@@ -847,7 +847,7 @@
     in fields 4-1, 4-2 and 4-3. Please correct the numbers in 5-7, the 5-8:As, and/or
     Section 4.
   severity: "Error"
-- check_number: '115'
+- error_code: '115'
   check_origin: NEW check
   code: ''
   columns: []
@@ -855,7 +855,7 @@
     field 5-7:A is greater than the total number of approved applications. Please
     correct the numbers in 5-7 and/or Section 4.
   severity: "Error"
-- check_number: '116'
+- error_code: '116'
   check_origin: NEW check
   code: ''
   columns: []
@@ -863,7 +863,7 @@
     including verifications for cause, were directly verified. Please correct the
     numbers reported in fields 5-7:A, 5-5, and/or VC-1.
   severity: Error
-- check_number: 117W
+- error_code: 117W
   check_origin: NEW check
   code: ''
   columns: []
@@ -871,7 +871,7 @@
     including verifications for cause, were directly verified. Please confirm the
     numbers reported in fields 5-7:A, 5-5, and VC-1.
   severity: Warning
-- check_number: '118'
+- error_code: '118'
   check_origin: NEW check
   code: ''
   columns: []
@@ -882,7 +882,7 @@
     Section 4 fields does not apply since applications selected for verification are
     picked only from those received by October 1.'
   severity: Error
-- check_number: '119'
+- error_code: '119'
   check_origin: NEW check
   code: ''
   columns: []
@@ -893,7 +893,7 @@
     4 fields does not apply since applications selected for verification are picked
     only from those received by October 1.'
   severity: Error
-- check_number: 120W
+- error_code: 120W
   check_origin: NEW check
   code: ''
   columns: []
@@ -904,7 +904,7 @@
     the verification sample and then confirmed as categorically eligible should be
     reported in 5-7.'
   severity: Warning
-- check_number: 121W
+- error_code: 121W
   check_origin: NEW check
   code: ''
   columns: []
@@ -913,7 +913,7 @@
     were selected in the verification sample and then confirmed as categorically eligible
     should be reported in 5-7B.'
   severity: Warning
-- check_number: 122W
+- error_code: 122W
   check_origin: NEW check
   code: ''
   columns: []
@@ -922,7 +922,7 @@
     Only applications that were selected in the verification sample and then confirmed
     as categorically eligible should be reported in 5-7.'
   severity: Warning
-- check_number: 123W
+- error_code: 123W
   check_origin: NEW check
   code: ''
   columns: []
@@ -930,7 +930,7 @@
     verification fields (5-7:A and 5-7:B). Please confirm that the numbers reported
     in 5-7 fields are correct.
   severity: Warning
-- check_number: '124'
+- error_code: '124'
   check_origin: NEW check
   code: ''
   columns: []
