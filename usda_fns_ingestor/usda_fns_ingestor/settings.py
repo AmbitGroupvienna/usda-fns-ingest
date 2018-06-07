@@ -202,7 +202,7 @@ UPLOAD_COLUMNS = [
 DATA_INGEST = {
     'VALIDATORS': {
         # 'usda_fns.json': 'data_ingest.ingestors.GoodtablesValidator',
-        'usda_sql_rules.yml': 'data_ingest.ingestors.SqlValidator',
+        'usda_sql_rules.yml': 'data_ingest.ingestors.SqlValidatorFailureConditions',
     },
     'STREAM_ARGS': {
         'sheet': 'Data',  # Uses the 'Data' sheet from workbook if .xlsx
