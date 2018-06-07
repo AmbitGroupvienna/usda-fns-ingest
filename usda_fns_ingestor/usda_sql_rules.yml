@@ -1,6 +1,6 @@
 - error_code: '1'
   check_origin: FPRS
-  code: _16_11A_nonrcci_schl <= _16_11B_nonrcci_stud
+  code: _16_11A_nonrcci_schl > _16_11B_nonrcci_stud
   columns: [_16_11A_nonrcci_schl, _16_11B_nonrcci_stud]
   message: Total schools (not including RCCIs) cannot be greater than total students
     in school. (In other words, there cannot be more schools than students.) Please
@@ -8,7 +8,7 @@
   severity: Error
 - error_code: '2'
   check_origin: FPRS
-  code: _16_12A_rcci_schl <= _16_12B_rcci_stud
+  code: _16_12A_rcci_schl > _16_12B_rcci_stud
   columns: [_16_12A_rcci_schl, _16_12B_rcci_stud]
   message: Total RCCIs cannot be greater than students in RCCIs. (In other words,
     there cannot be more RCCIs than students.) Please correct the numbers in fields
@@ -16,14 +16,14 @@
   severity: Error
 - error_code: '3'
   check_origin: FPRS
-  code: _16_12aA_rcci_day_schl <= _16_12A_rcci_schl
+  code: _16_12aA_rcci_day_schl > _16_12A_rcci_schl
   columns: [_16_12aA_rcci_day_schl, _16_12A_rcci_schl]
   message: RCCIs with day students cannot be greater than total RCCIs. Please correct
     the numbers in fields 1-2:aA and/or 1-2:A.
   severity: Error
 - error_code: '4'
   check_origin: FPRS
-  code: _16_12aA_rcci_day_schl <= _16_12aB_rcci_day_stud
+  code: _16_12aA_rcci_day_schl > _16_12aB_rcci_day_stud
   columns: [_16_12aA_rcci_day_schl, _16_12aB_rcci_day_stud]
   message: RCCIs with day students cannot be greater than total day students in RCCIs.
     (In other words, there cannot be more RCCIs than students.) Please correct the
@@ -31,21 +31,21 @@
   severity: Error
 - error_code: '5'
   check_origin: FPRS
-  code: _16_12aB_rcci_day_stud <= _16_12B_rcci_stud
+  code: _16_12aB_rcci_day_stud > _16_12B_rcci_stud
   columns: [_16_12aB_rcci_day_stud, _16_12B_rcci_stud]
   message: Day students in RCCIs cannot be greater than total students in RCCIs. Please
     correct the numbers in fields 1-2:aB and/or 1-2:B.
   severity: Error
 - error_code: '6'
   check_origin: FPRS
-  code: _16_12bA_rcci_nonday_schl <= _16_12A_rcci_schl
+  code: _16_12bA_rcci_nonday_schl > _16_12A_rcci_schl
   columns: [_16_12bA_rcci_nonday_schl, _16_12A_rcci_schl]
   message: RCCIs with NO day students cannot be greater than total RCCIs. Please correct
     the numbers in fields 1-2:bA and/or 1-2:A.
   severity: Error
 - error_code: '7'
   check_origin: FPRS
-  code: _16_12bA_rcci_nonday_schl <= _16_12bB_rcci_nonday_stud
+  code: _16_12bA_rcci_nonday_schl > _16_12bB_rcci_nonday_stud
   columns: [_16_12bA_rcci_nonday_schl, _16_12bB_rcci_nonday_stud]
   message: RCCIs with NO day students cannot be greater than the students in those
     RCCIs. (In other words, there cannot be more RCCIs than students.) Please correct
@@ -53,15 +53,15 @@
   severity: Error
 - error_code: '8'
   check_origin: FPRS
-  code: _16_12bB_rcci_nonday_stud <= _16_12B_rcci_stud
+  code: _16_12bB_rcci_nonday_stud > _16_12B_rcci_stud
   columns: [_16_12bB_rcci_nonday_stud, _16_12B_rcci_stud]
   message: Students in RCCIs with NO day students cannot be greater than total students
     in RCCIs. Please correct the numbers in fields 1-2:bB and/or 1-2:B.
   severity: "Error"
 - error_code: '9'
   check_origin: NEW check
-  code: ((_16_11B_nonrcci_stud + _16_12B_rcci_stud) <= 0) or ((_16_11A_nonrcci_schl
-    + _16_12A_rcci_schl) > 0)
+  code: ((_16_11B_nonrcci_stud + _16_12B_rcci_stud) > 0) and ((_16_11A_nonrcci_schl
+    + _16_12A_rcci_schl) <= 0)
   columns: [_16_11B_nonrcci_stud, _16_12B_rcci_stud, _16_11A_nonrcci_schl, _16_12A_rcci_schl]
   message: Cannot report students in zero schools and/or RCCIs. (In other words, the
     total number of students in the SFA (students in schools plus students in RCCIs)
@@ -70,7 +70,7 @@
   severity: "Error"
 - error_code: '10'
   check_origin: 'Direct Cert Report check I (E) '
-  code: (_16_12aA_rcci_day_schl + _16_12bA_rcci_nonday_schl) = _16_12A_rcci_schl
+  code: (_16_12aA_rcci_day_schl + _16_12bA_rcci_nonday_schl) ^= _16_12A_rcci_schl
   columns: [_16_12aA_rcci_day_schl, _16_12bA_rcci_nonday_schl, _16_12A_rcci_schl]
   message: The number of RCCIs with day students and RCCIs with NO day students must
     equal the total number of RCCIs. Please correct the numbers in fields 1-2:aA,
@@ -78,7 +78,7 @@
   severity: "Error"
 - error_code: '11'
   check_origin: Direct Cert Report check J (F)
-  code: (_16_12aB_rcci_day_stud + _16_12bB_rcci_nonday_stud) <= _16_12B_rcci_stud
+  code: (_16_12aB_rcci_day_stud + _16_12bB_rcci_nonday_stud) > _16_12B_rcci_stud
   columns: [_16_12aB_rcci_day_stud, _16_12bB_rcci_nonday_stud, _16_12B_rcci_stud]
   message: The number of students in RCCIs with day students and RCCIs with NO day
     students must be less than or equal to the total number of students in RCCIs.
@@ -86,17 +86,15 @@
   severity: "Error"
 - error_code: '12'
   check_origin: NEW check
-  code: (_16_11A_nonrcci_schl > 0) or (_16_12A_rcci_schl <= 0) or (_16_23A_cep_schl
-    <= 0)
+  code: (_16_11A_nonrcci_schl = 0) and (_16_12A_rcci_schl > 0) and (_16_23A_cep_schl
+    > 0)
   columns: [_16_11A_nonrcci_schl, _16_12A_rcci_schl, _16_23A_cep_schl]
   message: RCCIs are not eligible to elect CEP. Please correct the numbers reported
     in 1-2:A and/or 2-3:A.
   severity: "Error"
 - error_code: 13W
   check_origin: NEW check
-  code: >
-    not
-    (
+  code:
         (_16_11A_nonrcci_schl + _16_12A_rcci_schl) > 0
         and
         (
@@ -112,46 +110,48 @@
               ((_16_11B_nonrcci_stud + _16_12B_rcci_stud)/(_16_11A_nonrcci_schl + _16_12A_rcci_schl)) > 3000
             )
         )
-    )
   columns: [_16_11A_nonrcci_schl, _16_12A_rcci_schl, _16_11B_nonrcci_stud, _16_12B_rcci_stud]
   message: The number of students per school is much higher than expected. Please
     confirm the numbers reported in Section 1.
   severity: Warning
 - error_code: 16W
   check_origin: NEW check
-  code: ''
-  columns: []
+  code: if _16_11A_nonrcci_schl + _16_12A_rcci_schl > 0 then if
+        _16_11B_nonrcci_stud + _16_12B_rcci_stud / _16_11A_nonrcci_schl + _16_12A_rcci_schl < 200 and
+  	    _16_11A_nonrcci_schl + _16_12A_rcci_schl > 400
+  columns: [_16_11A_nonrcci_schl, _16_12A_rcci_schl, _16_11B_nonrcci_stud, _16_12B_rcci_stud, _16_11A_nonrcci_schl, _16_12A_rcci_schl, _16_11A_nonrcci_schl, _16_12A_rcci_schl]
   message: The total number of schools in Section 1 is much higher than expected.
     Please confirm the numbers reported in 1-1:A and 1-2:A.
   severity: "Warning"
+  # Begin SECTION 2 of the FNS-742
 - error_code: '17'
   check_origin: FPRS
-  code: ''
-  columns: []
+  code: _16_21A_base23_schl > _16_21B_base23_stud
+  columns: [_16_21A_base23_schl, _16_21B_base23_stud]
   message: The number of schools operating Provision 2/3 in a BASE year for NSLP and
     SBP cannot be greater than the number of students in those schools. Please correct
     the numbers in fields 2-1:A and/or 2-1:B.
   severity: "Error"
 - error_code: '18'
   check_origin: FPRS
-  code: ''
-  columns: []
+  code: _16_22A_nonbase23_schl > _16_22B_nonbase23_stud
+  columns: [_16_22A_nonbase23_schl, _16_22B_nonbase23_stud]
   message: The number of schools operating Provision 2/3 in a NON-BASE year for NSLP
     and SBP cannot be greater than the number of students in those schools. Please
     correct the numbers in fields 2-2:A and/or 2-2:B.
   severity: "Error"
 - error_code: '19'
   check_origin: FPRS
-  code: ''
-  columns: []
+  code: _16_22aB_nonbase23_free_stud > _16_22B_nonbase23_stud
+  columns: [_16_22aB_nonbase23_free_stud, _16_22B_nonbase23_stud]
   message: The number of FREE students in schools operating Provision 2/3 in a NON-BASE
     year for NSLP and SBP cannot be greater than the total number of students in those
     schools. Please correct the numbers in fields 2-2a:B and/or 2-2:B.
   severity: "Error"
 - error_code: '20'
   check_origin: FPRS
-  code: ''
-  columns: []
+  code: _16_22bB_nonbase23_rp_stud > _16_22B_nonbase23_stud
+  columns: [_16_22bB_nonbase23_rp_stud, _16_22B_nonbase23_stud]
   message: The number of REDUCED PRICE students in schools operating Provision 2/3
     in a NON-BASE year for NSLP and SBP cannot be greater than the total number of
     students in those schools. Please correct the numbers in fields 2-2b:B and/or
@@ -159,8 +159,8 @@
   severity: "Error"
 - error_code: '21'
   check_origin: FPRS
-  code: ''
-  columns: []
+  code: _16_23A_cep_schl > _16_23B_cep_stud
+  columns: [_16_23A_cep_schl, _16_23B_cep_stud, _16_check21]
   message: The number of schools operating the Community Eligibility Option (also
     known as the Community Eligibility Provision, or CEP) cannot be greater than the
     number of students in those schools. Please correct the numbers in fields 2-3:A
@@ -168,24 +168,24 @@
   severity: "Error"
 - error_code: '22'
   check_origin: FPRS
-  code: ''
-  columns: []
+  code: _16_24A_altboth_schl > _16_24B_altboth_stud
+  columns: [_16_24A_altboth_schl, _16_24B_altboth_stud]
   message: The number of schools operating alternatives for NSLP and SBP cannot be
     greater than the number of students in those schools. Please correct the numbers
     in fields 2-4:A and/or 2-4:B.
   severity: "Error"
 - error_code: '23'
   check_origin: FPRS
-  code: ''
-  columns: []
+  code: _16_25A_altoneonly_schl > _16_25B_altoneonly_stud
+  columns: [_16_25A_altoneonly_schl, _16_25B_altoneonly_stud]
   message: The number of schools operating an alternative provision for ONLY SBP or
     ONLY NSLP cannot be greater than the number of students in those schools. Please
     correct the numbers in fields 2-5:A and/or 2-5:B.
   severity: "Error"
 - error_code: '24'
   check_origin: Direct Cert Report check K (G)
-  code: ''
-  columns: []
+  code: (_16_22aB_nonbase23_free_stud + _16_22bB_nonbase23_rp_stud) > _16_22B_nonbase23_stud
+  columns: [_16_22aB_nonbase23_free_stud, _16_22bB_nonbase23_rp_stud, _16_22B_nonbase23_stud]
   message: The total number of FREE plus REDUCED PRICE students in schools operating
     Provision 2/3 in a NON-BASE year for NSLP and SBP cannot be greater than the total
     number of students in those schools. Please correct the numbers in fields 2-2a:B,
@@ -193,8 +193,8 @@
   severity: "Error"
 - error_code: '25'
   check_origin: Direct Cert Report check L (H)
-  code: ''
-  columns: []
+  code: (_16_21A_base23_schl + _16_22A_nonbase23_schl + _16_23A_cep_schl + _16_24A_altboth_schl +  _16_25A_altoneonly_schl) > (_16_11A_nonrcci_schl + _16_12A_rcci_schl)
+  columns: [_16_21A_base23_schl, _16_22A_nonbase23_schl, _16_23A_cep_schl, _16_24A_altboth_schl, _16_25A_altoneonly_schl, _16_11A_nonrcci_schl, _16_12A_rcci_schl]
   message: The number of schools operating special provisions cannot be greater than
     the total number of schools. (In other words, the number of schools in 2-1:A +
     2-2:A + 2-3:A + 2-4:A + 2-5:A cannot be greater than the number of schools in
