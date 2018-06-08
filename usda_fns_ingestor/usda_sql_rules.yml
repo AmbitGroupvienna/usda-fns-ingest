@@ -200,58 +200,59 @@
     2-2:A + 2-3:A + 2-4:A + 2-5:A cannot be greater than the number of schools in
     1-1:A + 1-2:A.) Please correct the numbers in Section1 and/or Section 2.
   severity: "Error"
+  # Begin SECTION 3 of the FNS-742
 - error_code: '26'
   check_origin: FPRS
-  code: ''
-  columns: []
+  code: _16_31_dc_notrequired = 1 and _16_32B_dc_snap_stud ^= 0
+  columns: [_16_31_dc_notrequired, _16_32B_dc_snap_stud]
   message: You have indicated that you were not required to perform direct certification
     with SNAP, but you are also reporting students who were directly certified with
     SNAP. Please correct your numbers in 3-1 and/or 3-2:B.
   severity: "Error"
 - error_code: '27'
   check_origin: FPRS
-  code: ''
-  columns: []
+  code: _16_32B_dc_snap_stud > (_16_11B_nonrcci_stud + _16_12B_rcci_stud)
+  columns: [_16_32B_dc_snap_stud, _16_11B_nonrcci_stud, _16_12B_rcci_stud]
   message: The number of students directly certified with SNAP cannot exceed the total
     number of students in the SFA. Please correct the numbers in fields 1-1:B, 1-2:B,
     and/or 3-2:B.
   severity: "Error"
 - error_code: '28'
   check_origin: FPRS
-  code: ''
-  columns: []
+  code: _16_32B_dc_snap_stud > _16_t1_tot_free
+  columns: [_16_32B_dc_snap_stud, _16_t1_tot_free]
   message: The number of students directly certified with SNAP cannot exceed the total
     number of FREE students in the SFA. Please correct the numbers in fields 3-2:B
     and/or T-1.
   severity: "Error"
 - error_code: '29'
   check_origin: FPRS
-  code: ''
-  columns: []
+  code: _16_33B_dc_other_stud > (_16_11B_nonrcci_stud + _16_12B_rcci_stud)
+  columns: [_16_33B_dc_other_stud, _16_11B_nonrcci_stud, _16_12B_rcci_stud]
   message: The number of students directly certified through programs other than SNAP
     cannot exceed the total number of students in the SFA. Please correct the numbers
     in fields 1-1:B, 1-2:B, and/or 3-3:B.
   severity: "Error"
 - error_code: '30'
   check_origin: FPRS
-  code: ''
-  columns: []
+  code: _16_33B_dc_other_stud > _16_t1_tot_free
+  columns: [_16_33B_dc_other_stud, _16_t1_tot_free]
   message: The number of students directly certified through programs other than SNAP
     cannot exceed the total number of FREE students in the SFA. Please correct the
     numbers in fields 3-3:B and/or T-1.
   severity: "Error"
 - error_code: '31'
   check_origin: FPRS
-  code: ''
-  columns: []
+  code: _16_34B_free_snapletter_stud > (_16_11B_nonrcci_stud + _16_12B_rcci_stud) 
+  columns: [_16_34B_free_snapletter_stud, _16_11B_nonrcci_stud, _16_12B_rcci_stud]
   message: The number of students certified as FREE through the SNAP letter method
     cannot exceed the total number of students in the SFA. Please correct the numbers
     in fields 1-1:B + 1-2:B + and/or 3-4:B.
   severity: "Error"
 - error_code: '32'
   check_origin: FPRS
-  code: ''
-  columns: []
+  code: _16_34B_free_snapletter_stud > _16_t1_tot_free
+  columns: [_16_34B_free_snapletter_stud, _16_t1_tot_free]
   message: The number of students certified as FREE through the SNAP letter method
     cannot exceed the total number of FREE students in the SFA. Please correct the
     numbers in fields 3-4:B and/or T-1.
