@@ -665,126 +665,133 @@
   severity: "Error"
 - check_number: '88'
   check_origin: FPRS
-  code: ''
-  columns: []
+  code: (_16_52_verif_yes_after + _16_52_verif_yes_before + _16_52_verif_no) > 1
+  columns: [_16_52_verif_yes_after, _16_52_verif_yes_before, _16_52_verif_no]
   message: Only one answer is allowed in field 5-2.
   severity: "Error"
 - check_number: '89'
   check_origin: FPRS
-  code: ''
-  columns: []
+  code: (_16_53_verif_type_alt1 + _16_53_verif_type_alt2 + _16_53_verif_type_standard) > 1
+  columns: [_16_53_verif_type_alt1, _16_53_verif_type_alt2, _16_53_verif_type_standard]
   message: Only one answer is allowed in field 5-3.
   severity: "Error"
 - check_number: '90'
   check_origin: FPRS
-  code: ''
-  columns: []
+  code: _16_55_selected_apps > (_16_41A_free_doc_apps + _16_42A_free_inc_apps + _16_43A_rp_inc_apps)
+  columns: [_16_55_selected_apps, _16_41A_free_doc_apps, _16_42A_free_inc_apps, _16_43A_rp_inc_apps]
   message: The number of applications selected for your verification sample in field
     5-5 is greater than the total approved applications in Section 4. Please correct
     the numbers in fields 5-5 and/or Section 4.
   severity: "Error"
 - check_number: '91'
   check_origin: FPRS
-  code: ''
-  columns: []
+  code: _16_56_noverif_sfa = 1 AND _16_57A_confirmverf_apps <> 0
+  columns: [_16_56_noverif_sfa, _16_57A_confirmverf_apps]
   message: If you did not conduct direct verification, you should check the box in
     field 5-6 and leave field 5-7:A blank.
   severity: "Error"
 - check_number: '92'
   check_origin: FPRS
-  code: ''
-  columns: []
+  code: _16_56_noverif_sfa = 1 AND _16_57B_confirmverf_stud <> 0
+  columns: [_16_56_noverif_sfa, _16_57B_confirmverf_stud]
   message: If you did not conduct direct verification, you should check the box in
     field 5-6 and leave field 5-7:B blank.
   severity: "Error"
 - check_number: '93'
   check_origin: FPRS
-  code: ''
-  columns: []
+  code: _16_58AA_freecat1_r_nc_apps > _16_58AB_freecat1_r_nc_stud
+  columns: [_16_58AA_freecat1_r_nc_apps, _16_58AB_freecat1_r_nc_stud]
   message: Applications cannot be greater than students for the FREE- categorically
     eligible fields in 5-8:Aa and  5-8:Ab, 1. Responded, NO CHANGE.
   severity: Error
 - check_number: '94'
   check_origin: FPRS
-  code: ''
-  columns: []
+  code: _16_58AA_freecat2_r_rp_apps > _16_58AB_freecat2_r_rp_stud
+  columns: [_16_58AA_freecat2_r_rp_apps, _16_58AB_freecat2_r_rp_stud]
   message: Applications cannot be greater than students for the FREE- categorically
     eligible fields in 5-8:Aa and  5-8:Ab, 2. Responded, Changed to REDUCED PRICE.
   severity: Error
 - check_number: '95'
   check_origin: FPRS
-  code: ''
-  columns: []
+  code: _16_58AA_freecat3_r_paid_apps > _16_58AB_freecat3_r_paid_stud
+  columns: [_16_58AA_freecat3_r_paid_apps, _16_58AB_freecat3_r_paid_stud]
   message: Applications cannot be greater than students for the FREE-categorically
     eligible fields in 5-8:Aa and  5-8:Ab, 3. Responded, Changed to PAID.
   severity: Error
 - check_number: '96'
   check_origin: FPRS
-  code: ''
-  columns: []
+  code: _16_58AA_freecat4_n_paid_apps > _16_58AB_freecat4_n_paid_stud
+  columns: [_16_58AA_freecat4_n_paid_apps, _16_58AB_freecat4_n_paid_stud]
   message: Applications cannot be greater than students for the FREE- categorically
     eligible fields in 5-8:Aa and  5-8:Ab, 4. NOT Responded, Changed to PAID.
   severity: Error
 - check_number: '97'
   check_origin: FPRS
-  code: ''
-  columns: []
+  code: _16_58BA_freeinc1_r_nc_apps > _16_58BB_freeinc1_r_nc_stud
+  columns: [_16_58BA_freeinc1_r_nc_apps, _16_58BB_freeinc1_r_nc_stud]
   message: Applications cannot be greater than students for the FREE-income fields
     in 5-8:Ba and 5-8:Bb, 1. Responded, NO CHANGE.
   severity: Error
 - check_number: '98'
   check_origin: FPRS
-  code: ''
-  columns: []
+  code: _16_58BA_freeinc2_r_rp_apps > _16_58BB_freeinc2_r_rp_stud
+  columns: [_16_58BA_freeinc2_r_rp_apps, _16_58BB_freeinc2_r_rp_stud]
   message: Applications cannot be greater than students for the FREE-income fields
     in 5-8:Ba and 5-8:Bb, 2. Responded, Changed to REDUCED PRICE.
   severity: Error
 - check_number: '99'
   check_origin: FPRS
-  code: ''
-  columns: []
+  code: _16_58BA_freeinc3_r_paid_apps > _16_58BB_freeinc3_r_paid_stud
+  columns: [_16_58BA_freeinc3_r_paid_apps, _16_58BB_freeinc3_r_paid_stud]
   message: Applications cannot be greater than students for the FREE-income fields
     in 5-8:Ba and 5-8:Bb, 3. Responded, Changed to PAID.
   severity: Error
 - check_number: '100'
   check_origin: FPRS
-  code: ''
-  columns: []
+  code: '_16_58BA_freeinc4_n_paid_apps > _16_58BB_freeinc4_n_paid_stud'
+  columns: [_16_58BA_freeinc4_n_paid_apps, _16_58BB_freeinc4_n_paid_stud]
   message: Applications cannot be greater than students for the FREE-income fields
     in 5-8:Ba and 5-8:Bb, 4. NOT Responded, Changed to PAID.
   severity: Error
 - check_number: '101'
   check_origin: FPRS
-  code: ''
-  columns: []
+  code: _16_58CA_rp1_r_nc_apps > _16_58CB_rp1_r_nc_stud
+  columns: [_16_58CA_rp1_r_nc_apps, _16_58CB_rp1_r_nc_stud]
   message: Applications cannot be greater than students for the REDUCED PRICE-income
     fields in 5-8:Ca and 5-8:Cb, 1. Responded, NO CHANGE.
   severity: Error
 - check_number: '102'
   check_origin: FPRS
-  code: ''
-  columns: []
+  code: _16_58CA_rp2_r_free_apps > _16_58CB_rp2_r_free_stud
+  columns: [_16_58CA_rp2_r_free_apps, _16_58CB_rp2_r_free_stud]
   message: Applications cannot be greater than students for the REDUCED PRICE-income
     fields in 5-8:Ca and 5-8:C, 3. Responded, Changed to FREE.
   severity: Error
 - check_number: '103'
   check_origin: FPRS
-  code: ''
-  columns: []
+  code: _16_58CA_rp3_r_paid_apps > _16_58CB_rp3_r_paid_stud
+  columns: [_16_58CA_rp3_r_paid_apps, _16_58CB_rp3_r_paid_stud]
   message: Applications cannot be greater than students for the REDUCED PRICE-income
     fields in 5-8:Ca and 5-8:C, 3. Responded, Changed to PAID.
   severity: Error
 - check_number: '104'
   check_origin: FPRS
-  code: ''
-  columns: []
+  code: _16_58CA_rp4_n_paid_apps > _16_58CB_rp4_n_paid_stud
+  columns: [_16_58CA_rp4_n_paid_apps, _16_58CB_rp4_n_paid_stud]
   message: Applications cannot be greater than students for theREDUCED PRICE-income
     fields in 5-8:Ca and 5-8:C, 4. NOT Responded, Changed to PAID.
   severity: Error
 - check_number: '105'
   check_origin: Direct Cert Report check P (L)  (modified)
-  code: ''
-  columns: []
+  code: _16_52_verif_no <> 1 and _16_vc1_forcause = 0
+    and _16_55_selected_apps <> (_16_57A_confirmverf_apps + _16_58AA_freecat1_r_nc_apps + _16_58AA_freecat2_r_rp_apps + _16_58AA_freecat3_r_paid_apps +
+      _16_58AA_freecat4_n_paid_apps + _16_58BA_freeinc1_r_nc_apps + _16_58BA_freeinc2_r_rp_apps + _16_58BA_freeinc3_r_paid_apps +
+      _16_58BA_freeinc4_n_paid_apps + _16_58CA_rp1_r_nc_apps + _16_58CA_rp2_r_free_apps + _16_58CA_rp3_r_paid_apps +
+      _16_58CA_rp4_n_paid_apps)
+  columns: [_16_52_verif_no, _16_55_selected_apps, _16_57A_confirmverf_apps, _16_58AA_freecat1_r_nc_apps, 
+    _16_58AA_freecat2_r_rp_apps, _16_58AA_freecat3_r_paid_apps, _16_58AA_freecat4_n_paid_apps, _16_58BA_freeinc1_r_nc_apps, 
+    _16_58BA_freeinc2_r_rp_apps, _16_58BA_freeinc3_r_paid_apps, _16_58BA_freeinc4_n_paid_apps, _16_58CA_rp1_r_nc_apps, _16_58CA_rp2_r_free_apps, 
+    _16_58CA_rp3_r_paid_apps, _16_58CA_rp4_n_paid_apps, _16_vc1_forcause]
   message: You have indicated that you completed the verification process in field
     5-2, but the results reported in 5-7A plus the 5-8a fields do not equal the sample
     size in 5-5. Please correct the entries reported in fields 5-2, 5-5, 5-7:A, and/or
@@ -792,16 +799,24 @@
   severity: "Error"
 - check_number: 106W
   check_origin: Direct Cert Report check R (N)
-  code: ''
-  columns: []
+  code: _16_53_verif_type_alt1 = 1 AND _16_54_error > 0
+  columns: [_16_54_error, _16_53_verif_type_alt1]
   message: You have indicated that you are conducting the 'alternate one' random sampling
     verification process and therefore you do not need to report the total number
     of error prone applications in field 5-4.
   severity: "Warning"
 - check_number: '107'
   check_origin: Direct Cert Report check U (Q)
-  code: ''
-  columns: []
+  code: _16_52_verif_no <>1 and _16_vc1_forcause <> 0 
+    and 
+    ((_16_57A_confirmverf_apps + _16_58AA_freecat1_r_nc_apps + _16_58AA_freecat2_r_rp_apps + _16_58AA_freecat3_r_paid_apps +
+      _16_58AA_freecat4_n_paid_apps + _16_58BA_freeinc1_r_nc_apps + _16_58BA_freeinc2_r_rp_apps + _16_58BA_freeinc3_r_paid_apps +
+      _16_58BA_freeinc4_n_paid_apps + _16_58CA_rp1_r_nc_apps + _16_58CA_rp2_r_free_apps + _16_58CA_rp3_r_paid_apps +
+      _16_58CA_rp4_n_paid_apps) - _16_55_selected_apps) > _16_vc1_forcause
+  columns: [_16_52_verif_no, _16_55_selected_apps, _16_57A_confirmverf_apps, _16_58AA_freecat1_r_nc_apps, 
+    _16_58AA_freecat2_r_rp_apps, _16_58AA_freecat3_r_paid_apps, _16_58AA_freecat4_n_paid_apps, _16_58BA_freeinc1_r_nc_apps, 
+    _16_58BA_freeinc2_r_rp_apps, _16_58BA_freeinc3_r_paid_apps, _16_58BA_freeinc4_n_paid_apps, _16_58CA_rp1_r_nc_apps, _16_58CA_rp2_r_free_apps, 
+    _16_58CA_rp3_r_paid_apps, _16_58CA_rp4_n_paid_apps, _16_vc1_forcause]
   message: Results for verified applications reported in 5-7A plus the 5-8a fields
     should equal the reported sample size in 5-5 plus any verifications for cause
     in VC-1. The only exception would be for applications that were verified for cause
@@ -810,38 +825,69 @@
   severity: "Error"
 - check_number: '108'
   check_origin: NEW check
-  code: ''
-  columns: []
+  code: _16_54_error > (_16_42A_free_inc_apps + _16_43A_rp_inc_apps)
+  columns: [_16_42A_free_inc_apps, _16_43A_rp_inc_apps, _16_54_error]
   message: The number of error prone applications exceeds the total number of income
     applications in fields 4-2 and 4-3. Please correct the numbers reported in fields
     4-2, 4-3, and/or 5-4.
   severity: Error
 - check_number: '109'
   check_origin: NEW check
-  code: ''
-  columns: []
+  code: (_16_42A_free_inc_apps + _16_43A_rp_inc_apps) >= 10 
+    and _16_54_error = (_16_42A_free_inc_apps + _16_43A_rp_inc_apps)
+  columns: [_16_42A_free_inc_apps, _16_43A_rp_inc_apps, _16_54_error]
   message: The number of error prone applications equals the total number of income
     applications in fields 4-2 and 4-3. Please correct the numbes reported in fields
     4-2, 4-3, and/or  5-4.
   severity: Error
 - check_number: 110W
   check_origin: NEW check
-  code: ''
-  columns: []
+  code: _16_54_error < (_16_42A_free_inc_apps + _16_43A_rp_inc_apps) 
+    and 
+    (
+      (
+        (10 < (_16_42A_free_inc_apps + _16_43A_rp_inc_apps) < 20) 
+        and
+        (_16_54_error > (_16_42A_free_inc_apps + _16_43A_rp_inc_apps)*0.3)
+      ) 
+      OR
+      (
+        (20 <= (_16_42A_free_inc_apps + _16_43A_rp_inc_apps) < 50) 
+        and
+        _16_54_error ^= (_16_42A_free_inc_apps + _16_43A_rp_inc_apps) 
+        and
+        (_16_54_error > (_16_42A_free_inc_apps + _16_43A_rp_inc_apps)*0.25)
+      ) 
+      OR
+      (
+        (_16_42A_free_inc_apps + _16_43A_rp_inc_apps) >= 50 
+        and _16_54_error ^= (_16_42A_free_inc_apps + _16_43A_rp_inc_apps) 
+        and (_16_54_error > (_16_42A_free_inc_apps + _16_43A_rp_inc_apps)*0.2)
+      )
+    )
+  columns: [_16_42A_free_inc_apps, _16_43A_rp_inc_apps, _16_54_error]
   message: The number of error prone applications is higher than expected. Please
     confirm the number of error prone applications reported in field 5-4.
   severity: Warning
 - check_number: 113W
   check_origin: NEW check
-  code: ''
-  columns: []
+  code: (_16_53_verif_type_standard = 1 OR _16_53_verif_type_alt2 = 1) 
+    and (_16_42A_free_inc_apps + _16_43A_rp_inc_apps) >= 150 
+    and (_16_54_error < (_16_42A_free_inc_apps + _16_43A_rp_inc_apps)*0.01)
+  columns: [_16_42A_free_inc_apps, _16_43A_rp_inc_apps, _16_53_verif_type_standard, _16_53_verif_type_alt2, _16_54_error]
   message: The number of error prone applications is lower than expected. Please confirm
     the number of error prone applications reported in field 5-4.
   severity: Warning
 - check_number: '114'
   check_origin: NEW check
-  code: ''
-  columns: []
+  code: (_16_41A_free_doc_apps + _16_42A_free_inc_apps + _16_43A_rp_inc_apps) < (_16_57A_confirmverf_apps + _16_58AA_freecat1_r_nc_apps + 
+    _16_58AA_freecat2_r_rp_apps + _16_58AA_freecat3_r_paid_apps + _16_58AA_freecat4_n_paid_apps + _16_58BA_freeinc1_r_nc_apps + 
+    _16_58BA_freeinc2_r_rp_apps + _16_58BA_freeinc3_r_paid_apps + _16_58BA_freeinc4_n_paid_apps + _16_58CA_rp1_r_nc_apps + _16_58CA_rp2_r_free_apps + 
+    _16_58CA_rp3_r_paid_apps + _16_58CA_rp4_n_paid_apps)
+  columns: [_16_41A_free_doc_apps, _16_42A_free_inc_apps, _16_43A_rp_inc_apps, _16_57A_confirmverf_apps, _16_58AA_freecat1_r_nc_apps, 
+    _16_58AA_freecat2_r_rp_apps, _16_58AA_freecat3_r_paid_apps, _16_58AA_freecat4_n_paid_apps, _16_58BA_freeinc1_r_nc_apps, 
+    _16_58BA_freeinc2_r_rp_apps, _16_58BA_freeinc3_r_paid_apps, _16_58BA_freeinc4_n_paid_apps, _16_58CA_rp1_r_nc_apps, _16_58CA_rp2_r_free_apps, 
+    _16_58CA_rp3_r_paid_apps, _16_58CA_rp4_n_paid_apps]
   message: The number of applications reported in the results of verification in fields
     5-7:A and the 5-8:As exceeds the total number of approved applications reported
     in fields 4-1, 4-2 and 4-3. Please correct the numbers in 5-7, the 5-8:As, and/or
@@ -849,32 +895,37 @@
   severity: "Error"
 - check_number: '115'
   check_origin: NEW check
-  code: ''
-  columns: []
+  code: (_16_41A_free_doc_apps + _16_42A_free_inc_apps + _16_43A_rp_inc_apps) > 0
+    and _16_57A_confirmverf_apps > (_16_41A_free_doc_apps + _16_42A_free_inc_apps + _16_43A_rp_inc_apps)
+  columns: [_16_41A_free_doc_apps, _16_42A_free_inc_apps, _16_43A_rp_inc_apps, _16_57A_confirmverf_apps]
   message: The number of applications verified by direct verification, reported in
     field 5-7:A is greater than the total number of approved applications. Please
     correct the numbers in 5-7 and/or Section 4.
   severity: "Error"
 - check_number: '116'
   check_origin: NEW check
-  code: ''
-  columns: []
+  code: (_16_41A_free_doc_apps + _16_42A_free_inc_apps + _16_43A_rp_inc_apps) > 0 
+    and _16_57A_confirmverf_apps > 25 
+    and _16_57A_confirmverf_apps = (_16_55_selected_apps + _16_vc1_forcause)
+  columns: [_16_41A_free_doc_apps, _16_42A_free_inc_apps, _16_43A_rp_inc_apps, _16_55_selected_apps, _16_57A_confirmverf_apps, _16_vc1_forcause]
   message: It is highly unlikely that all applications selected for verification,
     including verifications for cause, were directly verified. Please correct the
     numbers reported in fields 5-7:A, 5-5, and/or VC-1.
   severity: Error
 - check_number: 117W
   check_origin: NEW check
-  code: ''
-  columns: []
+  code: (_16_41A_free_doc_apps + _16_42A_free_inc_apps + _16_43A_rp_inc_apps) > 0 
+    and (_16_57A_confirmverf_apps BETWEEN 11 AND 25) 
+    and _16_57A_confirmverf_apps = (_16_55_selected_apps + _16_vc1_forcause)
+  columns: [_16_41A_free_doc_apps, _16_42A_free_inc_apps, _16_43A_rp_inc_apps, _16_55_selected_apps, _16_57A_confirmverf_apps, _16_vc1_forcause]
   message: It is highly unlikely that all applications selected for verification,
     including verifications for cause, were directly verified. Please confirm the
     numbers reported in fields 5-7:A, 5-5, and VC-1.
   severity: Warning
 - check_number: '118'
   check_origin: NEW check
-  code: ''
-  columns: []
+  code: _16_57A_confirmverf_apps > _16_57B_confirmverf_stud
+  columns: [_16_57A_confirmverf_apps, _16_57B_confirmverf_stud]
   message: 'The number of directly verified applications in field 5-7:A cannot exceed
     the number of students in 5-7:B. Please correct that the numbers that are reported
     in fields 5-7:A and/or 5-7:B. Note: The difference in reference dates between
@@ -884,8 +935,8 @@
   severity: Error
 - check_number: '119'
   check_origin: NEW check
-  code: ''
-  columns: []
+  code: _16_57A_confirmverf_apps = 0 and _16_57B_confirmverf_stud > 0
+  columns: [_16_57A_confirmverf_apps, _16_57B_confirmverf_stud]
   message: 'You have reported [x] students on 0 (zero) directly verified applications
     in field 5-7:A and 5-7:B. Please correct that the numbers that are reported in
     fields 5-7:A and/or 5-7:B. Note: The difference in reference dates between the
@@ -895,9 +946,9 @@
   severity: Error
 - check_number: 120W
   check_origin: NEW check
-  code: _16_57A_confirmverf_apps < 15 
-    and (_16_32B_dc_snap_stud + _16_33B_dc_other_stud + _16_34B_free_snapletter_stud) <> _16_57A_confirmverf_apps 
-    and _16_57A_confirmverf_apps <> _16_57B_confirmverf_stud
+  code: _16_57A_confirmverf_apps > 15 
+    and (_16_32B_dc_snap_stud + _16_33B_dc_other_stud + _16_34B_free_snapletter_stud) = _16_57A_confirmverf_apps 
+    and _16_57A_confirmverf_apps = _16_57B_confirmverf_stud
   columns: [_16_32B_dc_snap_stud, _16_33B_dc_other_stud, _16_34B_free_snapletter_stud, _16_57A_confirmverf_apps, _16_57B_confirmverf_stud]
   message: 'The number of students is equal to the number of applications for the
     direct verification fields (5-7:A and 5-7:B). Please confirm that the numbers
@@ -908,10 +959,10 @@
   severity: Warning
 - check_number: 121W
   check_origin: NEW check
-  code: _16_57A_confirmverf_apps < 15 
-    and _16_57B_confirmverf_stud < 10 
-    and _16_57A_confirmverf_apps = _16_57B_confirmverf_stud 
-    and (_16_32B_dc_snap_stud + _16_33B_dc_other_stud + _16_34B_free_snapletter_stud) <> _16_57B_confirmverf_stud
+  code: _16_57A_confirmverf_apps > 15 
+    and _16_57B_confirmverf_stud > 10 
+    and _16_57A_confirmverf_apps <> _16_57B_confirmverf_stud 
+    and (_16_32B_dc_snap_stud + _16_33B_dc_other_stud + _16_34B_free_snapletter_stud) = _16_57B_confirmverf_stud
   columns: [_16_32B_dc_snap_stud, _16_33B_dc_other_stud, _16_34B_free_snapletter_stud, _16_57A_confirmverf_apps, _16_57B_confirmverf_stud]
   message: 'Please confirm that the number in 5-7:B is correct. Reminder: Be careful
     not to confuse direct verification with direct certification. Only students that
@@ -920,18 +971,18 @@
   severity: Warning
 - check_number: 122W
   check_origin: NEW check
-  code: _16_57A_confirmverf_apps < 15 
-    and _16_32B_dc_snap_stud < 10 
-    and _16_33B_dc_other_stud < 10 
-    and _16_34B_free_snapletter_stud < 10 
-    and	(_16_32B_dc_snap_stud + _16_33B_dc_other_stud + _16_34B_free_snapletter_stud) = _16_57A_confirmverf_apps 
+  code: _16_57A_confirmverf_apps > 15 
+    and _16_32B_dc_snap_stud > 10 
+    and _16_33B_dc_other_stud > 10 
+    and _16_34B_free_snapletter_stud > 10 
+    and	(_16_32B_dc_snap_stud + _16_33B_dc_other_stud + _16_34B_free_snapletter_stud) <> _16_57A_confirmverf_apps 
     and	
       (
-        (_16_32B_dc_snap_stud <> _16_57A_confirmverf_apps)
+        (_16_32B_dc_snap_stud = _16_57A_confirmverf_apps)
         or 
-        (_16_33B_dc_other_stud <> _16_57A_confirmverf_apps) 
+        (_16_33B_dc_other_stud = _16_57A_confirmverf_apps) 
         or 
-        (_16_34B_free_snapletter_stud <> _16_57A_confirmverf_apps)
+        (_16_34B_free_snapletter_stud = _16_57A_confirmverf_apps)
       )
   columns: [_16_32B_dc_snap_stud, _16_33B_dc_other_stud, _16_34B_free_snapletter_stud, _16_57A_confirmverf_apps]
   message: 'Please confirm that the numbers in fields 5-7:A and 5-7:B are correct.
@@ -941,7 +992,17 @@
   severity: Warning
 - check_number: 123W
   check_origin: NEW check
-  code: ''
+  code: _16_57A_confirmverf_apps > 15 
+    and (_16_32B_dc_snap_stud + _16_33B_dc_other_stud + _16_34B_free_snapletter_stud) <> _16_57A_confirmverf_apps 
+    and (
+        (_16_32B_dc_snap_stud <> _16_57A_confirmverf_apps)
+        or 
+        (_16_33B_dc_other_stud <> _16_57A_confirmverf_apps)
+        or
+        (_16_34B_free_snapletter_stud <> _16_57A_confirmverf_apps)
+      )
+    and (_16_32B_dc_snap_stud + _16_33B_dc_other_stud + _16_34B_free_snapletter_stud) <> _16_57B_confirmverf_stud 
+    and _16_57A_confirmverf_apps = _16_57B_confirmverf_stud 
   columns: [_16_32B_dc_snap_stud, _16_33B_dc_other_stud, _16_34B_free_snapletter_stud, _16_57A_confirmverf_apps, _16_57B_confirmverf_stud]
   message: The number of students is equal to the number of applications for the direct
     verification fields (5-7:A and 5-7:B). Please confirm that the numbers reported
@@ -949,7 +1010,7 @@
   severity: Warning
 - check_number: '124'
   check_origin: NEW check
-  code: _16_vc1_forcause <= (_16_41A_free_doc_apps + _16_42A_free_inc_apps + _16_43A_rp_inc_apps)
+  code: _16_vc1_forcause > (_16_41A_free_doc_apps + _16_42A_free_inc_apps + _16_43A_rp_inc_apps)
   columns: [_16_41A_free_doc_apps, _16_42A_free_inc_apps, _16_43A_rp_inc_apps, _16_vc1_forcause]
   message: The number of applications reported as being verified for cause is greater
     than the total number of approved applications. (For this to be correct, applications
