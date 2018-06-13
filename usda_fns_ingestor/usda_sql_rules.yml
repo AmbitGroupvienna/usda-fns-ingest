@@ -380,16 +380,18 @@
               (_16_32B_dc_snap_stud + _16_33B_dc_other_stud + _16_34B_free_snapletter_stud) = _16_41B_free_doc_stud
             ) 
             and 
-            (_16_41B_free_doc_stud/_16_41A_free_doc_apps) BETWEEN 3.1 and 9.9) 
-            OR 
-            (_16_41B_free_doc_stud/_16_41A_free_doc_apps) BETWEEN 3.1 and 4.9)
-          )
-          OR
-	      (
-        _16_41A_free_doc_apps BETWEEN 3 and 9 
-        and 
-        (_16_41B_free_doc_stud/_16_41A_free_doc_apps) BETWEEN 6 and 9
+            (_16_41B_free_doc_stud/_16_41A_free_doc_apps) BETWEEN 3.1 and 9.9
+          ) 
+          OR 
+            (_16_41B_free_doc_stud/_16_41A_free_doc_apps) BETWEEN 3.1 and 4.9
+        )
       )
+      OR
+        (
+          _16_41A_free_doc_apps BETWEEN 3 and 9 
+          and 
+          (_16_41B_free_doc_stud/_16_41A_free_doc_apps) BETWEEN 6 and 9
+        )
     )
   columns: [_16_32B_dc_snap_stud, _16_33B_dc_other_stud, _16_34B_free_snapletter_stud, _16_41A_free_doc_apps, _16_41B_free_doc_stud]
   message: 'You are reporting on average [ x ] students per application for the categorically
@@ -445,7 +447,7 @@
     (
       _16_41B_free_doc_stud = _16_41A_free_doc_apps 
       OR 
-	    _16_41B_free_doc_stud/_16_41A_free_doc_apps < 3 
+      _16_41B_free_doc_stud/_16_41A_free_doc_apps < 3 
     )
   columns: [_16_33B_dc_other_stud, _16_41A_free_doc_apps, _16_41B_free_doc_stud]
   message: 'The number of students approved as categorically FREE eligible based on
