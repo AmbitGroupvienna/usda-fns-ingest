@@ -267,8 +267,38 @@
   severity: "Error"
 - check_number: '34'
   check_origin: Direct Cert Report check F (B) (modified)
-  code: ''
-  columns: []
+  code: 
+    _16_22A_nonbase23_schl = (_16_11A_nonrcci_schl + _16_12A_rcci_schl) 
+    and 
+    (
+      _16_31_dc_notrequired <> 1 
+      OR
+      _16_51_exempt <> 1 
+      OR 
+      (_16_32B_dc_snap_stud + _16_33B_dc_other_stud + _16_34B_free_snapletter_stud + 
+      _16_41B_free_doc_stud + _16_42B_free_inc_stud + _16_43B_rp_inc_stud + 
+      _16_41A_free_doc_apps + _16_42A_free_inc_apps + _16_43A_rp_inc_apps + 
+      _16_52_verif_no + _16_52_verif_yes_after + _16_52_verif_yes_before + 
+      _16_53_verif_type_alt1 + _16_53_verif_type_alt2 + _16_53_verif_type_standard + 
+      _16_54_error + _16_55_selected_apps + _16_56_noverif_sfa + _16_57A_confirmverf_apps + _16_57B_confirmverf_stud + 
+      _16_58AA_freecat1_r_nc_apps + _16_58AB_freecat1_r_nc_stud + _16_58AA_freecat2_r_rp_apps + _16_58AB_freecat2_r_rp_stud + 
+      _16_58AA_freecat3_r_paid_apps + _16_58AB_freecat3_r_paid_stud + _16_58AA_freecat4_n_paid_apps + _16_58AB_freecat4_n_paid_stud + 
+      _16_58BA_freeinc1_r_nc_apps + _16_58BB_freeinc1_r_nc_stud + _16_58BA_freeinc2_r_rp_apps + _16_58BB_freeinc2_r_rp_stud + 
+      _16_58BA_freeinc3_r_paid_apps + _16_58BB_freeinc3_r_paid_stud + _16_58BA_freeinc4_n_paid_apps + _16_58BB_freeinc4_n_paid_stud + 
+      _16_58CA_rp1_r_nc_apps + _16_58CB_rp1_r_nc_stud + _16_58CA_rp2_r_free_apps + _16_58CB_rp2_r_free_stud + _16_58CA_rp3_r_paid_apps + 
+      _16_58CB_rp3_r_paid_stud + _16_58CA_rp4_n_paid_apps + _16_58CB_rp4_n_paid_stud + _16_vc1_forcause) <> 0
+    )
+  columns: [_16_11A_nonrcci_schl, _16_12A_rcci_schl, _16_22A_nonbase23_schl, _16_31_dc_notrequired, 
+    _16_32B_dc_snap_stud, _16_33B_dc_other_stud, _16_34B_free_snapletter_stud, _16_41B_free_doc_stud, _16_42B_free_inc_stud, 
+    _16_43B_rp_inc_stud, _16_41A_free_doc_apps, _16_42A_free_inc_apps, _16_43A_rp_inc_apps, _16_51_exempt, _16_52_verif_no, 
+    _16_52_verif_yes_after, _16_52_verif_yes_before, _16_53_verif_type_alt1, _16_53_verif_type_alt2, _16_53_verif_type_standard, 
+    _16_54_error, _16_55_selected_apps, _16_56_noverif_sfa, _16_57A_confirmverf_apps, _16_57B_confirmverf_stud, 
+    _16_58AA_freecat1_r_nc_apps, _16_58AB_freecat1_r_nc_stud, _16_58AA_freecat2_r_rp_apps, _16_58AB_freecat2_r_rp_stud, 
+    _16_58AA_freecat3_r_paid_apps, _16_58AB_freecat3_r_paid_stud, _16_58AA_freecat4_n_paid_apps, _16_58AB_freecat4_n_paid_stud, 
+    _16_58BA_freeinc1_r_nc_apps, _16_58BB_freeinc1_r_nc_stud, _16_58BA_freeinc2_r_rp_apps, _16_58BB_freeinc2_r_rp_stud, 
+    _16_58BA_freeinc3_r_paid_apps, _16_58BB_freeinc3_r_paid_stud, _16_58BA_freeinc4_n_paid_apps, _16_58BB_freeinc4_n_paid_stud, 
+    _16_58CA_rp1_r_nc_apps, _16_58CB_rp1_r_nc_stud, _16_58CA_rp2_r_free_apps, _16_58CB_rp2_r_free_stud, _16_58CA_rp3_r_paid_apps, 
+    _16_58CB_rp3_r_paid_stud, _16_58CA_rp4_n_paid_apps, _16_58CB_rp4_n_paid_stud, _16_vc1_forcause]
   message: You have reported that all schools in your SFA are in a non-base year for
     Provision 2/3 and therefore should not have any approved  applications. Please
     check the boxes in fields 3-1 and 5-1, complete fields T-1 and T-2, if applicable,
@@ -276,8 +306,8 @@
   severity: "Error"
 - check_number: 35W
   check_origin: FPRS
-  code: ''
-  columns: []
+  code: _16_41A_free_doc_apps > _16_41B_free_doc_stud
+  columns: [_16_41A_free_doc_apps, _16_41B_free_doc_stud]
   message: The number of applications approved as categorically FREE eligible should
     not exceed the number of students on those applications. Even when considering
     the difference in reporting dates for the two fields (October 1 vs 31), only rare
@@ -286,8 +316,8 @@
   severity: "Warning"
 - check_number: 36W
   check_origin: FPRS
-  code: ''
-  columns: []
+  code: _16_42A_free_inc_apps > _16_42B_free_inc_stud
+  columns: [_16_42A_free_inc_apps, _16_42B_free_inc_stud]
   message: The number of applications approved as FREE eligible on the basis of income
     should not exceed the number of students on those applications. Even when considering
     the difference in reporting dates for the two fields (October 1 vs 31), only rare
@@ -296,8 +326,8 @@
   severity: "Warning"
 - check_number: 37W
   check_origin: FPRS
-  code: ''
-  columns: []
+  code: _16_43A_rp_inc_apps > _16_43B_rp_inc_stud
+  columns: [_16_43A_rp_inc_apps, _16_43B_rp_inc_stud]
   message: The number of applications approved as REDUCED PRICE eligible on the basis
     of income should not exceed the number of students on those applications. Even
     when considering the difference in reporting dates for the two fields (October
@@ -306,8 +336,12 @@
   severity: "Warning"
 - check_number: '38'
   check_origin: Direct Cert Report check G (C) (modified)
-  code: ''
-  columns: []
+  code: (_16_11B_nonrcci_stud + _16_12B_rcci_stud) < (_16_22B_nonbase23_stud + _16_23B_cep_stud + _16_24B_altboth_stud + 
+    _16_32B_dc_snap_stud +	_16_33B_dc_other_stud + _16_34B_free_snapletter_stud + _16_41B_free_doc_stud + 
+    _16_42B_free_inc_stud + _16_43B_rp_inc_stud)
+  columns: [_16_11B_nonrcci_stud, _16_12B_rcci_stud, _16_22B_nonbase23_stud, _16_23B_cep_stud, _16_24B_altboth_stud, 
+    _16_32B_dc_snap_stud,	_16_33B_dc_other_stud, _16_34B_free_snapletter_stud, _16_41B_free_doc_stud, _16_42B_free_inc_stud, 
+    _16_43B_rp_inc_stud]
   message: The number of students in special provision schools, plus the number of
     students certified as FREE through direct certification and the SNAP letter method,
     plus the number of students approved by application cannot be greater than the
@@ -317,16 +351,47 @@
   severity: "Error"
 - check_number: '39'
   check_origin: NEW check
-  code: ''
-  columns: []
+  code: (_16_11B_nonrcci_stud + _16_12B_rcci_stud) < (_16_41A_free_doc_apps + _16_42A_free_inc_apps + _16_43A_rp_inc_apps)
+  columns: [_16_11B_nonrcci_stud, _16_12B_rcci_stud, _16_41A_free_doc_apps, _16_42A_free_inc_apps, _16_43A_rp_inc_apps]
   message: Number of approved applications cannot be greater than the total number
     of students in the SFA. Please correct the numbers in Sections 1 and 4 so that
     1-1:B + 1-2:B is greater than 4-1:A + 4-2:A + 4-3:A.
   severity: "Error"
 - check_number: 40W
   check_origin: NEW check
-  code: ''
-  columns: []
+  code: 
+    _16_41A_free_doc_apps > 0 
+    and 
+    (
+      (
+        _16_41A_free_doc_apps > 10 
+        and 
+        _16_41B_free_doc_stud > 15 
+        and 
+        (
+          (
+            (
+              (_16_32B_dc_snap_stud = _16_41B_free_doc_stud) 
+              OR 
+              (_16_33B_dc_other_stud = _16_41B_free_doc_stud) 
+              OR 
+              (_16_34B_free_snapletter_stud = _16_41B_free_doc_stud) 
+              OR
+              (_16_32B_dc_snap_stud + _16_33B_dc_other_stud + _16_34B_free_snapletter_stud) = _16_41B_free_doc_stud
+            ) 
+            and 
+            (_16_41B_free_doc_stud/_16_41A_free_doc_apps) BETWEEN 3.1 and 9.9) 
+            OR 
+            (_16_41B_free_doc_stud/_16_41A_free_doc_apps) BETWEEN 3.1 and 4.9)
+          )
+          OR
+	      (
+        _16_41A_free_doc_apps BETWEEN 3 and 9 
+        and 
+        (_16_41B_free_doc_stud/_16_41A_free_doc_apps) BETWEEN 6 and 9
+      )
+    )
+  columns: [_16_32B_dc_snap_stud, _16_33B_dc_other_stud, _16_34B_free_snapletter_stud, _16_41A_free_doc_apps, _16_41B_free_doc_stud]
   message: 'You are reporting on average [ x ] students per application for the categorically
     eligible FREE applications. Even with the different reference dates for these
     two fields (Oct 1 vs Oct 31), this is unexpectedly high. Please confirm that the
@@ -335,8 +400,33 @@
   severity: Warning
 - check_number: '45'
   check_origin: NEW check
-  code: ''
-  columns: []
+  code: 
+    _16_41A_free_doc_apps > 0 
+    and 
+    (
+      (
+        _16_41A_free_doc_apps > 10 
+        and 
+        _16_41B_free_doc_stud > 15 
+        and 
+        _16_32B_dc_snap_stud <> _16_41B_free_doc_stud 
+        and 
+        _16_33B_dc_other_stud <> _16_41B_free_doc_stud 
+        and 
+        _16_34B_free_snapletter_stud <> _16_41B_free_doc_stud 
+        and 
+        (_16_32B_dc_snap_stud + _16_33B_dc_other_stud + _16_34B_free_snapletter_stud) <> _16_41B_free_doc_stud 
+        and 
+        _16_41B_free_doc_stud/_16_41A_free_doc_apps >= 5
+      ) 
+      OR 
+      (
+        _16_41A_free_doc_apps > 1 
+        and 
+        (_16_41B_free_doc_stud/_16_41A_free_doc_apps) >= 10
+      )
+    )
+  columns: [_16_32B_dc_snap_stud, _16_33B_dc_other_stud, _16_34B_free_snapletter_stud, _16_41A_free_doc_apps, _16_41B_free_doc_stud]
   message: 'You are reporting on average [ x ] students per application for the categorically
     eligible FREE applications. Even with the different reference dates for these
     two fields (Oct 1 vs Oct 31), this is unexpectedly high. Please correct the number
@@ -345,8 +435,19 @@
   severity: Error
 - check_number: 48W
   check_origin: NEW check
-  code: ''
-  columns: []
+  code: 
+    _16_41A_free_doc_apps > 0 
+    and 
+    _16_41B_free_doc_stud > 15 
+    and 
+    _16_33B_dc_other_stud = _16_41B_free_doc_stud
+    and 
+    (
+      _16_41B_free_doc_stud = _16_41A_free_doc_apps 
+      OR 
+	    _16_41B_free_doc_stud/_16_41A_free_doc_apps < 3 
+    )
+  columns: [_16_33B_dc_other_stud, _16_41A_free_doc_apps, _16_41B_free_doc_stud]
   message: 'The number of students approved as categorically FREE eligible based on
     application and by direct certification with programs other than SNAP are the
     same. Please confirm that the numbers in Sections 3 and 4 are correct. Note: Do
@@ -354,8 +455,23 @@
   severity: Warning
 - check_number: 49W
   check_origin: NEW check
-  code: ''
-  columns: []
+  code: 
+    _16_41A_free_doc_apps > 0 
+    and 
+    _16_41B_free_doc_stud > 15 
+    and 
+    _16_32B_dc_snap_stud > 0 
+    and 
+    _16_34B_free_snapletter_stud = _16_41B_free_doc_stud 
+    and 
+    (
+      _16_41B_free_doc_stud = _16_41A_free_doc_apps 
+      OR 
+      _16_34B_free_snapletter_stud/_16_32B_dc_snap_stud > .2
+    ) 
+    and 
+    _16_34B_free_snapletter_stud <> _16_33B_dc_other_stud
+  columns: [_16_32B_dc_snap_stud, _16_34B_free_snapletter_stud, _16_41A_free_doc_apps, _16_41B_free_doc_stud]
   message: 'The number of students approved as categorically FREE eligible based on
     application and by the SNAP letter method are the same. Please confirm that the
     numbers in Sections 3 and 4 are correct. Note: Do not report the same students
