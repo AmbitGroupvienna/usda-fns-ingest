@@ -274,37 +274,37 @@
 - error_code: '34'
   check_origin: Direct Cert Report check F (B) (modified)
   code:
-    _16_22A_nonbase23_schl = (_16_11A_nonrcci_schl + _16_12A_rcci_schl)
-    and
-    (
-      _16_31_dc_notrequired <> 1
-      OR
-      _16_51_exempt <> 1
-      OR
-      (_16_32B_dc_snap_stud + _16_33B_dc_other_stud + _16_34B_free_snapletter_stud +
-      _16_41B_free_doc_stud + _16_42B_free_inc_stud + _16_43B_rp_inc_stud +
-      _16_41A_free_doc_apps + _16_42A_free_inc_apps + _16_43A_rp_inc_apps +
-      _16_52_verif_no + _16_52_verif_yes_after + _16_52_verif_yes_before +
-      _16_53_verif_type_alt1 + _16_53_verif_type_alt2 + _16_53_verif_type_standard +
-      _16_54_error + _16_55_selected_apps + _16_56_noverif_sfa + _16_57A_confirmverf_apps + _16_57B_confirmverf_stud +
-      _16_58AA_freecat1_r_nc_apps + _16_58AB_freecat1_r_nc_stud + _16_58AA_freecat2_r_rp_apps + _16_58AB_freecat2_r_rp_stud +
-      _16_58AA_freecat3_r_paid_apps + _16_58AB_freecat3_r_paid_stud + _16_58AA_freecat4_n_paid_apps + _16_58AB_freecat4_n_paid_stud +
-      _16_58BA_freeinc1_r_nc_apps + _16_58BB_freeinc1_r_nc_stud + _16_58BA_freeinc2_r_rp_apps + _16_58BB_freeinc2_r_rp_stud +
-      _16_58BA_freeinc3_r_paid_apps + _16_58BB_freeinc3_r_paid_stud + _16_58BA_freeinc4_n_paid_apps + _16_58BB_freeinc4_n_paid_stud +
-      _16_58CA_rp1_r_nc_apps + _16_58CB_rp1_r_nc_stud + _16_58CA_rp2_r_free_apps + _16_58CB_rp2_r_free_stud + _16_58CA_rp3_r_paid_apps +
-      _16_58CB_rp3_r_paid_stud + _16_58CA_rp4_n_paid_apps + _16_58CB_rp4_n_paid_stud + _16_vc1_forcause) <> 0
-    )
+        _16_22A_nonbase23_schl = (_16_11A_nonrcci_schl + _16_12A_rcci_schl)
+        and
+        (
+          _16_31_dc_notrequired <> 1
+          OR
+          _16_51_exempt <> 1
+          OR
+          (_16_32B_dc_snap_stud + _16_33B_dc_other_stud + _16_34B_free_snapletter_stud +
+          _16_41B_free_doc_stud + _16_42B_free_inc_stud + _16_43B_rp_inc_stud +
+          _16_41A_free_doc_apps + _16_42A_free_inc_apps + _16_43A_rp_inc_apps +
+          _16_52_verif_no + _16_52_verif_yes_after + _16_52_verif_yes_before +
+          _16_53_verif_type_alt1 + _16_53_verif_type_alt2 + _16_53_verif_type_standard +
+          _16_54_error + _16_55_selected_apps + _16_56_noverif_sfa + _16_57A_confirmverf_apps + _16_57B_confirmverf_stud +
+          _16_58AA_freecat1_r_nc_apps + _16_58AB_freecat1_r_nc_stud + _16_58AA_freecat2_r_rp_apps + _16_58AB_freecat2_r_rp_stud +
+          _16_58AA_freecat3_r_paid_apps + _16_58AB_freecat3_r_paid_stud + _16_58AA_freecat4_n_paid_apps + _16_58AB_freecat4_n_paid_stud +
+          _16_58BA_freeinc1_r_nc_apps + _16_58BB_freeinc1_r_nc_stud + _16_58BA_freeinc2_r_rp_apps + _16_58BB_freeinc2_r_rp_stud +
+          _16_58BA_freeinc3_r_paid_apps + _16_58BB_freeinc3_r_paid_stud + _16_58BA_freeinc4_n_paid_apps + _16_58BB_freeinc4_n_paid_stud +
+          _16_58CA_rp1_r_nc_apps + _16_58CB_rp1_r_nc_stud + _16_58CA_rp2_r_free_apps + _16_58CB_rp2_r_free_stud + _16_58CA_rp3_r_paid_apps +
+          _16_58CB_rp3_r_paid_stud + _16_58CA_rp4_n_paid_apps + _16_58CB_rp4_n_paid_stud + _16_vc1_forcause) <> 0
+        )
   columns: [_16_11A_nonrcci_schl, _16_12A_rcci_schl, _16_22A_nonbase23_schl, _16_31_dc_notrequired,
-    _16_32B_dc_snap_stud, _16_33B_dc_other_stud, _16_34B_free_snapletter_stud, _16_41B_free_doc_stud, _16_42B_free_inc_stud,
-    _16_43B_rp_inc_stud, _16_41A_free_doc_apps, _16_42A_free_inc_apps, _16_43A_rp_inc_apps, _16_51_exempt, _16_52_verif_no,
-    _16_52_verif_yes_after, _16_52_verif_yes_before, _16_53_verif_type_alt1, _16_53_verif_type_alt2, _16_53_verif_type_standard,
-    _16_54_error, _16_55_selected_apps, _16_56_noverif_sfa, _16_57A_confirmverf_apps, _16_57B_confirmverf_stud,
-    _16_58AA_freecat1_r_nc_apps, _16_58AB_freecat1_r_nc_stud, _16_58AA_freecat2_r_rp_apps, _16_58AB_freecat2_r_rp_stud,
-    _16_58AA_freecat3_r_paid_apps, _16_58AB_freecat3_r_paid_stud, _16_58AA_freecat4_n_paid_apps, _16_58AB_freecat4_n_paid_stud,
-    _16_58BA_freeinc1_r_nc_apps, _16_58BB_freeinc1_r_nc_stud, _16_58BA_freeinc2_r_rp_apps, _16_58BB_freeinc2_r_rp_stud,
-    _16_58BA_freeinc3_r_paid_apps, _16_58BB_freeinc3_r_paid_stud, _16_58BA_freeinc4_n_paid_apps, _16_58BB_freeinc4_n_paid_stud,
-    _16_58CA_rp1_r_nc_apps, _16_58CB_rp1_r_nc_stud, _16_58CA_rp2_r_free_apps, _16_58CB_rp2_r_free_stud, _16_58CA_rp3_r_paid_apps,
-    _16_58CB_rp3_r_paid_stud, _16_58CA_rp4_n_paid_apps, _16_58CB_rp4_n_paid_stud, _16_vc1_forcause]
+            _16_32B_dc_snap_stud, _16_33B_dc_other_stud, _16_34B_free_snapletter_stud, _16_41B_free_doc_stud, _16_42B_free_inc_stud,
+            _16_43B_rp_inc_stud, _16_41A_free_doc_apps, _16_42A_free_inc_apps, _16_43A_rp_inc_apps, _16_51_exempt, _16_52_verif_no,
+            _16_52_verif_yes_after, _16_52_verif_yes_before, _16_53_verif_type_alt1, _16_53_verif_type_alt2, _16_53_verif_type_standard,
+            _16_54_error, _16_55_selected_apps, _16_56_noverif_sfa, _16_57A_confirmverf_apps, _16_57B_confirmverf_stud,
+            _16_58AA_freecat1_r_nc_apps, _16_58AB_freecat1_r_nc_stud, _16_58AA_freecat2_r_rp_apps, _16_58AB_freecat2_r_rp_stud,
+            _16_58AA_freecat3_r_paid_apps, _16_58AB_freecat3_r_paid_stud, _16_58AA_freecat4_n_paid_apps, _16_58AB_freecat4_n_paid_stud,
+            _16_58BA_freeinc1_r_nc_apps, _16_58BB_freeinc1_r_nc_stud, _16_58BA_freeinc2_r_rp_apps, _16_58BB_freeinc2_r_rp_stud,
+            _16_58BA_freeinc3_r_paid_apps, _16_58BB_freeinc3_r_paid_stud, _16_58BA_freeinc4_n_paid_apps, _16_58BB_freeinc4_n_paid_stud,
+            _16_58CA_rp1_r_nc_apps, _16_58CB_rp1_r_nc_stud, _16_58CA_rp2_r_free_apps, _16_58CB_rp2_r_free_stud, _16_58CA_rp3_r_paid_apps,
+            _16_58CB_rp3_r_paid_stud, _16_58CA_rp4_n_paid_apps, _16_58CB_rp4_n_paid_stud, _16_vc1_forcause]
   message: 'You have reported that all schools in your SFA are in a non-base year for
     Provision 2/3 and therefore should not have any approved  applications. Please
     check the boxes in fields 3-1 and 5-1, complete fields T-1 and T-2, if applicable,
@@ -343,11 +343,11 @@
 - error_code: '38'
   check_origin: Direct Cert Report check G (C) (modified)
   code: (_16_11B_nonrcci_stud + _16_12B_rcci_stud) < (_16_22B_nonbase23_stud + _16_23B_cep_stud + _16_24B_altboth_stud +
-    _16_32B_dc_snap_stud +	_16_33B_dc_other_stud + _16_34B_free_snapletter_stud + _16_41B_free_doc_stud +
+    _16_32B_dc_snap_stud + _16_33B_dc_other_stud + _16_34B_free_snapletter_stud + _16_41B_free_doc_stud +
     _16_42B_free_inc_stud + _16_43B_rp_inc_stud)
   columns: [_16_11B_nonrcci_stud, _16_12B_rcci_stud, _16_22B_nonbase23_stud, _16_23B_cep_stud, _16_24B_altboth_stud,
-    _16_32B_dc_snap_stud,	_16_33B_dc_other_stud, _16_34B_free_snapletter_stud, _16_41B_free_doc_stud, _16_42B_free_inc_stud,
-    _16_43B_rp_inc_stud]
+            _16_32B_dc_snap_stud, _16_33B_dc_other_stud, _16_34B_free_snapletter_stud, _16_41B_free_doc_stud, _16_42B_free_inc_stud,
+            _16_43B_rp_inc_stud]
   message: 'The number of students in special provision schools, plus the number of
     students certified as FREE through direct certification and the SNAP letter method,
     plus the number of students approved by application cannot be greater than the
@@ -366,47 +366,47 @@
 - error_code: 40W
   check_origin: NEW check
   code:
-    _16_41A_free_doc_apps > 0
-    and
-    (
-      (
-        _16_41A_free_doc_apps > 10
-        and
-        _16_41B_free_doc_stud > 15
+        _16_41A_free_doc_apps > 0
         and
         (
           (
+            _16_41A_free_doc_apps > 10
+            and
+            _16_41B_free_doc_stud > 15
+            and
             (
-              (_16_32B_dc_snap_stud = _16_41B_free_doc_stud)
+              (
+                (
+                  (_16_32B_dc_snap_stud = _16_41B_free_doc_stud)
+                  OR
+                  (_16_33B_dc_other_stud = _16_41B_free_doc_stud)
+                  OR
+                  (_16_34B_free_snapletter_stud = _16_41B_free_doc_stud)
+                  OR
+                  (_16_32B_dc_snap_stud + _16_33B_dc_other_stud + _16_34B_free_snapletter_stud) = _16_41B_free_doc_stud
+                )
+                and
+                (_16_41B_free_doc_stud/_16_41A_free_doc_apps) > 3
+                and
+                (_16_41B_free_doc_stud/_16_41A_free_doc_apps) < 10
+              )
               OR
-              (_16_33B_dc_other_stud = _16_41B_free_doc_stud)
-              OR
-              (_16_34B_free_snapletter_stud = _16_41B_free_doc_stud)
-              OR
-              (_16_32B_dc_snap_stud + _16_33B_dc_other_stud + _16_34B_free_snapletter_stud) = _16_41B_free_doc_stud
+                (_16_41B_free_doc_stud/_16_41A_free_doc_apps) > 3
+                and
+                (_16_41B_free_doc_stud/_16_41A_free_doc_apps) < 5
             )
-            and
-            (_16_41B_free_doc_stud/_16_41A_free_doc_apps) > 3
-            and
-            (_16_41B_free_doc_stud/_16_41A_free_doc_apps) < 10
           )
           OR
-            (_16_41B_free_doc_stud/_16_41A_free_doc_apps) > 3
-            and
-            (_16_41B_free_doc_stud/_16_41A_free_doc_apps) < 5
+            (
+              _16_41A_free_doc_apps > 2
+              and
+              _16_41A_free_doc_apps < 10
+              and
+              (_16_41B_free_doc_stud/_16_41A_free_doc_apps) > 5
+              and
+              (_16_41B_free_doc_stud/_16_41A_free_doc_apps) < 10
+            )
         )
-      )
-      OR
-        (
-          _16_41A_free_doc_apps > 2
-          and
-          _16_41A_free_doc_apps < 10
-          and
-          (_16_41B_free_doc_stud/_16_41A_free_doc_apps) > 5
-          and
-          (_16_41B_free_doc_stud/_16_41A_free_doc_apps) < 10
-        )
-    )
   columns: [_16_32B_dc_snap_stud, _16_33B_dc_other_stud, _16_34B_free_snapletter_stud, _16_41A_free_doc_apps, _16_41B_free_doc_stud]
   message: 'You are reporting on average [ x ] students per application for the categorically
     eligible FREE applications. Even with the different reference dates for these
@@ -417,31 +417,31 @@
 - error_code: '45'
   check_origin: NEW check
   code:
-    _16_41A_free_doc_apps > 0
-    and
-    (
-      (
-        _16_41A_free_doc_apps > 10
+        _16_41A_free_doc_apps > 0
         and
-        _16_41B_free_doc_stud > 15
-        and
-        _16_32B_dc_snap_stud <> _16_41B_free_doc_stud
-        and
-        _16_33B_dc_other_stud <> _16_41B_free_doc_stud
-        and
-        _16_34B_free_snapletter_stud <> _16_41B_free_doc_stud
-        and
-        (_16_32B_dc_snap_stud + _16_33B_dc_other_stud + _16_34B_free_snapletter_stud) <> _16_41B_free_doc_stud
-        and
-        _16_41B_free_doc_stud/_16_41A_free_doc_apps >= 5
-      )
-      OR
-      (
-        _16_41A_free_doc_apps > 1
-        and
-        (_16_41B_free_doc_stud/_16_41A_free_doc_apps) >= 10
-      )
-    )
+        (
+          (
+            _16_41A_free_doc_apps > 10
+            and
+            _16_41B_free_doc_stud > 15
+            and
+            _16_32B_dc_snap_stud <> _16_41B_free_doc_stud
+            and
+            _16_33B_dc_other_stud <> _16_41B_free_doc_stud
+            and
+            _16_34B_free_snapletter_stud <> _16_41B_free_doc_stud
+            and
+            (_16_32B_dc_snap_stud + _16_33B_dc_other_stud + _16_34B_free_snapletter_stud) <> _16_41B_free_doc_stud
+            and
+            _16_41B_free_doc_stud/_16_41A_free_doc_apps >= 5
+          )
+          OR
+          (
+            _16_41A_free_doc_apps > 1
+            and
+            (_16_41B_free_doc_stud/_16_41A_free_doc_apps) >= 10
+          )
+        )
   columns: [_16_32B_dc_snap_stud, _16_33B_dc_other_stud, _16_34B_free_snapletter_stud, _16_41A_free_doc_apps, _16_41B_free_doc_stud]
   message: 'You are reporting on average [ x ] students per application for the categorically
     eligible FREE applications. Even with the different reference dates for these
@@ -452,17 +452,17 @@
 - error_code: 48W
   check_origin: NEW check
   code:
-    _16_41A_free_doc_apps > 0
-    and
-    _16_41B_free_doc_stud > 15
-    and
-    _16_33B_dc_other_stud = _16_41B_free_doc_stud
-    and
-    (
-      _16_41B_free_doc_stud = _16_41A_free_doc_apps
-      OR
-      _16_41B_free_doc_stud/_16_41A_free_doc_apps < 3
-    )
+        _16_41A_free_doc_apps > 0
+        and
+        _16_41B_free_doc_stud > 15
+        and
+        _16_33B_dc_other_stud = _16_41B_free_doc_stud
+        and
+        (
+          _16_41B_free_doc_stud = _16_41A_free_doc_apps
+          OR
+          _16_41B_free_doc_stud/_16_41A_free_doc_apps < 3
+        )
   columns: [_16_33B_dc_other_stud, _16_41A_free_doc_apps, _16_41B_free_doc_stud]
   message: 'The number of students approved as categorically FREE eligible based on
     application and by direct certification with programs other than SNAP are the
@@ -472,21 +472,21 @@
 - error_code: 49W
   check_origin: NEW check
   code:
-    _16_41A_free_doc_apps > 0
-    and
-    _16_41B_free_doc_stud > 15
-    and
-    _16_32B_dc_snap_stud > 0
-    and
-    _16_34B_free_snapletter_stud = _16_41B_free_doc_stud
-    and
-    (
-      _16_41B_free_doc_stud = _16_41A_free_doc_apps
-      OR
-      _16_34B_free_snapletter_stud/_16_32B_dc_snap_stud > .2
-    )
-    and
-    _16_34B_free_snapletter_stud <> _16_33B_dc_other_stud
+        _16_41A_free_doc_apps > 0
+        and
+        _16_41B_free_doc_stud > 15
+        and
+        _16_32B_dc_snap_stud > 0
+        and
+        _16_34B_free_snapletter_stud = _16_41B_free_doc_stud
+        and
+        (
+          _16_41B_free_doc_stud = _16_41A_free_doc_apps
+          OR
+          _16_34B_free_snapletter_stud/_16_32B_dc_snap_stud > .2
+        )
+        and
+        _16_34B_free_snapletter_stud <> _16_33B_dc_other_stud
   columns: [_16_32B_dc_snap_stud, _16_34B_free_snapletter_stud, _16_41A_free_doc_apps, _16_41B_free_doc_stud]
   message: 'The number of students approved as categorically FREE eligible based on
     application and by the SNAP letter method are the same. Please confirm that the
@@ -499,8 +499,8 @@
     and _16_41B_free_doc_stud > 15
     and (_16_32B_dc_snap_stud + _16_33B_dc_other_stud + _16_34B_free_snapletter_stud) > 0
     and (_16_32B_dc_snap_stud + _16_33B_dc_other_stud + _16_34B_free_snapletter_stud) = _16_41B_free_doc_stud
-    and	_16_32B_dc_snap_stud = _16_41B_free_doc_stud
-  columns: [_16_32B_dc_snap_stud, _16_33B_dc_other_stud, _16_34B_free_snapletter_stud, _16_41A_free_doc_apps, _41B_free_doc_stud]
+    and _16_32B_dc_snap_stud = _16_41B_free_doc_stud
+  columns: [_16_32B_dc_snap_stud, _16_33B_dc_other_stud, _16_34B_free_snapletter_stud, _16_41A_free_doc_apps, _16_41B_free_doc_stud]
   message: 'The number of students approved as categorically FREE eligible based on
     application and by direct certification with SNAP are the same. Please confirm
     that the numbers in Sections 3 and 4 are correct. Note: Do not report the same
@@ -513,7 +513,7 @@
     and (_16_32B_dc_snap_stud + _16_33B_dc_other_stud + _16_34B_free_snapletter_stud) > 0
     and _16_41B_free_doc_stud = _16_41A_free_doc_apps
     and _16_32B_dc_snap_stud <> _16_41B_free_doc_stud
-    and	(_16_41B_free_doc_stud/(_16_32B_dc_snap_stud + _16_33B_dc_other_stud + _16_34B_free_snapletter_stud)) > 0.2
+    and (_16_41B_free_doc_stud/(_16_32B_dc_snap_stud + _16_33B_dc_other_stud + _16_34B_free_snapletter_stud)) > 0.2
   columns: [_16_32B_dc_snap_stud, _16_33B_dc_other_stud, _16_34B_free_snapletter_stud, _16_41A_free_doc_apps, _16_41B_free_doc_stud]
   message: 'The number of students approved as categorically FREE eligible based on
     application is higher than expected. Please confirm that the numbers in Sections
@@ -524,11 +524,11 @@
   code: _16_41A_free_doc_apps > 0
     and _16_41B_free_doc_stud > 40
     and _16_12A_rcci_schl <> (_16_11A_nonrcci_schl + _16_12A_rcci_schl)
-    and	_16_TypeSFA_Private <> 1
+    and _16_TypeSFA_Private <> 1
     and _16_12B_rcci_stud < (_16_41B_free_doc_stud + _16_42B_free_inc_stud + _16_43B_rp_inc_stud)
-    and	_16_41B_free_doc_stud = _16_41A_free_doc_apps
+    and _16_41B_free_doc_stud = _16_41A_free_doc_apps
   columns: [_16_TypeSFA_Private, _16_11A_nonrcci_schl, _16_12A_rcci_schl, _16_12B_rcci_stud, _16_41A_free_doc_apps,
-    _16_41B_free_doc_stud, _16_42B_free_inc_stud, _16_43B_rp_inc_stud]
+            _16_41B_free_doc_stud, _16_42B_free_inc_stud, _16_43B_rp_inc_stud]
   message: 'The number of students is equal to the number of applications for the
     categorically FREE eligible applications. Please confirm that the numbers of students
     and applications reported in field 4-1: Approved as categorically FREE eligible
@@ -537,38 +537,40 @@
 - error_code: 56W
   check_origin: NEW check
   code:
-    (_16_41A_free_doc_apps + _16_42A_free_inc_apps + _16_43A_rp_inc_apps) > 0
-    and
-    _16_41B_free_doc_stud > 15
-    and
-    _16_41A_free_doc_apps > 0
-    and
-    (_16_32B_dc_snap_stud + _16_33B_dc_other_stud + _16_34B_free_snapletter_stud) > 0
-    and
-    (_16_41B_free_doc_stud/_16_41A_free_doc_apps) <= 1.5
-    and
-    (_16_41B_free_doc_stud/_16_41A_free_doc_apps) <> 1
-    and
-      (
-        ceil
-        (
-          (_16_53_verif_type_standard*.03 + _16_53_verif_type_alt1*.03 + _16_53_verif_type_alt2*.015)*
-          (_16_41A_free_doc_apps + _16_42A_free_inc_apps + _16_43A_rp_inc_apps)
-        ) - _16_55_selected_apps
-      ) > 1
-    and
-    _16_52_verif_no = 0
-    and
-    (_16_55_selected_apps + _16_vc1_forcause) = (_16_57A_confirmverf_apps + _16_58AA_freecat1_r_nc_apps +
-    _16_58AA_freecat2_r_rp_apps + _16_58AA_freecat3_r_paid_apps + _16_58AA_freecat4_n_paid_apps + _16_58BA_freeinc1_r_nc_apps +
-    _16_58BA_freeinc2_r_rp_apps + _16_58BA_freeinc3_r_paid_apps + _16_58BA_freeinc4_n_paid_apps +
-    _16_58CA_rp1_r_nc_apps + _16_58CA_rp2_r_free_apps + _16_58CA_rp3_r_paid_apps + _16_58CA_rp4_n_paid_apps)
-    and
-      (
-        _16_41A_free_doc_apps/(_16_41A_free_doc_apps + _16_42A_free_inc_apps + _16_43A_rp_inc_apps) > 0.3
+        (_16_41A_free_doc_apps + _16_42A_free_inc_apps + _16_43A_rp_inc_apps) > 0
         and
-        _16_41B_free_doc_stud/(_16_32B_dc_snap_stud + _16_33B_dc_other_stud + _16_34B_free_snapletter_stud) > 0.3
-      )
+        _16_41B_free_doc_stud > 15
+        and
+        _16_41A_free_doc_apps > 0
+        and
+        (_16_32B_dc_snap_stud + _16_33B_dc_other_stud + _16_34B_free_snapletter_stud) > 0
+        and
+        (_16_41B_free_doc_stud/_16_41A_free_doc_apps) <= 1.5
+        and
+        (_16_41B_free_doc_stud/_16_41A_free_doc_apps) <> 1
+        and
+          (
+            CAST(ROUND
+                  (
+                    (_16_53_verif_type_standard*.03 + _16_53_verif_type_alt1*.03 + _16_53_verif_type_alt2*.015)*
+                    (_16_41A_free_doc_apps + _16_42A_free_inc_apps + _16_43A_rp_inc_apps)
+                    + 0.5
+                  ) AS INT
+                ) - _16_55_selected_apps
+          ) > 1
+        and
+        _16_52_verif_no = 0
+        and
+        (_16_55_selected_apps + _16_vc1_forcause) = (_16_57A_confirmverf_apps + _16_58AA_freecat1_r_nc_apps +
+        _16_58AA_freecat2_r_rp_apps + _16_58AA_freecat3_r_paid_apps + _16_58AA_freecat4_n_paid_apps + _16_58BA_freeinc1_r_nc_apps +
+        _16_58BA_freeinc2_r_rp_apps + _16_58BA_freeinc3_r_paid_apps + _16_58BA_freeinc4_n_paid_apps +
+        _16_58CA_rp1_r_nc_apps + _16_58CA_rp2_r_free_apps + _16_58CA_rp3_r_paid_apps + _16_58CA_rp4_n_paid_apps)
+        and
+          (
+            _16_41A_free_doc_apps/(_16_41A_free_doc_apps + _16_42A_free_inc_apps + _16_43A_rp_inc_apps) > 0.3
+            and
+            _16_41B_free_doc_stud/(_16_32B_dc_snap_stud + _16_33B_dc_other_stud + _16_34B_free_snapletter_stud) > 0.3
+          )
   columns: []
   message: 'The number of applications approved on the basis of categorically eligible
     is higher than expected, based on your sample size and results from verification.
@@ -662,8 +664,8 @@
     and _16_TypeSFA_Private <> 1
     and _16_12B_rcci_stud < (_16_41B_free_doc_stud + _16_42B_free_inc_stud + _16_43B_rp_inc_stud)
     and _16_42B_free_inc_stud = _16_42A_free_inc_apps
-  columns: [_16_TypeSFA_Private, _16_11A_nonrcci_schl, _16_12A_rcci_schl, _16_12B_rcci_stud, _16_41B_free_doc_stud
-    _16_42A_free_inc_apps, _16_42B_free_inc_stud, _16_43B_rp_inc_stud]
+  columns: [_16_TypeSFA_Private, _16_11A_nonrcci_schl, _16_12A_rcci_schl, _16_12B_rcci_stud, _16_41B_free_doc_stud,
+            _16_42A_free_inc_apps, _16_42B_free_inc_stud, _16_43B_rp_inc_stud]
   message: 'The number of students is equal to the number of applications for the
     FREE income applications. Please correct the number of students and applications
     reported in field 4-2: Approved as FREE eligible.'
@@ -676,8 +678,8 @@
     and _16_TypeSFA_Private <> 1
     and _16_12B_rcci_stud < (_16_41B_free_doc_stud + _16_42B_free_inc_stud + _16_43B_rp_inc_stud)
     and _16_42B_free_inc_stud = _16_42A_free_inc_apps
-  columns: [_16_TypeSFA_Private, _16_11A_nonrcci_schl, _16_12A_rcci_schl, _16_12B_rcci_stud, _16_41B_free_doc_stud
-    _16_42A_free_inc_apps, _16_42B_free_inc_stud, _16_43B_rp_inc_stud]
+  columns: [_16_TypeSFA_Private, _16_11A_nonrcci_schl, _16_12A_rcci_schl, _16_12B_rcci_stud,
+            _16_41B_free_doc_stud, _16_42A_free_inc_apps, _16_42B_free_inc_stud, _16_43B_rp_inc_stud]
   message: 'The number of students is equal to the number of applications for the
     FREE income applications. Please confirm that the numbers of students and applications
     reported in field 4-2: Approved as FREE eligible are correct.'
@@ -690,8 +692,8 @@
     and _16_TypeSFA_Private <> 1
     and _16_12B_rcci_stud < (_16_41B_free_doc_stud + _16_42B_free_inc_stud + _16_43B_rp_inc_stud)
     and (_16_43B_rp_inc_stud = _16_43A_rp_inc_apps)
-  columns: [_16_TypeSFA_Private, _16_11A_nonrcci_schl, _16_12A_rcci_schl, _16_12B_rcci_stud, _16_41B_free_doc_stud
-    _16_42B_free_inc_stud, _16_43A_rp_inc_apps, _16_43B_rp_inc_stud]
+  columns: [_16_TypeSFA_Private, _16_11A_nonrcci_schl, _16_12A_rcci_schl, _16_12B_rcci_stud, _16_41B_free_doc_stud,
+            _16_42B_free_inc_stud, _16_43A_rp_inc_apps, _16_43B_rp_inc_stud]
   message: 'The number of students is equal to the number of applications for the
     reduced price applications. Please correct the number of students and applications
     reported in field 4-3: Approved as REDUCED PRICE eligible.'
@@ -704,8 +706,8 @@
     and _16_TypeSFA_Private <> 1
     and _16_12B_rcci_stud < (_16_41B_free_doc_stud + _16_42B_free_inc_stud + _16_43B_rp_inc_stud)
     and (_16_43B_rp_inc_stud = _16_43A_rp_inc_apps)
-  columns: [_16_TypeSFA_Private, _16_11A_nonrcci_schl, _16_12A_rcci_schl, _16_12B_rcci_stud, _16_41B_free_doc_stud
-    _16_42B_free_inc_stud, _16_43A_rp_inc_apps, _16_43B_rp_inc_stud]
+  columns: [_16_TypeSFA_Private, _16_11A_nonrcci_schl, _16_12A_rcci_schl, _16_12B_rcci_stud, _16_41B_free_doc_stud,
+            _16_42B_free_inc_stud, _16_43A_rp_inc_apps, _16_43B_rp_inc_stud]
   message: 'The number of students is equal to the number of applications for the
     reduced price applications. Please confirm that the numbers of students and applications
     reported in field 4-3: Approved as REDUCED PRICE eligible are correct.'
@@ -716,7 +718,7 @@
     and (_16_58AA_freecat1_r_nc_apps + _16_58AA_freecat2_r_rp_apps + _16_58AA_freecat3_r_paid_apps + _16_58AA_freecat4_n_paid_apps) > _16_vc1_forcause
     and (_16_58AA_freecat1_r_nc_apps + _16_58AA_freecat2_r_rp_apps + _16_58AA_freecat3_r_paid_apps + _16_58AA_freecat4_n_paid_apps) > 0
   columns: [_16_41A_free_doc_apps, _16_58AA_freecat1_r_nc_apps, _16_58AA_freecat2_r_rp_apps, _16_58AA_freecat3_r_paid_apps,
-    _16_58AA_freecat4_n_paid_apps, _16_vc1_forcause]
+            _16_58AA_freecat4_n_paid_apps, _16_vc1_forcause]
   message: 'You are reporting 0 (zero) applications as of October 1 for the categorically
     eligible FREE applications, but you are also reporting results from verifying
     categorically FREE eligible applications that would have been selected on or before
@@ -734,7 +736,7 @@
   severity: Error
 - error_code: 72W
   check_origin: NEW check
-  code: _16_41A_free_doc_apps = 0 and	_16_41B_free_doc_stud > 1 and _16_41B_free_doc_stud < 20
+  code: _16_41A_free_doc_apps = 0 and _16_41B_free_doc_stud > 1 and _16_41B_free_doc_stud < 20
   columns: [_16_41A_free_doc_apps, _16_41B_free_doc_stud]
   message: 'You are reporting [ x ] students on 0 (zero) applications for the categorically
     eligible FREE applications. Even with the different reference dates for these
@@ -748,7 +750,7 @@
     and (_16_58BA_freeinc1_r_nc_apps + _16_58BA_freeinc2_r_rp_apps + _16_58BA_freeinc3_r_paid_apps + _16_58BA_freeinc4_n_paid_apps) > _16_vc1_forcause
     and (_16_58BA_freeinc1_r_nc_apps + _16_58BA_freeinc2_r_rp_apps + _16_58BA_freeinc3_r_paid_apps + _16_58BA_freeinc4_n_paid_apps) > 0
   columns: [_16_42A_free_inc_apps, _16_58BA_freeinc1_r_nc_apps, _16_58BA_freeinc2_r_rp_apps, _16_58BA_freeinc3_r_paid_apps,
-    _16_58BA_freeinc4_n_paid_apps, _16_vc1_forcause]
+            _16_58BA_freeinc4_n_paid_apps, _16_vc1_forcause]
   message: 'You are reporting 0 (zero) applications as of October 1 for the FREE income
     applications, but you are also reporting results from verifying FREE income applications
     that would have been selected on October 1. Please correct the numbers in Sections
@@ -756,7 +758,7 @@
   severity: "Error"
 - error_code: '74'
   check_origin: NEW check
-  code: _16_42A_free_inc_apps = 0 and	_16_42B_free_inc_stud >= 20
+  code: _16_42A_free_inc_apps = 0 and _16_42B_free_inc_stud >= 20
   columns: [_16_42A_free_inc_apps, _16_42B_free_inc_stud]
   message: 'You are reporting [ x ] students on 0 (zero) applications for the FREE
     income applications. Even with the different reference dates for these two fields
@@ -766,7 +768,7 @@
   severity: Error
 - error_code: 75W
   check_origin: NEW check
-  code: _16_42A_free_inc_apps = 0 and	_16_42B_free_inc_stud > 1 and _16_42B_free_inc_stud < 20
+  code: _16_42A_free_inc_apps = 0 and _16_42B_free_inc_stud > 1 and _16_42B_free_inc_stud < 20
   columns: [_16_42A_free_inc_apps, _16_42B_free_inc_stud]
   message: 'You are reporting [ x ] students on 0 (zero) applications for the FREE
     income applications. Even with the different reference dates for these two fields
@@ -780,7 +782,7 @@
     and (_16_58CA_rp1_r_nc_apps + _16_58CA_rp2_r_free_apps + _16_58CA_rp3_r_paid_apps + _16_58CA_rp4_n_paid_apps) > _16_vc1_forcause
     and (_16_58CA_rp1_r_nc_apps + _16_58CA_rp2_r_free_apps + _16_58CA_rp3_r_paid_apps + _16_58CA_rp4_n_paid_apps) > 0
   columns: [_16_43A_rp_inc_apps, _16_58CA_rp1_r_nc_apps, _16_58CA_rp2_r_free_apps, _16_58CA_rp3_r_paid_apps, _16_58CA_rp4_n_paid_apps,
-    _16_vc1_forcause]
+            _16_vc1_forcause]
   message: 'You are reporting 0 (zero) applications as of October 1 for the reduced
     price applications, but you are also reporting results from verifying reduced
     price applications that would have been selected on October 1. Please correct
@@ -788,7 +790,7 @@
   severity: "Error"
 - error_code: '77'
   check_origin: NEW check
-  code: _16_43A_rp_inc_apps = 0 and	_16_43B_rp_inc_stud >= 20
+  code: _16_43A_rp_inc_apps = 0 and _16_43B_rp_inc_stud >= 20
   columns: [_16_43A_rp_inc_apps, _16_43B_rp_inc_stud]
   message: 'You are reporting [ x ] students on 0 (zero) applications for the reduced
     price applications. Even with the different reference dates for these two fields
@@ -798,7 +800,7 @@
   severity: Error
 - error_code: 78W
   check_origin: NEW check
-  code: _16_43A_rp_inc_apps = 0 and	_16_43B_rp_inc_stud > 1 and _16_43B_rp_inc_stud < 20
+  code: _16_43A_rp_inc_apps = 0 and _16_43B_rp_inc_stud > 1 and _16_43B_rp_inc_stud < 20
   columns: [_16_43A_rp_inc_apps, _16_43B_rp_inc_stud]
   message: 'You are reporting [ x ] students on 0 (zero) applications for the reduced
     price applications. Even with the different reference dates for these two fields
@@ -809,9 +811,9 @@
 - error_code: '79'
   check_origin: FPRS
   code: _16_t1_tot_free <> (_16_22aB_nonbase23_free_stud + _16_32B_dc_snap_stud + _16_33B_dc_other_stud +
-    _16_34B_free_snapletter_stud + _16_41B_free_doc_stud +	_16_42B_free_inc_stud)
+    _16_34B_free_snapletter_stud + _16_41B_free_doc_stud + _16_42B_free_inc_stud)
   columns: [_16_22aB_nonbase23_free_stud, _16_32B_dc_snap_stud, _16_33B_dc_other_stud, _16_34B_free_snapletter_stud,
-    _16_41B_free_doc_stud, _16_42B_free_inc_stud, _16_t1_tot_free]
+            _16_41B_free_doc_stud, _16_42B_free_inc_stud, _16_t1_tot_free]
   message: 'The total number of free students in T-1 must equal the number of students
     reported as free in non-base year provision schools (field 2-2a:B), plus the students
     approved as free through direct certification + including the SNAP letter method
@@ -839,7 +841,7 @@
   severity: "Error"
 - error_code: 82W
   check_origin: NEW check
-  code: _16_21A_base23_schl > 0 and (_16_t1_tot_free + _16_t2_tot_rp = 0
+  code: _16_21A_base23_schl > 0 and (_16_t1_tot_free + _16_t2_tot_rp) == 0
   columns: [_16_21A_base23_schl, _16_t1_tot_free, _16_t2_tot_rp]
   message: 'Total free and reduced price students should be greater than zero when
     reporting provision schools in a base year. This may not be the case if renewing
@@ -851,18 +853,18 @@
   code: (_16_41A_free_doc_apps > 0 OR _16_42A_free_inc_apps > 0 OR _16_43A_rp_inc_apps > 0)
     AND _16_51_exempt = 0
     and _16_52_verif_no = 1
-    and	(_16_57A_confirmverf_apps + _16_58AA_freecat1_r_nc_apps + _16_58AA_freecat2_r_rp_apps + _16_58AA_freecat3_r_paid_apps +
+    and (_16_57A_confirmverf_apps + _16_58AA_freecat1_r_nc_apps + _16_58AA_freecat2_r_rp_apps + _16_58AA_freecat3_r_paid_apps +
       _16_58AA_freecat4_n_paid_apps + _16_58BA_freeinc1_r_nc_apps + _16_58BA_freeinc2_r_rp_apps + _16_58BA_freeinc3_r_paid_apps +
       _16_58BA_freeinc4_n_paid_apps + _16_58CA_rp1_r_nc_apps + _16_58CA_rp2_r_free_apps + _16_58CA_rp3_r_paid_apps +
       _16_58CA_rp4_n_paid_apps) = (_16_55_selected_apps + _16_vc1_forcause)
-    and	(_16_57A_confirmverf_apps + _16_58AA_freecat1_r_nc_apps + _16_58AA_freecat2_r_rp_apps + _16_58AA_freecat3_r_paid_apps +
+    and (_16_57A_confirmverf_apps + _16_58AA_freecat1_r_nc_apps + _16_58AA_freecat2_r_rp_apps + _16_58AA_freecat3_r_paid_apps +
       _16_58AA_freecat4_n_paid_apps + _16_58BA_freeinc1_r_nc_apps + _16_58BA_freeinc2_r_rp_apps + _16_58BA_freeinc3_r_paid_apps +
       _16_58BA_freeinc4_n_paid_apps + _16_58CA_rp1_r_nc_apps + _16_58CA_rp2_r_free_apps + _16_58CA_rp3_r_paid_apps +
       _16_58CA_rp4_n_paid_apps) > 0
   columns: [_16_41A_free_doc_apps, _16_42A_free_inc_apps, _16_43A_rp_inc_apps, _16_51_exempt, _16_52_verif_no,
-    _16_57A_confirmverf_apps, _16_58AA_freecat1_r_nc_apps, _16_58AA_freecat2_r_rp_apps, _16_58AA_freecat3_r_paid_apps,
-    _16_58AA_freecat4_n_paid_apps, _16_58BA_freeinc1_r_nc_apps, _16_58BA_freeinc2_r_rp_apps, _16_58BA_freeinc3_r_paid_apps,
-    _16_58BA_freeinc4_n_paid_apps, _16_58CA_rp1_r_nc_apps, _16_58CA_rp2_r_free_apps, _16_58CA_rp3_r_paid_apps, _16_58CA_rp4_n_paid_apps]
+            _16_57A_confirmverf_apps, _16_58AA_freecat1_r_nc_apps, _16_58AA_freecat2_r_rp_apps, _16_58AA_freecat3_r_paid_apps,
+            _16_58AA_freecat4_n_paid_apps, _16_58BA_freeinc1_r_nc_apps, _16_58BA_freeinc2_r_rp_apps, _16_58BA_freeinc3_r_paid_apps,
+            _16_58BA_freeinc4_n_paid_apps, _16_58CA_rp1_r_nc_apps, _16_58CA_rp2_r_free_apps, _16_58CA_rp3_r_paid_apps, _16_58CA_rp4_n_paid_apps]
   message: 'You have reported that you did not perform or complete verification in
     field 5-2, but you are also reporting results from verification. Please confirm
     your entry in field 5-2 and your results in 5-5, 5-7, 5-8, and VC-1.'
@@ -873,14 +875,14 @@
     AND _16_51_exempt = 0
     and _16_52_verif_no = 1
     and _16_55_selected_apps > 0
-    and	(_16_57A_confirmverf_apps + _16_58AA_freecat1_r_nc_apps + _16_58AA_freecat2_r_rp_apps + _16_58AA_freecat3_r_paid_apps +
+    and (_16_57A_confirmverf_apps + _16_58AA_freecat1_r_nc_apps + _16_58AA_freecat2_r_rp_apps + _16_58AA_freecat3_r_paid_apps +
       _16_58AA_freecat4_n_paid_apps + _16_58BA_freeinc1_r_nc_apps + _16_58BA_freeinc2_r_rp_apps + _16_58BA_freeinc3_r_paid_apps +
       _16_58BA_freeinc4_n_paid_apps + _16_58CA_rp1_r_nc_apps + _16_58CA_rp2_r_free_apps + _16_58CA_rp3_r_paid_apps +
       _16_58CA_rp4_n_paid_apps) = (_16_55_selected_apps + _16_vc1_forcause)
   columns: [_16_41A_free_doc_apps, _16_42A_free_inc_apps, _16_43A_rp_inc_apps, _16_51_exempt, _16_52_verif_no,
-    _16_57A_confirmverf_apps, _16_58AA_freecat1_r_nc_apps, _16_58AA_freecat2_r_rp_apps, _16_58AA_freecat3_r_paid_apps,
-    _16_58AA_freecat4_n_paid_apps, _16_58BA_freeinc1_r_nc_apps, _16_58BA_freeinc2_r_rp_apps, _16_58BA_freeinc3_r_paid_apps,
-    _16_58BA_freeinc4_n_paid_apps, _16_58CA_rp1_r_nc_apps, _16_58CA_rp2_r_free_apps, _16_58CA_rp3_r_paid_apps, _16_58CA_rp4_n_paid_apps]
+            _16_57A_confirmverf_apps, _16_58AA_freecat1_r_nc_apps, _16_58AA_freecat2_r_rp_apps, _16_58AA_freecat3_r_paid_apps,
+            _16_58AA_freecat4_n_paid_apps, _16_58BA_freeinc1_r_nc_apps, _16_58BA_freeinc2_r_rp_apps, _16_58BA_freeinc3_r_paid_apps,
+            _16_58BA_freeinc4_n_paid_apps, _16_58CA_rp1_r_nc_apps, _16_58CA_rp2_r_free_apps, _16_58CA_rp3_r_paid_apps, _16_58CA_rp4_n_paid_apps]
   message: 'You have reported that you did not perform or complete verification in
     field 5-2, but the results in the direct verification fields (5-7) and traditional
     verification (5-8) account for your entire sample size. Please correct your entry
@@ -911,12 +913,12 @@
     _16_58BB_freeinc4_n_paid_stud + _16_58CA_rp1_r_nc_apps + _16_58CB_rp1_r_nc_stud + _16_58CA_rp2_r_free_apps + _16_58CB_rp2_r_free_stud +
     _16_58CA_rp3_r_paid_apps + _16_58CB_rp3_r_paid_stud + _16_58CA_rp4_n_paid_apps + _16_58CB_rp4_n_paid_stud) > 0
   columns: [_16_51_exempt, _16_52_verif_no, _16_52_verif_yes_after, _16_52_verif_yes_before, _16_53_verif_type_alt1, _16_53_verif_type_alt2,
-  _16_53_verif_type_standard, _16_54_error, _16_55_selected_apps, _16_57A_confirmverf_apps, _16_57B_confirmverf_stud, _16_58AA_freecat1_r_nc_apps,
-  _16_58AB_freecat1_r_nc_stud, _16_58AA_freecat2_r_rp_apps, _16_58AB_freecat2_r_rp_stud, _16_58AA_freecat3_r_paid_apps, _16_58AB_freecat3_r_paid_stud,
-  _16_58AA_freecat4_n_paid_apps, _16_58AB_freecat4_n_paid_stud, _16_58BA_freeinc1_r_nc_apps, _16_58BB_freeinc1_r_nc_stud, _16_58BA_freeinc2_r_rp_apps,
-  _16_58BB_freeinc2_r_rp_stud, _16_58BA_freeinc3_r_paid_apps, _16_58BB_freeinc3_r_paid_stud, _16_58BA_freeinc4_n_paid_apps,
-  _16_58BB_freeinc4_n_paid_stud, _16_58CA_rp1_r_nc_apps, _16_58CB_rp1_r_nc_stud, _16_58CA_rp2_r_free_apps, _16_58CB_rp2_r_free_stud,
-  _16_58CA_rp3_r_paid_apps, _16_58CB_rp3_r_paid_stud, _16_58CA_rp4_n_paid_apps, _16_58CB_rp4_n_paid_stud]
+            _16_53_verif_type_standard, _16_54_error, _16_55_selected_apps, _16_57A_confirmverf_apps, _16_57B_confirmverf_stud, _16_58AA_freecat1_r_nc_apps,
+            _16_58AB_freecat1_r_nc_stud, _16_58AA_freecat2_r_rp_apps, _16_58AB_freecat2_r_rp_stud, _16_58AA_freecat3_r_paid_apps, _16_58AB_freecat3_r_paid_stud,
+            _16_58AA_freecat4_n_paid_apps, _16_58AB_freecat4_n_paid_stud, _16_58BA_freeinc1_r_nc_apps, _16_58BB_freeinc1_r_nc_stud, _16_58BA_freeinc2_r_rp_apps,
+            _16_58BB_freeinc2_r_rp_stud, _16_58BA_freeinc3_r_paid_apps, _16_58BB_freeinc3_r_paid_stud, _16_58BA_freeinc4_n_paid_apps,
+            _16_58BB_freeinc4_n_paid_stud, _16_58CA_rp1_r_nc_apps, _16_58CB_rp1_r_nc_stud, _16_58CA_rp2_r_free_apps, _16_58CB_rp2_r_free_stud,
+            _16_58CA_rp3_r_paid_apps, _16_58CB_rp3_r_paid_stud, _16_58CA_rp4_n_paid_apps, _16_58CB_rp4_n_paid_stud]
   message: 'If you are exempt from conducting verification you should check the box
     in field 5-1 and leave the rest of Section 5 blank.'
   severity: "Error"
@@ -1046,9 +1048,9 @@
       _16_58BA_freeinc4_n_paid_apps + _16_58CA_rp1_r_nc_apps + _16_58CA_rp2_r_free_apps + _16_58CA_rp3_r_paid_apps +
       _16_58CA_rp4_n_paid_apps)
   columns: [_16_52_verif_no, _16_55_selected_apps, _16_57A_confirmverf_apps, _16_58AA_freecat1_r_nc_apps,
-    _16_58AA_freecat2_r_rp_apps, _16_58AA_freecat3_r_paid_apps, _16_58AA_freecat4_n_paid_apps, _16_58BA_freeinc1_r_nc_apps,
-    _16_58BA_freeinc2_r_rp_apps, _16_58BA_freeinc3_r_paid_apps, _16_58BA_freeinc4_n_paid_apps, _16_58CA_rp1_r_nc_apps, _16_58CA_rp2_r_free_apps,
-    _16_58CA_rp3_r_paid_apps, _16_58CA_rp4_n_paid_apps, _16_vc1_forcause]
+            _16_58AA_freecat2_r_rp_apps, _16_58AA_freecat3_r_paid_apps, _16_58AA_freecat4_n_paid_apps, _16_58BA_freeinc1_r_nc_apps,
+            _16_58BA_freeinc2_r_rp_apps, _16_58BA_freeinc3_r_paid_apps, _16_58BA_freeinc4_n_paid_apps, _16_58CA_rp1_r_nc_apps, _16_58CA_rp2_r_free_apps,
+            _16_58CA_rp3_r_paid_apps, _16_58CA_rp4_n_paid_apps, _16_vc1_forcause]
   message: 'You have indicated that you completed the verification process in field
     5-2, but the results reported in 5-7A plus the 5-8a fields do not equal the sample
     size in 5-5. Please correct the entries reported in fields 5-2, 5-5, 5-7:A, and/or
@@ -1058,9 +1060,9 @@
   check_origin: Direct Cert Report check R (N)
   code: _16_53_verif_type_alt1 = 1 AND _16_54_error > 0
   columns: [_16_54_error, _16_53_verif_type_alt1]
-  message: 'You have indicated that you are conducting the 'alternate one' random sampling
+  message: You have indicated that you are conducting the 'alternate one' random sampling
     verification process and therefore you do not need to report the total number
-    of error prone applications in field 5-4.'
+    of error prone applications in field 5-4.
   severity: "Warning"
 - error_code: '107'
   check_origin: Direct Cert Report check U (Q)
@@ -1071,9 +1073,9 @@
       _16_58BA_freeinc4_n_paid_apps + _16_58CA_rp1_r_nc_apps + _16_58CA_rp2_r_free_apps + _16_58CA_rp3_r_paid_apps +
       _16_58CA_rp4_n_paid_apps) - _16_55_selected_apps) > _16_vc1_forcause
   columns: [_16_52_verif_no, _16_55_selected_apps, _16_57A_confirmverf_apps, _16_58AA_freecat1_r_nc_apps,
-    _16_58AA_freecat2_r_rp_apps, _16_58AA_freecat3_r_paid_apps, _16_58AA_freecat4_n_paid_apps, _16_58BA_freeinc1_r_nc_apps,
-    _16_58BA_freeinc2_r_rp_apps, _16_58BA_freeinc3_r_paid_apps, _16_58BA_freeinc4_n_paid_apps, _16_58CA_rp1_r_nc_apps, _16_58CA_rp2_r_free_apps,
-    _16_58CA_rp3_r_paid_apps, _16_58CA_rp4_n_paid_apps, _16_vc1_forcause]
+            _16_58AA_freecat2_r_rp_apps, _16_58AA_freecat3_r_paid_apps, _16_58AA_freecat4_n_paid_apps, _16_58BA_freeinc1_r_nc_apps,
+            _16_58BA_freeinc2_r_rp_apps, _16_58BA_freeinc3_r_paid_apps, _16_58BA_freeinc4_n_paid_apps, _16_58CA_rp1_r_nc_apps, _16_58CA_rp2_r_free_apps,
+            _16_58CA_rp3_r_paid_apps, _16_58CA_rp4_n_paid_apps, _16_vc1_forcause]
   message: 'Results for verified applications reported in 5-7A plus the 5-8a fields
     should equal the reported sample size in 5-5 plus any verifications for cause
     in VC-1. The only exception would be for applications that were verified for cause
@@ -1152,9 +1154,9 @@
     _16_58BA_freeinc2_r_rp_apps + _16_58BA_freeinc3_r_paid_apps + _16_58BA_freeinc4_n_paid_apps + _16_58CA_rp1_r_nc_apps + _16_58CA_rp2_r_free_apps +
     _16_58CA_rp3_r_paid_apps + _16_58CA_rp4_n_paid_apps)
   columns: [_16_41A_free_doc_apps, _16_42A_free_inc_apps, _16_43A_rp_inc_apps, _16_57A_confirmverf_apps, _16_58AA_freecat1_r_nc_apps,
-    _16_58AA_freecat2_r_rp_apps, _16_58AA_freecat3_r_paid_apps, _16_58AA_freecat4_n_paid_apps, _16_58BA_freeinc1_r_nc_apps,
-    _16_58BA_freeinc2_r_rp_apps, _16_58BA_freeinc3_r_paid_apps, _16_58BA_freeinc4_n_paid_apps, _16_58CA_rp1_r_nc_apps, _16_58CA_rp2_r_free_apps,
-    _16_58CA_rp3_r_paid_apps, _16_58CA_rp4_n_paid_apps]
+            _16_58AA_freecat2_r_rp_apps, _16_58AA_freecat3_r_paid_apps, _16_58AA_freecat4_n_paid_apps, _16_58BA_freeinc1_r_nc_apps,
+            _16_58BA_freeinc2_r_rp_apps, _16_58BA_freeinc3_r_paid_apps, _16_58BA_freeinc4_n_paid_apps, _16_58CA_rp1_r_nc_apps, _16_58CA_rp2_r_free_apps,
+            _16_58CA_rp3_r_paid_apps, _16_58CA_rp4_n_paid_apps]
   message: 'The number of applications reported in the results of verification in fields
     5-7:A and the 5-8:As exceeds the total number of approved applications reported
     in fields 4-1, 4-2 and 4-3. Please correct the numbers in 5-7, the 5-8:As, and/or
@@ -1242,7 +1244,7 @@
     and _16_32B_dc_snap_stud > 10
     and _16_33B_dc_other_stud > 10
     and _16_34B_free_snapletter_stud > 10
-    and	(_16_32B_dc_snap_stud + _16_33B_dc_other_stud + _16_34B_free_snapletter_stud) <> _16_57A_confirmverf_apps
+    and (_16_32B_dc_snap_stud + _16_33B_dc_other_stud + _16_34B_free_snapletter_stud) <> _16_57A_confirmverf_apps
     and
       (
         (_16_32B_dc_snap_stud = _16_57A_confirmverf_apps)
