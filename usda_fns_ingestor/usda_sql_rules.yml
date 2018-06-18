@@ -264,7 +264,8 @@
   severity: "Error"
 - error_code: '33'
   check_origin: NEW check
-  code: ''
+  code: _16_23A_cep_schl = (_16_11A_nonrcci_schl + _16_12A_rcci_schl) and
+       _16_31_dc_notrequired != 1
   columns: []
   message: 'You have reported that all schools in your SFA are operating the Community
     Eligibility Option (aka CEP). Please check the box in field 3-1. Note: Matching
@@ -386,12 +387,12 @@
                   (_16_32B_dc_snap_stud + _16_33B_dc_other_stud + _16_34B_free_snapletter_stud) = _16_41B_free_doc_stud
                 )
                 and
-                (_16_41B_free_doc_stud/_16_41A_free_doc_apps) > 3
+                (CAST(_16_41B_free_doc_stud AS FLOAT)/_16_41A_free_doc_apps) > 3
                 and
                 (_16_41B_free_doc_stud/_16_41A_free_doc_apps) < 10
               )
               OR
-                (_16_41B_free_doc_stud/_16_41A_free_doc_apps) > 3
+                (CAST(_16_41B_free_doc_stud AS FLOAT)/_16_41A_free_doc_apps) > 3
                 and
                 (_16_41B_free_doc_stud/_16_41A_free_doc_apps) < 5
             )
@@ -402,7 +403,7 @@
               and
               _16_41A_free_doc_apps < 10
               and
-              (_16_41B_free_doc_stud/_16_41A_free_doc_apps) > 5
+              (CAST(_16_41B_free_doc_stud AS FLOAT)/_16_41A_free_doc_apps) > 5
               and
               (_16_41B_free_doc_stud/_16_41A_free_doc_apps) < 10
             )
@@ -483,7 +484,7 @@
         (
           _16_41B_free_doc_stud = _16_41A_free_doc_apps
           OR
-          _16_34B_free_snapletter_stud/_16_32B_dc_snap_stud > .2
+          CAST(_16_34B_free_snapletter_stud AS FLOAT)/_16_32B_dc_snap_stud > .2
         )
         and
         _16_34B_free_snapletter_stud <> _16_33B_dc_other_stud
@@ -513,7 +514,7 @@
     and (_16_32B_dc_snap_stud + _16_33B_dc_other_stud + _16_34B_free_snapletter_stud) > 0
     and _16_41B_free_doc_stud = _16_41A_free_doc_apps
     and _16_32B_dc_snap_stud <> _16_41B_free_doc_stud
-    and (_16_41B_free_doc_stud/(_16_32B_dc_snap_stud + _16_33B_dc_other_stud + _16_34B_free_snapletter_stud)) > 0.2
+    and (CAST(_16_41B_free_doc_stud AS FLOAT)/(_16_32B_dc_snap_stud + _16_33B_dc_other_stud + _16_34B_free_snapletter_stud)) > 0.2
   columns: [_16_32B_dc_snap_stud, _16_33B_dc_other_stud, _16_34B_free_snapletter_stud, _16_41A_free_doc_apps, _16_41B_free_doc_stud]
   message: 'The number of students approved as categorically FREE eligible based on
     application is higher than expected. Please confirm that the numbers in Sections
@@ -547,7 +548,7 @@
         and
         (_16_41B_free_doc_stud/_16_41A_free_doc_apps) <= 1.5
         and
-        (_16_41B_free_doc_stud/_16_41A_free_doc_apps) <> 1
+        (CAST(_16_41B_free_doc_stud AS FLOAT)/_16_41A_free_doc_apps) <> 1
         and
           (
             CAST(ROUND
@@ -567,9 +568,9 @@
         _16_58CA_rp1_r_nc_apps + _16_58CA_rp2_r_free_apps + _16_58CA_rp3_r_paid_apps + _16_58CA_rp4_n_paid_apps)
         and
           (
-            _16_41A_free_doc_apps/(_16_41A_free_doc_apps + _16_42A_free_inc_apps + _16_43A_rp_inc_apps) > 0.3
+            CAST(_16_41A_free_doc_apps AS FLOAT)/(_16_41A_free_doc_apps + _16_42A_free_inc_apps + _16_43A_rp_inc_apps) > 0.3
             and
-            _16_41B_free_doc_stud/(_16_32B_dc_snap_stud + _16_33B_dc_other_stud + _16_34B_free_snapletter_stud) > 0.3
+            CAST(_16_41B_free_doc_stud AS FLOAT)/(_16_32B_dc_snap_stud + _16_33B_dc_other_stud + _16_34B_free_snapletter_stud) > 0.3
           )
   columns: []
   message: 'The number of applications approved on the basis of categorically eligible
@@ -588,7 +589,7 @@
   severity: Error
 - error_code: 59W
   check_origin: NEW check
-  code: _16_42A_free_inc_apps > 10 and (_16_42B_free_inc_stud/_16_42A_free_inc_apps) > 3 and
+  code: _16_42A_free_inc_apps > 10 and (CAST(_16_42B_free_inc_stud AS FLOAT)/_16_42A_free_inc_apps) > 3 and
     (_16_42B_free_inc_stud/_16_42A_free_inc_apps) < 5
   columns: [_16_42A_free_inc_apps, _16_42B_free_inc_stud]
   message: 'You are reporting on average [ x ] students per application for the FREE
@@ -608,7 +609,7 @@
 - error_code: 61W
   check_origin: NEW check
   code: _16_42A_free_inc_apps > 1 and _16_42A_free_inc_apps <= 10
-    and (_16_42B_free_inc_stud/_16_42A_free_inc_apps) > 5
+    and (CAST(_16_42B_free_inc_stud as FLOAT)/_16_42A_free_inc_apps) > 5
     and (_16_42B_free_inc_stud/_16_42A_free_inc_apps) < 10
   columns: [_16_42A_free_inc_apps, _16_42B_free_inc_stud]
   message: 'You are reporting on average [ x ] students per application for the FREE
@@ -628,7 +629,7 @@
 - error_code: 63W
   check_origin: NEW check
   code: _16_43A_rp_inc_apps > 10 and
-    (_16_43B_rp_inc_stud/_16_43A_rp_inc_apps) > 3 and
+    (CAST(_16_43B_rp_inc_stud AS FLOAT)/_16_43A_rp_inc_apps) > 3 and
     (_16_43B_rp_inc_stud/_16_43A_rp_inc_apps) < 5
   columns: [_16_43A_rp_inc_apps, _16_43B_rp_inc_stud]
   message: 'You are reporting on average [ x ] students per application for the reduced
@@ -1066,7 +1067,7 @@
   severity: "Warning"
 - error_code: '107'
   check_origin: Direct Cert Report check U (Q)
-  code: _16_52_verif_no <>1 and _16_vc1_forcause <> 0
+  code: _16_52_verif_no <> 1 and _16_vc1_forcause <> 0
     and
     ((_16_57A_confirmverf_apps + _16_58AA_freecat1_r_nc_apps + _16_58AA_freecat2_r_rp_apps + _16_58AA_freecat3_r_paid_apps +
       _16_58AA_freecat4_n_paid_apps + _16_58BA_freeinc1_r_nc_apps + _16_58BA_freeinc2_r_rp_apps + _16_58BA_freeinc3_r_paid_apps +
@@ -1101,7 +1102,7 @@
   severity: Error
 - error_code: 110W
   check_origin: NEW check
-  code: _16_54_error < (_16_42A_free_inc_apps + _16_43A_rp_inc_apps)
+  code: (_16_54_error < (_16_42A_free_inc_apps + _16_43A_rp_inc_apps))
     and
     (
       (
