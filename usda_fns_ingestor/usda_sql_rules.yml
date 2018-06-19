@@ -102,13 +102,13 @@
             (
               (_16_11A_nonrcci_schl + _16_12A_rcci_schl) = 1
               and
-              ((_16_11B_nonrcci_stud + _16_12B_rcci_stud)/(_16_11A_nonrcci_schl + _16_12A_rcci_schl)) > 10000
+              ((CAST(_16_11B_nonrcci_stud AS FLOAT) + _16_12B_rcci_stud)/(_16_11A_nonrcci_schl + _16_12A_rcci_schl)) > 10000
             )
             OR
             (
               (_16_11A_nonrcci_schl + _16_12A_rcci_schl) > 1
               and
-              ((_16_11B_nonrcci_stud + _16_12B_rcci_stud)/(_16_11A_nonrcci_schl + _16_12A_rcci_schl)) > 3000
+              ((CAST(_16_11B_nonrcci_stud AS FLOAT) + _16_12B_rcci_stud)/(_16_11A_nonrcci_schl + _16_12A_rcci_schl)) > 3000
             )
         )
   columns: [_16_11A_nonrcci_schl, _16_12A_rcci_schl, _16_11B_nonrcci_stud, _16_12B_rcci_stud]
@@ -539,17 +539,17 @@
   check_origin: NEW check
   code:
         (_16_41A_free_doc_apps + _16_42A_free_inc_apps + _16_43A_rp_inc_apps) > 0
-        and
+        AND
         _16_41B_free_doc_stud > 15
-        and
+        AND
         _16_41A_free_doc_apps > 0
-        and
+        AND
         (_16_32B_dc_snap_stud + _16_33B_dc_other_stud + _16_34B_free_snapletter_stud) > 0
-        and
-        (_16_41B_free_doc_stud/_16_41A_free_doc_apps) <= 1.5
-        and
+        AND
+        (CAST(_16_41B_free_doc_stud AS FLOAT)/_16_41A_free_doc_apps) <= 1.5
+        AND
         (CAST(_16_41B_free_doc_stud AS FLOAT)/_16_41A_free_doc_apps) <> 1
-        and
+        AND
           (
             CAST(ROUND
                   (
@@ -649,7 +649,7 @@
 - error_code: 65W
   check_origin: NEW check
   code: _16_43A_rp_inc_apps > 1 and _16_43A_rp_inc_apps <= 10 and
-    (_16_43B_rp_inc_stud/_16_43A_rp_inc_apps) > 5 and
+    (CAST(_16_43B_rp_inc_stud as FLOAT)/_16_43A_rp_inc_apps) > 5 and
     (_16_43B_rp_inc_stud/_16_43A_rp_inc_apps) < 10
   columns: [_16_43A_rp_inc_apps, _16_43B_rp_inc_stud]
   message: 'You are reporting on average [ x ] students per application for the reduced
@@ -1278,7 +1278,7 @@
     verification fields (5-7:A and 5-7:B). Please confirm that the numbers reported
     in 5-7 fields are correct.'
   severity: Warning
-- error_code: '124'
+- error_code: '124W'
   check_origin: NEW check
   code: _16_vc1_forcause > (_16_41A_free_doc_apps + _16_42A_free_inc_apps + _16_43A_rp_inc_apps)
   columns: [_16_41A_free_doc_apps, _16_42A_free_inc_apps, _16_43A_rp_inc_apps, _16_vc1_forcause]
