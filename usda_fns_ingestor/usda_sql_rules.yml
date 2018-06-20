@@ -117,11 +117,11 @@
   severity: Warning
 - error_code: 16W
   check_origin: NEW check
-  code: (_16_11A_nonrcci_schl + _16_12A_rcci_schl > 0)
+  code: (_16_11A_nonrcci_schl + _16_12A_rcci_schl) > 0
         and
-        (_16_11B_nonrcci_stud + _16_12B_rcci_stud / _16_11A_nonrcci_schl + _16_12A_rcci_schl < 200)
+        ((_16_11B_nonrcci_stud + _16_12B_rcci_stud) / (_16_11A_nonrcci_schl + _16_12A_rcci_schl)) < 200
         and
-        (_16_11A_nonrcci_schl + _16_12A_rcci_schl > 400)
+        (_16_11A_nonrcci_schl + _16_12A_rcci_schl) > 400
   columns: [_16_11A_nonrcci_schl, _16_12A_rcci_schl, _16_11B_nonrcci_stud,
             _16_12B_rcci_stud, _16_11A_nonrcci_schl, _16_12A_rcci_schl,
             _16_11A_nonrcci_schl, _16_12A_rcci_schl]
