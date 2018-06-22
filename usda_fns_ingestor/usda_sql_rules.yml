@@ -857,7 +857,7 @@
     and (_16_57A_confirmverf_apps + _16_58AA_freecat1_r_nc_apps + _16_58AA_freecat2_r_rp_apps + _16_58AA_freecat3_r_paid_apps +
       _16_58AA_freecat4_n_paid_apps + _16_58BA_freeinc1_r_nc_apps + _16_58BA_freeinc2_r_rp_apps + _16_58BA_freeinc3_r_paid_apps +
       _16_58BA_freeinc4_n_paid_apps + _16_58CA_rp1_r_nc_apps + _16_58CA_rp2_r_free_apps + _16_58CA_rp3_r_paid_apps +
-      _16_58CA_rp4_n_paid_apps) = (_16_55_selected_apps + _16_vc1_forcause)
+      _16_58CA_rp4_n_paid_apps) != (_16_55_selected_apps + _16_vc1_forcause)
     and (_16_57A_confirmverf_apps + _16_58AA_freecat1_r_nc_apps + _16_58AA_freecat2_r_rp_apps + _16_58AA_freecat3_r_paid_apps +
       _16_58AA_freecat4_n_paid_apps + _16_58BA_freeinc1_r_nc_apps + _16_58BA_freeinc2_r_rp_apps + _16_58BA_freeinc3_r_paid_apps +
       _16_58BA_freeinc4_n_paid_apps + _16_58CA_rp1_r_nc_apps + _16_58CA_rp2_r_free_apps + _16_58CA_rp3_r_paid_apps +
