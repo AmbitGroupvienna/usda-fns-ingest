@@ -119,7 +119,7 @@
   check_origin: NEW check
   code: (_16_11A_nonrcci_schl + _16_12A_rcci_schl) > 0
         and
-        ((_16_11B_nonrcci_stud + _16_12B_rcci_stud) / (_16_11A_nonrcci_schl + _16_12A_rcci_schl)) < 200
+        ((CAST(_16_11B_nonrcci_stud AS FLOAT) + _16_12B_rcci_stud) / (_16_11A_nonrcci_schl + _16_12A_rcci_schl)) < 200
         and
         (_16_11A_nonrcci_schl + _16_12A_rcci_schl) > 400
   columns: [_16_11A_nonrcci_schl, _16_12A_rcci_schl, _16_11B_nonrcci_stud,
@@ -434,13 +434,13 @@
             and
             (_16_32B_dc_snap_stud + _16_33B_dc_other_stud + _16_34B_free_snapletter_stud) <> _16_41B_free_doc_stud
             and
-            _16_41B_free_doc_stud/_16_41A_free_doc_apps >= 5
+            (CAST(_16_41B_free_doc_stud AS FLOAT)/_16_41A_free_doc_apps) >= 5
           )
           OR
           (
             _16_41A_free_doc_apps > 1
             and
-            (_16_41B_free_doc_stud/_16_41A_free_doc_apps) >= 10
+            (CAST(_16_41B_free_doc_stud AS FLOAT)/_16_41A_free_doc_apps) >= 10
           )
         )
   columns: [_16_32B_dc_snap_stud, _16_33B_dc_other_stud, _16_34B_free_snapletter_stud, _16_41A_free_doc_apps, _16_41B_free_doc_stud]
@@ -593,7 +593,7 @@
 - error_code: 59W
   check_origin: NEW check
   code: _16_42A_free_inc_apps > 10 and (CAST(_16_42B_free_inc_stud AS FLOAT)/_16_42A_free_inc_apps) > 3 and
-    (_16_42B_free_inc_stud/_16_42A_free_inc_apps) < 5
+    (CAST(_16_42B_free_inc_stud AS FLOAT)/_16_42A_free_inc_apps) < 5
   columns: [_16_42A_free_inc_apps, _16_42B_free_inc_stud]
   message: 'You are reporting on average [ x ] students per application for the FREE
     income applications. Even with the difference in reference dates for these two
@@ -602,7 +602,7 @@
   severity: Warning
 - error_code: '60'
   check_origin: NEW check
-  code: _16_42A_free_inc_apps > 1 and _16_42A_free_inc_apps <= 10 and (_16_42B_free_inc_stud/_16_42A_free_inc_apps) >= 10
+  code: _16_42A_free_inc_apps > 1 and _16_42A_free_inc_apps <= 10 and (CAST(_16_42B_free_inc_stud AS FLOAT)/_16_42A_free_inc_apps) >= 10
   columns: [_16_42A_free_inc_apps, _16_42B_free_inc_stud]
   message: 'You are reporting on average [ x ] students per application for the FREE
     income applications. Even with the difference in reference dates for these two
@@ -613,7 +613,7 @@
   check_origin: NEW check
   code: _16_42A_free_inc_apps > 1 and _16_42A_free_inc_apps <= 10
     and (CAST(_16_42B_free_inc_stud as FLOAT)/_16_42A_free_inc_apps) > 5
-    and (_16_42B_free_inc_stud/_16_42A_free_inc_apps) < 10
+    and (CAST(_16_42B_free_inc_stud as FLOAT)/_16_42A_free_inc_apps) < 10
   columns: [_16_42A_free_inc_apps, _16_42B_free_inc_stud]
   message: 'You are reporting on average [ x ] students per application for the FREE
     income applications. Even with the difference in reference dates for these two
@@ -622,7 +622,7 @@
   severity: Warning
 - error_code: '62'
   check_origin: NEW check
-  code: _16_43A_rp_inc_apps > 10 and (_16_43B_rp_inc_stud/_16_43A_rp_inc_apps) >= 5
+  code: _16_43A_rp_inc_apps > 10 and (CAST(_16_43B_rp_inc_stud AS FLOAT)/_16_43A_rp_inc_apps) >= 5
   columns: [_16_43A_rp_inc_apps, _16_43B_rp_inc_stud]
   message: 'You are reporting on average [ x ] students per application for the reduced
     price applications. Even with the difference in reference dates for these two
@@ -633,7 +633,7 @@
   check_origin: NEW check
   code: _16_43A_rp_inc_apps > 10 and
     (CAST(_16_43B_rp_inc_stud AS FLOAT)/_16_43A_rp_inc_apps) > 3 and
-    (_16_43B_rp_inc_stud/_16_43A_rp_inc_apps) < 5
+    (CAST(_16_43B_rp_inc_stud AS FLOAT)/_16_43A_rp_inc_apps) < 5
   columns: [_16_43A_rp_inc_apps, _16_43B_rp_inc_stud]
   message: 'You are reporting on average [ x ] students per application for the reduced
     price applications. Even with the difference in reference dates for these two
@@ -642,7 +642,7 @@
   severity: Warning
 - error_code: '64'
   check_origin: NEW check
-  code: _16_43A_rp_inc_apps > 1 and _16_43A_rp_inc_apps <= 10 and (_16_43B_rp_inc_stud/_16_43A_rp_inc_apps) >= 10
+  code: _16_43A_rp_inc_apps > 1 and _16_43A_rp_inc_apps <= 10 and (CAST(_16_43B_rp_inc_stud AS FLOAT)/_16_43A_rp_inc_apps) >= 10
   columns: [_16_43A_rp_inc_apps, _16_43B_rp_inc_stud]
   message: 'You are reporting on average [ x ] students per application for the reduced
     price applications. Even with the difference in reference dates for these two
@@ -653,7 +653,7 @@
   check_origin: NEW check
   code: _16_43A_rp_inc_apps > 1 and _16_43A_rp_inc_apps <= 10 and
     (CAST(_16_43B_rp_inc_stud as FLOAT)/_16_43A_rp_inc_apps) > 5 and
-    (_16_43B_rp_inc_stud/_16_43A_rp_inc_apps) < 10
+    (CAST(_16_43B_rp_inc_stud as FLOAT)/_16_43A_rp_inc_apps) < 10
   columns: [_16_43A_rp_inc_apps, _16_43B_rp_inc_stud]
   message: 'You are reporting on average [ x ] students per application for the reduced
     price applications. Even with the difference in reference dates for these two
@@ -845,7 +845,7 @@
   severity: "Error"
 - error_code: 82W
   check_origin: NEW check
-  code: _16_21A_base23_schl > 0 and (_16_t1_tot_free + _16_t2_tot_rp) == 0
+  code: _16_21A_base23_schl > 0 and (_16_t1_tot_free + _16_t2_tot_rp) = 0
   columns: [_16_21A_base23_schl, _16_t1_tot_free, _16_t2_tot_rp]
   message: 'Total free and reduced price students should be greater than zero when
     reporting provision schools in a base year. This may not be the case if renewing
