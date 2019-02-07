@@ -554,7 +554,7 @@
 
 - error_code: 56W
   check_origin: NEW check
-  code: 
+  code:
         (
           ((_16_41A_free_doc_apps + _16_42A_free_inc_apps + _16_43A_rp_inc_apps) > 0) and
           (_16_41B_free_doc_stud > 15) and
@@ -565,24 +565,90 @@
         (
           (CAST(_16_41B_free_doc_stud AS FLOAT)/_16_41A_free_doc_apps) <= 1.5 and
           (CAST(_16_41B_free_doc_stud AS FLOAT)/_16_41A_free_doc_apps) <> 1 and
-          ( 
-            CAST(ROUND
+          (
+            (
+              case
+                when (
                   (
-                    CAST(ROUND
-                          (
-                            (_16_53_verif_type_standard*.03 + _16_53_verif_type_alt1*.03 + _16_53_verif_type_alt2*.01)*
-                            (_16_41A_free_doc_apps + _16_42A_free_inc_apps + _16_43A_rp_inc_apps)
-                            + 0.5
-                          ) AS INT
+                    case
+                      when ((_16_53_verif_type_standard*.03 + _16_53_verif_type_alt1*.03 + _16_53_verif_type_alt2*.01)*
+                  (_16_41A_free_doc_apps + _16_42A_free_inc_apps + _16_43A_rp_inc_apps)) = cast(((_16_53_verif_type_standard*.03 + _16_53_verif_type_alt1*.03 + _16_53_verif_type_alt2*.01)*
+                  (_16_41A_free_doc_apps + _16_42A_free_inc_apps + _16_43A_rp_inc_apps)) as int)
+                    then cast(((_16_53_verif_type_standard*.03 + _16_53_verif_type_alt1*.03 + _16_53_verif_type_alt2*.01)*
+                  (_16_41A_free_doc_apps + _16_42A_free_inc_apps + _16_43A_rp_inc_apps)) as int)
+                      else 1 + cast(((_16_53_verif_type_standard*.03 + _16_53_verif_type_alt1*.03 + _16_53_verif_type_alt2*.01)*
+                  (_16_41A_free_doc_apps + _16_42A_free_inc_apps + _16_43A_rp_inc_apps)) as int)
+                    end
+                  ) +
+                  (
+                    case
+                      when (_16_53_verif_type_alt2*.005 * _16_41A_free_doc_apps) = cast((_16_53_verif_type_alt2*.005 * _16_41A_free_doc_apps) as int) then cast((_16_53_verif_type_alt2*.005 * _16_41A_free_doc_apps) as int)
+                      else 1 + cast((_16_53_verif_type_alt2*.005 * _16_41A_free_doc_apps) as int)
+                    end
+                  )
+                ) = cast(
+                      (
+                        (
+                          case
+                            when ((_16_53_verif_type_standard*.03 + _16_53_verif_type_alt1*.03 + _16_53_verif_type_alt2*.01)*
+                        (_16_41A_free_doc_apps + _16_42A_free_inc_apps + _16_43A_rp_inc_apps)) = cast(((_16_53_verif_type_standard*.03 + _16_53_verif_type_alt1*.03 + _16_53_verif_type_alt2*.01)*
+                        (_16_41A_free_doc_apps + _16_42A_free_inc_apps + _16_43A_rp_inc_apps)) as int)
+                          then cast(((_16_53_verif_type_standard*.03 + _16_53_verif_type_alt1*.03 + _16_53_verif_type_alt2*.01)*
+                        (_16_41A_free_doc_apps + _16_42A_free_inc_apps + _16_43A_rp_inc_apps)) as int)
+                            else 1 + cast(((_16_53_verif_type_standard*.03 + _16_53_verif_type_alt1*.03 + _16_53_verif_type_alt2*.01)*
+                        (_16_41A_free_doc_apps + _16_42A_free_inc_apps + _16_43A_rp_inc_apps)) as int)
+                          end
                         ) +
-                    CAST(ROUND
-                          (
-                            (_16_53_verif_type_alt2*.005 * _16_41A_free_doc_apps)
-                            + 0.5
-                          ) AS INT
-                        ) + 0.5
-                  ) AS INT
-                ) - _16_55_selected_apps
+                        (
+                          case
+                            when (_16_53_verif_type_alt2*.005 * _16_41A_free_doc_apps) = cast((_16_53_verif_type_alt2*.005 * _16_41A_free_doc_apps) as int) then cast((_16_53_verif_type_alt2*.005 * _16_41A_free_doc_apps) as int)
+                            else 1 + cast((_16_53_verif_type_alt2*.005 * _16_41A_free_doc_apps) as int)
+                          end
+                        )
+                      ) as int)
+                then cast(
+                  (
+                    (
+                      case
+                        when ((_16_53_verif_type_standard*.03 + _16_53_verif_type_alt1*.03 + _16_53_verif_type_alt2*.01)*
+                    (_16_41A_free_doc_apps + _16_42A_free_inc_apps + _16_43A_rp_inc_apps)) = cast(((_16_53_verif_type_standard*.03 + _16_53_verif_type_alt1*.03 + _16_53_verif_type_alt2*.01)*
+                    (_16_41A_free_doc_apps + _16_42A_free_inc_apps + _16_43A_rp_inc_apps)) as int)
+                      then cast(((_16_53_verif_type_standard*.03 + _16_53_verif_type_alt1*.03 + _16_53_verif_type_alt2*.01)*
+                    (_16_41A_free_doc_apps + _16_42A_free_inc_apps + _16_43A_rp_inc_apps)) as int)
+                        else 1 + cast(((_16_53_verif_type_standard*.03 + _16_53_verif_type_alt1*.03 + _16_53_verif_type_alt2*.01)*
+                    (_16_41A_free_doc_apps + _16_42A_free_inc_apps + _16_43A_rp_inc_apps)) as int)
+                      end
+                    ) +
+                    (
+                      case
+                        when (_16_53_verif_type_alt2*.005 * _16_41A_free_doc_apps) = cast((_16_53_verif_type_alt2*.005 * _16_41A_free_doc_apps) as int) then cast((_16_53_verif_type_alt2*.005 * _16_41A_free_doc_apps) as int)
+                        else 1 + cast((_16_53_verif_type_alt2*.005 * _16_41A_free_doc_apps) as int)
+                      end
+                    )
+                  ) as int)
+                else 1 + cast(
+                  (
+                    (
+                      case
+                        when ((_16_53_verif_type_standard*.03 + _16_53_verif_type_alt1*.03 + _16_53_verif_type_alt2*.01)*
+                    (_16_41A_free_doc_apps + _16_42A_free_inc_apps + _16_43A_rp_inc_apps)) = cast(((_16_53_verif_type_standard*.03 + _16_53_verif_type_alt1*.03 + _16_53_verif_type_alt2*.01)*
+                    (_16_41A_free_doc_apps + _16_42A_free_inc_apps + _16_43A_rp_inc_apps)) as int)
+                      then cast(((_16_53_verif_type_standard*.03 + _16_53_verif_type_alt1*.03 + _16_53_verif_type_alt2*.01)*
+                    (_16_41A_free_doc_apps + _16_42A_free_inc_apps + _16_43A_rp_inc_apps)) as int)
+                        else 1 + cast(((_16_53_verif_type_standard*.03 + _16_53_verif_type_alt1*.03 + _16_53_verif_type_alt2*.01)*
+                    (_16_41A_free_doc_apps + _16_42A_free_inc_apps + _16_43A_rp_inc_apps)) as int)
+                      end
+                    ) +
+                    (
+                      case
+                        when (_16_53_verif_type_alt2*.005 * _16_41A_free_doc_apps) = cast((_16_53_verif_type_alt2*.005 * _16_41A_free_doc_apps) as int) then cast((_16_53_verif_type_alt2*.005 * _16_41A_free_doc_apps) as int)
+                        else 1 + cast((_16_53_verif_type_alt2*.005 * _16_41A_free_doc_apps) as int)
+                      end
+                    )
+                  ) as int)
+              end
+            ) -
+            _16_55_selected_apps
           ) > 1 and
           _16_52_verif_no = 0 and
           ((_16_55_selected_apps + _16_vc1_forcause) = (_16_57A_confirmverf_apps + _16_58AA_freecat1_r_nc_apps +
