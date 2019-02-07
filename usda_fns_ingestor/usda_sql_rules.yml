@@ -119,7 +119,7 @@
   check_origin: NEW check
   code: (_16_11A_nonrcci_schl + _16_12A_rcci_schl) > 0
         and
-        ((_16_11B_nonrcci_stud + _16_12B_rcci_stud) / (_16_11A_nonrcci_schl + _16_12A_rcci_schl)) < 200
+        ((CAST(_16_11B_nonrcci_stud AS FLOAT) + _16_12B_rcci_stud) / (_16_11A_nonrcci_schl + _16_12A_rcci_schl)) < 200
         and
         (_16_11A_nonrcci_schl + _16_12A_rcci_schl) > 400
   columns: [_16_11A_nonrcci_schl, _16_12A_rcci_schl, _16_11B_nonrcci_stud,
@@ -266,7 +266,7 @@
   check_origin: NEW check
   code: _16_23A_cep_schl = (_16_11A_nonrcci_schl + _16_12A_rcci_schl) and
        _16_31_dc_notrequired != 1
-  columns: []
+  columns: [_16_11A_nonrcci_schl, _16_12A_rcci_schl, _16_23A_cep_schl, _16_31_dc_notrequired]
   message: 'You have reported that all schools in your SFA are operating the Community
     Eligibility Option (aka CEP). Please check the box in field 3-1. Note: Matching
     for the purposes of CEP is not considered Direct Certification for the purposes
@@ -418,29 +418,45 @@
 - error_code: '45'
   check_origin: NEW check
   code:
-        _16_41A_free_doc_apps > 0
-        and
         (
+          _16_41A_free_doc_apps > 0
+          and
           (
-            _16_41A_free_doc_apps > 10
+            (
+              (
+                _16_41A_free_doc_apps > 10
+                and
+                _16_41B_free_doc_stud > 15
+                and
+                _16_32B_dc_snap_stud <> _16_41B_free_doc_stud
+                and
+                _16_33B_dc_other_stud <> _16_41B_free_doc_stud
+                and
+                _16_34B_free_snapletter_stud <> _16_41B_free_doc_stud
+                and
+                (_16_32B_dc_snap_stud + _16_33B_dc_other_stud + _16_34B_free_snapletter_stud) <> _16_41B_free_doc_stud
+                and
+                (CAST(_16_41B_free_doc_stud AS FLOAT)/_16_41A_free_doc_apps) >= 5
+              )
+              OR
+              (
+                _16_41A_free_doc_apps > 1
+                and
+                (CAST(_16_41B_free_doc_stud AS FLOAT)/_16_41A_free_doc_apps) >= 10
+              )
+            )
             and
-            _16_41B_free_doc_stud > 15
-            and
-            _16_32B_dc_snap_stud <> _16_41B_free_doc_stud
-            and
-            _16_33B_dc_other_stud <> _16_41B_free_doc_stud
-            and
-            _16_34B_free_snapletter_stud <> _16_41B_free_doc_stud
-            and
-            (_16_32B_dc_snap_stud + _16_33B_dc_other_stud + _16_34B_free_snapletter_stud) <> _16_41B_free_doc_stud
-            and
-            _16_41B_free_doc_stud/_16_41A_free_doc_apps >= 5
-          )
-          OR
-          (
-            _16_41A_free_doc_apps > 1
-            and
-            (_16_41B_free_doc_stud/_16_41A_free_doc_apps) >= 10
+            (
+              (_16_42A_free_inc_apps = 0)
+              or
+              (
+                (_16_42A_free_inc_apps > 0)
+                and
+                (
+                  (CAST(_16_42B_free_inc_stud AS FLOAT)/_16_42A_free_inc_apps) <= (0.9 * (CAST(_16_41B_free_doc_stud AS FLOAT)/_16_41A_free_doc_apps))
+                )
+              )
+            )
           )
         )
   columns: [_16_32B_dc_snap_stud, _16_33B_dc_other_stud, _16_34B_free_snapletter_stud, _16_41A_free_doc_apps, _16_41B_free_doc_stud]
@@ -535,43 +551,116 @@
     and applications reported in field 4-1: Approved as categorically FREE eligible
     are correct.'
   severity: Warning
+
 - error_code: 56W
   check_origin: NEW check
   code:
-        (_16_41A_free_doc_apps + _16_42A_free_inc_apps + _16_43A_rp_inc_apps) > 0
-        AND
-        _16_41B_free_doc_stud > 15
-        AND
-        _16_41A_free_doc_apps > 0
-        AND
-        (_16_32B_dc_snap_stud + _16_33B_dc_other_stud + _16_34B_free_snapletter_stud) > 0
-        AND
-        (CAST(_16_41B_free_doc_stud AS FLOAT)/_16_41A_free_doc_apps) <= 1.5
-        AND
-        (CAST(_16_41B_free_doc_stud AS FLOAT)/_16_41A_free_doc_apps) <> 1
-        AND
+        (
+          ((_16_41A_free_doc_apps + _16_42A_free_inc_apps + _16_43A_rp_inc_apps) > 0) and
+          (_16_41B_free_doc_stud > 15) and
+          (_16_41A_free_doc_apps > 0) and
+          ((_16_32B_dc_snap_stud + _16_33B_dc_other_stud + _16_34B_free_snapletter_stud) > 0)
+        )
+        and
+        (
+          (CAST(_16_41B_free_doc_stud AS FLOAT)/_16_41A_free_doc_apps) <= 1.5 and
+          (CAST(_16_41B_free_doc_stud AS FLOAT)/_16_41A_free_doc_apps) <> 1 and
           (
-            CAST(ROUND
+            (
+              case
+                when (
                   (
-                    (_16_53_verif_type_standard*.03 + _16_53_verif_type_alt1*.03 + _16_53_verif_type_alt2*.015)*
-                    (_16_41A_free_doc_apps + _16_42A_free_inc_apps + _16_43A_rp_inc_apps)
-                    + 0.5
-                  ) AS INT
-                ) - _16_55_selected_apps
-          ) > 1
-        and
-        _16_52_verif_no = 0
-        and
-        (_16_55_selected_apps + _16_vc1_forcause) = (_16_57A_confirmverf_apps + _16_58AA_freecat1_r_nc_apps +
-        _16_58AA_freecat2_r_rp_apps + _16_58AA_freecat3_r_paid_apps + _16_58AA_freecat4_n_paid_apps + _16_58BA_freeinc1_r_nc_apps +
-        _16_58BA_freeinc2_r_rp_apps + _16_58BA_freeinc3_r_paid_apps + _16_58BA_freeinc4_n_paid_apps +
-        _16_58CA_rp1_r_nc_apps + _16_58CA_rp2_r_free_apps + _16_58CA_rp3_r_paid_apps + _16_58CA_rp4_n_paid_apps)
-        and
+                    case
+                      when ((_16_53_verif_type_standard*.03 + _16_53_verif_type_alt1*.03 + _16_53_verif_type_alt2*.01)*
+                  (_16_41A_free_doc_apps + _16_42A_free_inc_apps + _16_43A_rp_inc_apps)) = cast(((_16_53_verif_type_standard*.03 + _16_53_verif_type_alt1*.03 + _16_53_verif_type_alt2*.01)*
+                  (_16_41A_free_doc_apps + _16_42A_free_inc_apps + _16_43A_rp_inc_apps)) as int)
+                    then cast(((_16_53_verif_type_standard*.03 + _16_53_verif_type_alt1*.03 + _16_53_verif_type_alt2*.01)*
+                  (_16_41A_free_doc_apps + _16_42A_free_inc_apps + _16_43A_rp_inc_apps)) as int)
+                      else 1 + cast(((_16_53_verif_type_standard*.03 + _16_53_verif_type_alt1*.03 + _16_53_verif_type_alt2*.01)*
+                  (_16_41A_free_doc_apps + _16_42A_free_inc_apps + _16_43A_rp_inc_apps)) as int)
+                    end
+                  ) +
+                  (
+                    case
+                      when (_16_53_verif_type_alt2*.005 * _16_41A_free_doc_apps) = cast((_16_53_verif_type_alt2*.005 * _16_41A_free_doc_apps) as int) then cast((_16_53_verif_type_alt2*.005 * _16_41A_free_doc_apps) as int)
+                      else 1 + cast((_16_53_verif_type_alt2*.005 * _16_41A_free_doc_apps) as int)
+                    end
+                  )
+                ) = cast(
+                      (
+                        (
+                          case
+                            when ((_16_53_verif_type_standard*.03 + _16_53_verif_type_alt1*.03 + _16_53_verif_type_alt2*.01)*
+                        (_16_41A_free_doc_apps + _16_42A_free_inc_apps + _16_43A_rp_inc_apps)) = cast(((_16_53_verif_type_standard*.03 + _16_53_verif_type_alt1*.03 + _16_53_verif_type_alt2*.01)*
+                        (_16_41A_free_doc_apps + _16_42A_free_inc_apps + _16_43A_rp_inc_apps)) as int)
+                          then cast(((_16_53_verif_type_standard*.03 + _16_53_verif_type_alt1*.03 + _16_53_verif_type_alt2*.01)*
+                        (_16_41A_free_doc_apps + _16_42A_free_inc_apps + _16_43A_rp_inc_apps)) as int)
+                            else 1 + cast(((_16_53_verif_type_standard*.03 + _16_53_verif_type_alt1*.03 + _16_53_verif_type_alt2*.01)*
+                        (_16_41A_free_doc_apps + _16_42A_free_inc_apps + _16_43A_rp_inc_apps)) as int)
+                          end
+                        ) +
+                        (
+                          case
+                            when (_16_53_verif_type_alt2*.005 * _16_41A_free_doc_apps) = cast((_16_53_verif_type_alt2*.005 * _16_41A_free_doc_apps) as int) then cast((_16_53_verif_type_alt2*.005 * _16_41A_free_doc_apps) as int)
+                            else 1 + cast((_16_53_verif_type_alt2*.005 * _16_41A_free_doc_apps) as int)
+                          end
+                        )
+                      ) as int)
+                then cast(
+                  (
+                    (
+                      case
+                        when ((_16_53_verif_type_standard*.03 + _16_53_verif_type_alt1*.03 + _16_53_verif_type_alt2*.01)*
+                    (_16_41A_free_doc_apps + _16_42A_free_inc_apps + _16_43A_rp_inc_apps)) = cast(((_16_53_verif_type_standard*.03 + _16_53_verif_type_alt1*.03 + _16_53_verif_type_alt2*.01)*
+                    (_16_41A_free_doc_apps + _16_42A_free_inc_apps + _16_43A_rp_inc_apps)) as int)
+                      then cast(((_16_53_verif_type_standard*.03 + _16_53_verif_type_alt1*.03 + _16_53_verif_type_alt2*.01)*
+                    (_16_41A_free_doc_apps + _16_42A_free_inc_apps + _16_43A_rp_inc_apps)) as int)
+                        else 1 + cast(((_16_53_verif_type_standard*.03 + _16_53_verif_type_alt1*.03 + _16_53_verif_type_alt2*.01)*
+                    (_16_41A_free_doc_apps + _16_42A_free_inc_apps + _16_43A_rp_inc_apps)) as int)
+                      end
+                    ) +
+                    (
+                      case
+                        when (_16_53_verif_type_alt2*.005 * _16_41A_free_doc_apps) = cast((_16_53_verif_type_alt2*.005 * _16_41A_free_doc_apps) as int) then cast((_16_53_verif_type_alt2*.005 * _16_41A_free_doc_apps) as int)
+                        else 1 + cast((_16_53_verif_type_alt2*.005 * _16_41A_free_doc_apps) as int)
+                      end
+                    )
+                  ) as int)
+                else 1 + cast(
+                  (
+                    (
+                      case
+                        when ((_16_53_verif_type_standard*.03 + _16_53_verif_type_alt1*.03 + _16_53_verif_type_alt2*.01)*
+                    (_16_41A_free_doc_apps + _16_42A_free_inc_apps + _16_43A_rp_inc_apps)) = cast(((_16_53_verif_type_standard*.03 + _16_53_verif_type_alt1*.03 + _16_53_verif_type_alt2*.01)*
+                    (_16_41A_free_doc_apps + _16_42A_free_inc_apps + _16_43A_rp_inc_apps)) as int)
+                      then cast(((_16_53_verif_type_standard*.03 + _16_53_verif_type_alt1*.03 + _16_53_verif_type_alt2*.01)*
+                    (_16_41A_free_doc_apps + _16_42A_free_inc_apps + _16_43A_rp_inc_apps)) as int)
+                        else 1 + cast(((_16_53_verif_type_standard*.03 + _16_53_verif_type_alt1*.03 + _16_53_verif_type_alt2*.01)*
+                    (_16_41A_free_doc_apps + _16_42A_free_inc_apps + _16_43A_rp_inc_apps)) as int)
+                      end
+                    ) +
+                    (
+                      case
+                        when (_16_53_verif_type_alt2*.005 * _16_41A_free_doc_apps) = cast((_16_53_verif_type_alt2*.005 * _16_41A_free_doc_apps) as int) then cast((_16_53_verif_type_alt2*.005 * _16_41A_free_doc_apps) as int)
+                        else 1 + cast((_16_53_verif_type_alt2*.005 * _16_41A_free_doc_apps) as int)
+                      end
+                    )
+                  ) as int)
+              end
+            ) -
+            _16_55_selected_apps
+          ) > 1 and
+          _16_52_verif_no = 0 and
+          ((_16_55_selected_apps + _16_vc1_forcause) = (_16_57A_confirmverf_apps + _16_58AA_freecat1_r_nc_apps +
+            _16_58AA_freecat2_r_rp_apps + _16_58AA_freecat3_r_paid_apps + _16_58AA_freecat4_n_paid_apps + _16_58BA_freeinc1_r_nc_apps +
+            _16_58BA_freeinc2_r_rp_apps + _16_58BA_freeinc3_r_paid_apps + _16_58BA_freeinc4_n_paid_apps +
+            _16_58CA_rp1_r_nc_apps + _16_58CA_rp2_r_free_apps + _16_58CA_rp3_r_paid_apps + _16_58CA_rp4_n_paid_apps)) and
           (
-            CAST(_16_41A_free_doc_apps AS FLOAT)/(_16_41A_free_doc_apps + _16_42A_free_inc_apps + _16_43A_rp_inc_apps) > 0.3
+            (CAST(_16_41A_free_doc_apps AS FLOAT)/(_16_41A_free_doc_apps + _16_42A_free_inc_apps + _16_43A_rp_inc_apps)) > 0.3
             and
-            CAST(_16_41B_free_doc_stud AS FLOAT)/(_16_32B_dc_snap_stud + _16_33B_dc_other_stud + _16_34B_free_snapletter_stud) > 0.3
+            (CAST(_16_41B_free_doc_stud AS FLOAT)/(_16_32B_dc_snap_stud + _16_33B_dc_other_stud + _16_34B_free_snapletter_stud)) > 0.3
           )
+        )
   columns: []
   message: 'The number of applications approved on the basis of categorically eligible
     is higher than expected, based on your sample size and results from verification.
@@ -590,7 +679,7 @@
 - error_code: 59W
   check_origin: NEW check
   code: _16_42A_free_inc_apps > 10 and (CAST(_16_42B_free_inc_stud AS FLOAT)/_16_42A_free_inc_apps) > 3 and
-    (_16_42B_free_inc_stud/_16_42A_free_inc_apps) < 5
+    (CAST(_16_42B_free_inc_stud AS FLOAT)/_16_42A_free_inc_apps) < 5
   columns: [_16_42A_free_inc_apps, _16_42B_free_inc_stud]
   message: 'You are reporting on average [ x ] students per application for the FREE
     income applications. Even with the difference in reference dates for these two
@@ -599,7 +688,7 @@
   severity: Warning
 - error_code: '60'
   check_origin: NEW check
-  code: _16_42A_free_inc_apps > 1 and _16_42A_free_inc_apps <= 10 and (_16_42B_free_inc_stud/_16_42A_free_inc_apps) >= 10
+  code: _16_42A_free_inc_apps > 1 and _16_42A_free_inc_apps <= 10 and (CAST(_16_42B_free_inc_stud AS FLOAT)/_16_42A_free_inc_apps) >= 10
   columns: [_16_42A_free_inc_apps, _16_42B_free_inc_stud]
   message: 'You are reporting on average [ x ] students per application for the FREE
     income applications. Even with the difference in reference dates for these two
@@ -610,7 +699,7 @@
   check_origin: NEW check
   code: _16_42A_free_inc_apps > 1 and _16_42A_free_inc_apps <= 10
     and (CAST(_16_42B_free_inc_stud as FLOAT)/_16_42A_free_inc_apps) > 5
-    and (_16_42B_free_inc_stud/_16_42A_free_inc_apps) < 10
+    and (CAST(_16_42B_free_inc_stud as FLOAT)/_16_42A_free_inc_apps) < 10
   columns: [_16_42A_free_inc_apps, _16_42B_free_inc_stud]
   message: 'You are reporting on average [ x ] students per application for the FREE
     income applications. Even with the difference in reference dates for these two
@@ -619,7 +708,7 @@
   severity: Warning
 - error_code: '62'
   check_origin: NEW check
-  code: _16_43A_rp_inc_apps > 10 and (_16_43B_rp_inc_stud/_16_43A_rp_inc_apps) >= 5
+  code: _16_43A_rp_inc_apps > 10 and (CAST(_16_43B_rp_inc_stud AS FLOAT)/_16_43A_rp_inc_apps) >= 5
   columns: [_16_43A_rp_inc_apps, _16_43B_rp_inc_stud]
   message: 'You are reporting on average [ x ] students per application for the reduced
     price applications. Even with the difference in reference dates for these two
@@ -630,7 +719,7 @@
   check_origin: NEW check
   code: _16_43A_rp_inc_apps > 10 and
     (CAST(_16_43B_rp_inc_stud AS FLOAT)/_16_43A_rp_inc_apps) > 3 and
-    (_16_43B_rp_inc_stud/_16_43A_rp_inc_apps) < 5
+    (CAST(_16_43B_rp_inc_stud AS FLOAT)/_16_43A_rp_inc_apps) < 5
   columns: [_16_43A_rp_inc_apps, _16_43B_rp_inc_stud]
   message: 'You are reporting on average [ x ] students per application for the reduced
     price applications. Even with the difference in reference dates for these two
@@ -639,7 +728,7 @@
   severity: Warning
 - error_code: '64'
   check_origin: NEW check
-  code: _16_43A_rp_inc_apps > 1 and _16_43A_rp_inc_apps <= 10 and (_16_43B_rp_inc_stud/_16_43A_rp_inc_apps) >= 10
+  code: _16_43A_rp_inc_apps > 1 and _16_43A_rp_inc_apps <= 10 and (CAST(_16_43B_rp_inc_stud AS FLOAT)/_16_43A_rp_inc_apps) >= 10
   columns: [_16_43A_rp_inc_apps, _16_43B_rp_inc_stud]
   message: 'You are reporting on average [ x ] students per application for the reduced
     price applications. Even with the difference in reference dates for these two
@@ -650,7 +739,7 @@
   check_origin: NEW check
   code: _16_43A_rp_inc_apps > 1 and _16_43A_rp_inc_apps <= 10 and
     (CAST(_16_43B_rp_inc_stud as FLOAT)/_16_43A_rp_inc_apps) > 5 and
-    (_16_43B_rp_inc_stud/_16_43A_rp_inc_apps) < 10
+    (CAST(_16_43B_rp_inc_stud as FLOAT)/_16_43A_rp_inc_apps) < 10
   columns: [_16_43A_rp_inc_apps, _16_43B_rp_inc_stud]
   message: 'You are reporting on average [ x ] students per application for the reduced
     price applications. Even with the difference in reference dates for these two
@@ -842,7 +931,7 @@
   severity: "Error"
 - error_code: 82W
   check_origin: NEW check
-  code: _16_21A_base23_schl > 0 and (_16_t1_tot_free + _16_t2_tot_rp) == 0
+  code: _16_21A_base23_schl > 0 and (_16_t1_tot_free + _16_t2_tot_rp) = 0
   columns: [_16_21A_base23_schl, _16_t1_tot_free, _16_t2_tot_rp]
   message: 'Total free and reduced price students should be greater than zero when
     reporting provision schools in a base year. This may not be the case if renewing
@@ -1241,19 +1330,13 @@
   severity: Warning
 - error_code: 122W
   check_origin: NEW check
-  code: _16_57A_confirmverf_apps > 15
-    and _16_32B_dc_snap_stud > 10
-    and _16_33B_dc_other_stud > 10
-    and _16_34B_free_snapletter_stud > 10
-    and (_16_32B_dc_snap_stud + _16_33B_dc_other_stud + _16_34B_free_snapletter_stud) <> _16_57A_confirmverf_apps
-    and
-      (
-        (_16_32B_dc_snap_stud = _16_57A_confirmverf_apps)
-        or
-        (_16_33B_dc_other_stud = _16_57A_confirmverf_apps)
-        or
-        (_16_34B_free_snapletter_stud = _16_57A_confirmverf_apps)
-      )
+  code: (_16_57A_confirmverf_apps > 15) and
+    ((_16_32B_dc_snap_stud + _16_33B_dc_other_stud + _16_34B_free_snapletter_stud) <> _16_57A_confirmverf_apps) and
+    (
+      ((_16_32B_dc_snap_stud > 10) and (_16_32B_dc_snap_stud = _16_57A_confirmverf_apps)) or
+      ((_16_33B_dc_other_stud > 10) and (_16_33B_dc_other_stud = _16_57A_confirmverf_apps)) or
+      ((_16_34B_free_snapletter_stud > 10) and (_16_34B_free_snapletter_stud = _16_57A_confirmverf_apps))
+    )
   columns: [_16_32B_dc_snap_stud, _16_33B_dc_other_stud, _16_34B_free_snapletter_stud, _16_57A_confirmverf_apps]
   message: 'Please confirm that the numbers in fields 5-7:A and 5-7:B are correct.
     Reminder: Be careful not to confuse direct verification with direct certification.
@@ -1262,17 +1345,15 @@
   severity: Warning
 - error_code: 123W
   check_origin: NEW check
-  code: _16_57A_confirmverf_apps > 15
-    and (_16_32B_dc_snap_stud + _16_33B_dc_other_stud + _16_34B_free_snapletter_stud) <> _16_57A_confirmverf_apps
-    and (
-        (_16_32B_dc_snap_stud <> _16_57A_confirmverf_apps)
-        or
-        (_16_33B_dc_other_stud <> _16_57A_confirmverf_apps)
-        or
-        (_16_34B_free_snapletter_stud <> _16_57A_confirmverf_apps)
-      )
-    and (_16_32B_dc_snap_stud + _16_33B_dc_other_stud + _16_34B_free_snapletter_stud) <> _16_57B_confirmverf_stud
-    and _16_57A_confirmverf_apps = _16_57B_confirmverf_stud
+  code: (_16_57A_confirmverf_apps > 15) and
+    ((_16_32B_dc_snap_stud + _16_33B_dc_other_stud + _16_34B_free_snapletter_stud) <> _16_57A_confirmverf_apps) and
+    (
+      (_16_32B_dc_snap_stud <> _16_57A_confirmverf_apps) and
+      (_16_33B_dc_other_stud <> _16_57A_confirmverf_apps) and
+      (_16_34B_free_snapletter_stud <> _16_57A_confirmverf_apps)
+    ) and
+    ((_16_32B_dc_snap_stud + _16_33B_dc_other_stud + _16_34B_free_snapletter_stud) <> _16_57B_confirmverf_stud) and
+    (_16_57A_confirmverf_apps = _16_57B_confirmverf_stud)
   columns: [_16_32B_dc_snap_stud, _16_33B_dc_other_stud, _16_34B_free_snapletter_stud, _16_57A_confirmverf_apps, _16_57B_confirmverf_stud]
   message: 'The number of students is equal to the number of applications for the direct
     verification fields (5-7:A and 5-7:B). Please confirm that the numbers reported
