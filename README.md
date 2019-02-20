@@ -7,22 +7,33 @@ Use [the webform](https://usda-fns-ingestor.app.cloud.gov/data_ingest)
 to interactively upload files and see
 validation results, or the [API](api.md) to simply see the validation results.
 
+## Development
+
+To start development, clone this repository:
+
+	git clone https://github.com/18F/usda-fns-ingest.git
+
+You will need to install [Python 3.6](http://www.python.org/)
+
+Install development dependencies using [Pipenv](http://docs.python-guide.org/en/latest/dev/virtualenvs/):
+
+	pipenv install --dev
+
+This tool makes use of the [django-data-ingest](https://github.com/18F/django-data-ingest) tool, if you also are developing that tool at the same time, you will need to have a local copy of it.  You can then install and point to the local copy so the changes you make there will reflect on this tool immediately.
+
+	pipenv install -d -e <path to django-data-ingest>
+
+You can then activate the Python virtual environment:
+
+	pipenv shell
+
 ## Deploying locally 
 
-You'll need to install [Python](http://www.python.org/) and 
-[PostgreSQL](https://www.postgresql.org/), then
+You'll need to install [PostgreSQL](https://www.postgresql.org/), then
 
     createdb usda_fns_ingestor
-    cd usda_fns_ingestor 
-    pip install -r requirements.txt 
+    cd usda_fns_ingestor
     python manage.py runserver
-    
-It's best to do this after activating a 
-[Python virtual environment](http://docs.python-guide.org/en/latest/dev/virtualenvs/#lower-level-virtualenv)
-or using [Pipenv](http://docs.python-guide.org/en/latest/dev/virtualenvs/): 
-
-    pipenv install 
-    pipenv shell
     
 You can use other PostgreSQL configurations (database name, user, 
 require a password, etc); just `export DATABASE_URL=<database url>`.
