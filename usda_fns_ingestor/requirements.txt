@@ -1,9 +1,39 @@
--e git+https://github.com/18F/django-data-ingest.git#egg=django-data-ingest
-# -e ../django-data-ingest
-django==1.11
-dj-database-url
-psycopg2
-goodtables
-json-logic
-sqlparse
-pyyaml
+-i https://pypi.python.org/simple
+-e git+https://github.com/18F/django-data-ingest.git@cd9baac17a50ace4335d371c5588806f1d307ec7#egg=django-data-ingest
+cchardet==2.1.4
+certifi==2018.11.29
+chardet==3.0.4
+click-default-group==1.2
+click==6.7
+datapackage==1.5.1
+dj-database-url==0.5.0
+django==1.11.20
+djangorestframework==3.9.1
+docutils==0.14
+et-xmlfile==1.0.1
+goodtables==2.1.1
+idna==2.8
+ijson==2.3
+isodate==0.6.0
+jdcal==1.4
+json-logic-qubit==0.9.1
+jsonlines==1.2.0
+jsonpointer==1.14
+jsonschema==2.6.0
+linear-tsv==1.1.0
+openpyxl==2.4.11
+psycopg2-binary==2.7.7
+python-dateutil==2.8.0
+pytz==2018.9
+pyyaml==3.13
+requests==2.21.0
+rfc3986==1.2.0
+simpleeval==0.9.8
+six==1.12.0
+sqlalchemy==1.2.18
+statistics==1.0.3.5
+tableschema==1.3.0
+tabulator==1.19.0
+unicodecsv==0.14.1
+urllib3==1.24.1
+xlrd==1.2.0
