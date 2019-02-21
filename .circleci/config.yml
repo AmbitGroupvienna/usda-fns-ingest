@@ -45,7 +45,7 @@ jobs:
 
       - run:
           name: Bandit
-          command: pipenv run bandit -r .
+          command: pipenv run bandit -r . --ini .bandit
 
       # - run:
       #     name: Codecov
