@@ -7,3 +7,5 @@ name = "pypi"
 django-data-ingest = {editable = true,git = "https://github.com/18F/django-data-ingest.git",ref = "v0.2.0"}
 
 [dev-packages]
+flake8 = "*"
+bandit = "*"
