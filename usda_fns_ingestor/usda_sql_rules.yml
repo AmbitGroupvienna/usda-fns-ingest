@@ -287,7 +287,7 @@
           S41A_free_doc_apps + S42A_free_inc_apps + S43A_rp_inc_apps +
           S52_no_verif + S52_yes_after_verif + S52_yes_by_verif +
           S532_verif_type_alt_1 + S533_verif_type_alt_2 + S531_verif_type_standard +
-          S54_error + S55_selected_apps + S56_no_verif_sfa + S57A_confirm_verf_apps + S57B_confirm_verf_stud +
+          S54_error + S55_selected_apps + S57A_confirm_verf_apps + S57B_confirm_verf_stud +
           S58A1a_free_cat_r_nc_apps + S58A1b_free_cat_r_nc_stud + S58A2a_free_cat_r_rp_apps + S58A2b_free_cat_r_rp_stud +
           S58A3a_free_cat_r_paid_apps + S58A3b_free_cat_r_paid_stud + S58A4a_free_cat_n_paid_apps + S58A4b_free_cat_n_paid_stud +
           S58B1a_free_inc_r_nc_apps + S58B1b_free_inc_r_nc_stud + S58B2a_free_inc_r_rp_apps + S58B2b_free_inc_r_rp_stud +
