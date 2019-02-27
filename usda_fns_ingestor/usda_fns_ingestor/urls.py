@@ -19,6 +19,6 @@ import data_ingest.urls
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^data_ingest/', include(data_ingest.urls)),
+    url(r'^data_ingest/', include(data_ingest.urls, namespace="data_ingest")),
     url('accounts/', include('django.contrib.auth.urls')),
 ]

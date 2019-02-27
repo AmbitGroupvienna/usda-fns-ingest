@@ -31,13 +31,13 @@ jobs:
             - ./.venv
           key: v1-py-cache-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
 
-      # - run:
-      #     name: USDA FNS Ingestor test suite
-      #     command: pipenv run coverage run runtests.py
+      - run:
+          name: USDA FNS Ingestor test suite
+          command: pipenv run coverage run ./manage.py test
 
-      # - run:
-      #     name: Build Coverage report
-      #     command: pipenv run coverage report
+      - run:
+          name: Build Coverage report
+          command: pipenv run coverage report
 
       - run:
           name: Flake8
@@ -47,6 +47,6 @@ jobs:
           name: Bandit
           command: pipenv run bandit -r . --ini .bandit
 
-      # - run:
-      #     name: Codecov
-      #     command: pipenv run codecov
+      - run:
+          name: Codecov
+          command: pipenv run codecov
