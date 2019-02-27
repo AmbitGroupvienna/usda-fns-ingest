@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "0b738052f0e704dacd6524414003dc0652f3514b921fa1d8b205ffd2f5aa87ee"
+            "sha256": "701b45722e7cb83d3b463bd06babda15e1dea85121e3b0eae32a0eb35d90bc4e"
         },
         "pipfile-spec": 6,
         "requires": {},
@@ -93,7 +93,7 @@
         "django-data-ingest": {
             "editable": true,
             "git": "https://github.com/18F/django-data-ingest.git",
-            "ref": "cd9baac17a50ace4335d371c5588806f1d307ec7"
+            "ref": "39f3166304cc51fa6e03bd823eda9d17ccdb0d4c"
         },
         "djangorestframework": {
             "hashes": [

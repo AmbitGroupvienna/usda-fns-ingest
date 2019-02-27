@@ -33,11 +33,11 @@ jobs:
 
       - run:
           name: USDA FNS Ingestor test suite
-          command: pipenv run coverage run ./manage.py test
+          command: cd usda_fns_ingestor && pipenv run coverage run ./manage.py test
 
       - run:
           name: Build Coverage report
-          command: pipenv run coverage report
+          command: cd usda_fns_ingestor && pipenv run coverage report
 
       - run:
           name: Flake8
@@ -49,4 +49,4 @@ jobs:
 
       - run:
           name: Codecov
-          command: pipenv run codecov
+          command: cd usda_fns_ingestor && pipenv run codecov

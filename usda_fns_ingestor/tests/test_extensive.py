@@ -18,8 +18,8 @@ def load_test_cases(file_ext):
     thisDir = os.path.dirname(__file__)
     test_data_dir = os.path.join(thisDir, "test_data")
 
-    return [ (os.path.join(test_data_dir, file), (os.path.join(test_data_dir, "test_results", file + ".json")))
-                for file in os.listdir(test_data_dir) if fnmatch.fnmatch(file, '*.' + file_ext) ]
+    return [(os.path.join(test_data_dir, file), (os.path.join(test_data_dir, "test_results", file + ".json")))
+            for file in os.listdir(test_data_dir) if fnmatch.fnmatch(file, '*.' + file_ext)]
 
 
 def get_errors_only(response):
@@ -37,7 +37,7 @@ def get_errors_only(response):
 
 
 def get_total_errors(results):
-    out = defaultdict(lambda:0)
+    out = defaultdict(lambda: 0)
     for item in results:
         for e in item['errors']:
             out[e] += 1
