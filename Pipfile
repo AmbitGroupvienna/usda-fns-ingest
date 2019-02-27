@@ -4,8 +4,11 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-django-data-ingest = {editable = true,git = "https://github.com/18F/django-data-ingest.git",ref = "v0.2.0"}
+django-data-ingest = {editable = true,git = "https://github.com/18F/django-data-ingest.git",ref = "master"}
 
 [dev-packages]
 flake8 = "*"
 bandit = "*"
+parameterized = "*"
+coverage = "*"
+codecov = "*"

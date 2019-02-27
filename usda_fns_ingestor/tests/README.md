@@ -1,0 +1,7 @@
+# Test
+
+There are two test files at this point:
+* `test_api_validate.py` is set up to verify basic and simple cases to make sure the API is working properly.
+* `test_extensive.py` is set up to take inputs and outputs that live in files from a designated folder.  The inputs live in the [test_data](https://github.com/18F/usda-fns-ingest/tree/master/usda_fns_ingestor/tests/test_data) folder, and the corresponding expected results live in the [test_data/test_results](https://github.com/18F/usda-fns-ingest/tree/master/usda_fns_ingestor/tests/test_data/test_results) folder with a suffix/file extension of `.json` attached to each filename.  i.e. [single-test-case.csv](https://github.com/18F/usda-fns-ingest/tree/master/usda_fns_ingestor/tests/test_data/single-test-case.csv) is an input file in CSV format that lives in the test_data folder, and its corresponding expected result is named [single-test-case.csv.json](https://github.com/18F/usda-fns-ingest/tree/master/usda_fns_ingestor/tests/test_data/test_results/single-test-case.csv.json) lives in the test_data/test_results folder.  The tests here will iterate through these folders to run all the available test cases. 
+
+For more test cases, you can copy the test_data folder [here](https://drive.google.com/drive/folders/1wJXTwT6vHcf8EIucG89iYcH_thrLs2nq).
