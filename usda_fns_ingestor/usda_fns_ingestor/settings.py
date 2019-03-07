@@ -213,7 +213,7 @@ DATA_INGEST = {
     },
     'STREAM_ARGS': {
         'sheet': 'Data',  # Uses the 'Data' sheet from workbook if .xlsx
-        'headers': 1 #UPLOAD_COLUMNS,
+        'headers': 1,  # UPLOAD_COLUMNS,
     },
     # 'OLD_HEADER_ROW': 1,
 }
