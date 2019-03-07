@@ -7,24 +7,6 @@
       "description": "State ID"
     },
     {
-      "name": "sfa_id",
-      "title": "SFA ID",
-      "type": "string",
-      "description": "SFA ID"
-    },
-    {
-      "name": "type_sfa_public",
-      "title": "Type of SFA: Public",
-      "type": "integer",
-      "description": "Type of SFA: Public"
-    },
-    {
-      "name": "type_sfa_private",
-      "title": "Type of SFA: Private",
-      "type": "integer",
-      "description": "Type of SFA: Private"
-    },
-    {
       "name": "school_year_from",
       "title": "School Year From",
       "type": "integer",
@@ -35,24 +17,6 @@
       "title": "School Year To",
       "type": "integer",
       "description": "School Year To"
-    },
-    {
-      "name": "sfa_name",
-      "title": "SFA Name",
-      "type": "string",
-      "description": "SFA Name"
-    },
-    {
-      "name": "sfa_city",
-      "title": "SFA City",
-      "type": "string",
-      "description": "SFA City"
-    },
-    {
-      "name": "sfa_zip_code",
-      "title": "SFA Zip Code",
-      "type": "string",
-      "description": "SFA Zip Code"
     },
     {
       "name": "S11A_non_rcci_schl",
