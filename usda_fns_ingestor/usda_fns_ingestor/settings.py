@@ -207,12 +207,13 @@ UPLOAD_COLUMNS = [
 
 DATA_INGEST = {
     'VALIDATORS': {
-        # 'usda_fns.json': 'data_ingest.ingestors.GoodtablesValidator',
+        'usda_fns.json': 'data_ingest.ingestors.GoodtablesValidator',
+        # None: 'data_ingest.ingestors.GoodtablesValidator',
         'usda_sql_rules.yml': 'data_ingest.ingestors.SqlValidatorFailureConditions',
     },
     'STREAM_ARGS': {
         'sheet': 'Data',  # Uses the 'Data' sheet from workbook if .xlsx
-        'headers': UPLOAD_COLUMNS,
+        'headers': 1 #UPLOAD_COLUMNS,
     },
-    'OLD_HEADER_ROW': 1,
+    # 'OLD_HEADER_ROW': 1,
 }
