@@ -1,5 +1,5 @@
 -i https://pypi.python.org/simple
--e git+https://github.com/18F/django-data-ingest.git@cd9baac17a50ace4335d371c5588806f1d307ec7#egg=django-data-ingest
+-e git+https://github.com/18F/django-data-ingest.git@master#egg=django-data-ingest
 cchardet==2.1.4
 certifi==2018.11.29
 chardet==3.0.4
