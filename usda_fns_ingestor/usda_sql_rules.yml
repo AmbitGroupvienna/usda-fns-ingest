@@ -409,7 +409,7 @@
             )
         )
   columns: [S32B_dc_snap_stud, S33B_dc_other_stud, S34B_free_snap_letter_stud, S41A_free_doc_apps, S41B_free_doc_stud]
-  message: 'You are reporting on average [ x ] students per application for the categorically
+  message: 'You are reporting on average {S41B_free_doc_stud/S41A_free_doc_apps} students per application for the categorically
     eligible FREE applications. Even with the different reference dates for these
     two fields (Oct 1 vs Oct 31), this is unexpectedly high. Please confirm that the
     numbers of students and applications reported in fields 4-1:A and 4-1:B are correct.
@@ -460,7 +460,7 @@
           )
         )
   columns: [S32B_dc_snap_stud, S33B_dc_other_stud, S34B_free_snap_letter_stud, S41A_free_doc_apps, S41B_free_doc_stud]
-  message: 'You are reporting on average [ x ] students per application for the categorically
+  message: 'You are reporting on average {S41B_free_doc_stud/S41A_free_doc_apps} students per application for the categorically
     eligible FREE applications. Even with the different reference dates for these
     two fields (Oct 1 vs Oct 31), this is unexpectedly high. Please correct the number
     of students and applications reported in fields 4-1:A and/or 4-1:B. Note: Do not
@@ -671,7 +671,7 @@
   check_origin: NEW check
   code: S42A_free_inc_apps > 10 and (S42B_free_inc_stud/S42A_free_inc_apps) >= 5
   columns: [S42A_free_inc_apps, S42B_free_inc_stud]
-  message: 'You are reporting on average [ x ] students per application for the FREE
+  message: 'You are reporting on average {S42B_free_inc_stud/S42A_free_inc_apps} students per application for the FREE
     income applications. Even with the difference in reference dates for these two
     fields (Oct 1 vs Oct 31), this is unexpectedly high. Please correct the number
     of students and applications reported in fields 4-2:A and/or 4-2:B.'
@@ -681,7 +681,7 @@
   code: S42A_free_inc_apps > 10 and (CAST(S42B_free_inc_stud AS FLOAT)/S42A_free_inc_apps) > 3 and
     (CAST(S42B_free_inc_stud AS FLOAT)/S42A_free_inc_apps) < 5
   columns: [S42A_free_inc_apps, S42B_free_inc_stud]
-  message: 'You are reporting on average [ x ] students per application for the FREE
+  message: 'You are reporting on average {S42B_free_inc_stud/S42A_free_inc_apps} students per application for the FREE
     income applications. Even with the difference in reference dates for these two
     fields (Oct 1 vs Oct 31), this is unexpectedly high. Please confirm that the numbers
     of students and applications reported in fields 4-2:A and 4-2:B are correct.'
@@ -690,7 +690,7 @@
   check_origin: NEW check
   code: S42A_free_inc_apps > 1 and S42A_free_inc_apps <= 10 and (CAST(S42B_free_inc_stud AS FLOAT)/S42A_free_inc_apps) >= 10
   columns: [S42A_free_inc_apps, S42B_free_inc_stud]
-  message: 'You are reporting on average [ x ] students per application for the FREE
+  message: 'You are reporting on average {S42B_free_inc_stud/S42A_free_inc_apps} students per application for the FREE
     income applications. Even with the difference in reference dates for these two
     fields (Oct 1 vs Oct 31), this is unexpectedly high. Please correct the number
     of students and applications reported in fields 4-2:A and/or 4-2:B.'
@@ -701,7 +701,7 @@
     and (CAST(S42B_free_inc_stud as FLOAT)/S42A_free_inc_apps) > 5
     and (CAST(S42B_free_inc_stud as FLOAT)/S42A_free_inc_apps) < 10
   columns: [S42A_free_inc_apps, S42B_free_inc_stud]
-  message: 'You are reporting on average [ x ] students per application for the FREE
+  message: 'You are reporting on average {S42B_free_inc_stud/S42A_free_inc_apps} students per application for the FREE
     income applications. Even with the difference in reference dates for these two
     fields (Oct 1 vs Oct 31), this is unexpectedly high. Please confirm that the numbers
     of students and applications reported in fields 4-2:A and 4-2:B are correct.'
@@ -710,7 +710,7 @@
   check_origin: NEW check
   code: S43A_rp_inc_apps > 10 and (CAST(S43B_rp_inc_stud AS FLOAT)/S43A_rp_inc_apps) >= 5
   columns: [S43A_rp_inc_apps, S43B_rp_inc_stud]
-  message: 'You are reporting on average [ x ] students per application for the reduced
+  message: 'You are reporting on average {S43B_rp_inc_stud/S43A_rp_inc_apps} students per application for the reduced
     price applications. Even with the difference in reference dates for these two
     fields (Oct 1 vs Oct 31), this is unexpectedly high. Please correct the number
     of students and applications reported in fields 4-3:A and/or 4-3:B.'
@@ -721,7 +721,7 @@
     (CAST(S43B_rp_inc_stud AS FLOAT)/S43A_rp_inc_apps) > 3 and
     (CAST(S43B_rp_inc_stud AS FLOAT)/S43A_rp_inc_apps) < 5
   columns: [S43A_rp_inc_apps, S43B_rp_inc_stud]
-  message: 'You are reporting on average [ x ] students per application for the reduced
+  message: 'You are reporting on average {S43B_rp_inc_stud/S43A_rp_inc_apps} students per application for the reduced
     price applications. Even with the difference in reference dates for these two
     fields (Oct 1 vs Oct 31), this is unexpectedly high. Please confirm that the numbers
     of students and applications reported in fields 4-3:A and 4-3:B are correct.'
@@ -730,7 +730,7 @@
   check_origin: NEW check
   code: S43A_rp_inc_apps > 1 and S43A_rp_inc_apps <= 10 and (CAST(S43B_rp_inc_stud AS FLOAT)/S43A_rp_inc_apps) >= 10
   columns: [S43A_rp_inc_apps, S43B_rp_inc_stud]
-  message: 'You are reporting on average [ x ] students per application for the reduced
+  message: 'You are reporting on average {S43B_rp_inc_stud/S43A_rp_inc_apps} students per application for the reduced
     price applications. Even with the difference in reference dates for these two
     fields (Oct 1 vs Oct 31), this is unexpectedly high. Please correct the number
     of students and applications reported in fields 4-3:A and/or 4-3:B.'
@@ -741,7 +741,7 @@
     (CAST(S43B_rp_inc_stud as FLOAT)/S43A_rp_inc_apps) > 5 and
     (CAST(S43B_rp_inc_stud as FLOAT)/S43A_rp_inc_apps) < 10
   columns: [S43A_rp_inc_apps, S43B_rp_inc_stud]
-  message: 'You are reporting on average [ x ] students per application for the reduced
+  message: 'You are reporting on average {S43B_rp_inc_stud/S43A_rp_inc_apps} students per application for the reduced
     price applications. Even with the difference in reference dates for these two
     fields (Oct 1 vs Oct 31), this is unexpectedly high. Please confirm that the numbers
     of students and applications reported in fields 4-3:A and 4-3:B are correct.'
@@ -818,7 +818,7 @@
   check_origin: NEW check
   code: S41A_free_doc_apps = 0 and S41B_free_doc_stud >= 20
   columns: [S41A_free_doc_apps, S41B_free_doc_stud]
-  message: 'You are reporting [ x ] students on 0 (zero) applications for the categorically
+  message: 'You are reporting {S41B_free_doc_stud} students on 0 (zero) applications for the categorically
     FREE eligible applications. Even with the different reference dates for these
     two fields (Oct 1 vs Oct 31), this is unexpectedly high. Please correct the number
     of students and applications reported in fields 4-1:A and/or 4-1:B. Note: Do not
@@ -828,7 +828,7 @@
   check_origin: NEW check
   code: S41A_free_doc_apps = 0 and S41B_free_doc_stud > 1 and S41B_free_doc_stud < 20
   columns: [S41A_free_doc_apps, S41B_free_doc_stud]
-  message: 'You are reporting [ x ] students on 0 (zero) applications for the categorically
+  message: 'You are reporting {S41B_free_doc_stud} students on 0 (zero) applications for the categorically
     eligible FREE applications. Even with the different reference dates for these
     two fields (Oct 1 vs Oct 31), this is unexpectedly high. Please confirm the numbers
     of students and applications reported in fields 4-1:A and 4-1:B. Note: Do not
@@ -850,7 +850,7 @@
   check_origin: NEW check
   code: S42A_free_inc_apps = 0 and S42B_free_inc_stud >= 20
   columns: [S42A_free_inc_apps, S42B_free_inc_stud]
-  message: 'You are reporting [ x ] students on 0 (zero) applications for the FREE
+  message: 'You are reporting {S42B_free_inc_stud} students on 0 (zero) applications for the FREE
     income applications. Even with the different reference dates for these two fields
     (Oct 1 vs Oct 31), this is unexpectedly high. Please correct the number of students
     and applications reported in fields 4-2:A and/or 4-2:B. Note: Do not report the
@@ -860,7 +860,7 @@
   check_origin: NEW check
   code: S42A_free_inc_apps = 0 and S42B_free_inc_stud > 1 and S42B_free_inc_stud < 20
   columns: [S42A_free_inc_apps, S42B_free_inc_stud]
-  message: 'You are reporting [ x ] students on 0 (zero) applications for the FREE
+  message: 'You are reporting {S42B_free_inc_stud} students on 0 (zero) applications for the FREE
     income applications. Even with the different reference dates for these two fields
     (Oct 1 vs Oct 31), this is unexpectedly high. Please confirm the numbers of students
     and applications reported in fields 4-2:A and 4-2:B. Note: Do not report the same
@@ -882,7 +882,7 @@
   check_origin: NEW check
   code: S43A_rp_inc_apps = 0 and S43B_rp_inc_stud >= 20
   columns: [S43A_rp_inc_apps, S43B_rp_inc_stud]
-  message: 'You are reporting [ x ] students on 0 (zero) applications for the reduced
+  message: 'You are reporting {S43B_rp_inc_stud} students on 0 (zero) applications for the reduced
     price applications. Even with the different reference dates for these two fields
     (Oct 1 vs Oct 31), this is unexpectedly high. Please correct the number of students
     and applications reported in fields 4-3:A and/or 4-3:B. Note: Do not report the
@@ -892,7 +892,7 @@
   check_origin: NEW check
   code: S43A_rp_inc_apps = 0 and S43B_rp_inc_stud > 1 and S43B_rp_inc_stud < 20
   columns: [S43A_rp_inc_apps, S43B_rp_inc_stud]
-  message: 'You are reporting [ x ] students on 0 (zero) applications for the reduced
+  message: 'You are reporting {S43B_rp_inc_stud} students on 0 (zero) applications for the reduced
     price applications. Even with the different reference dates for these two fields
     (Oct 1 vs Oct 31), this is unexpectedly high. Please confirm the numbers of students
     and applications reported in fields 4-3:A and 4-3:B. Note: Do not report the same
@@ -1296,7 +1296,7 @@
   check_origin: NEW check
   code: S57A_confirm_verf_apps = 0 and S57B_confirm_verf_stud > 0
   columns: [S57A_confirm_verf_apps, S57B_confirm_verf_stud]
-  message: 'You have reported [x] students on 0 (zero) directly verified applications
+  message: 'You have reported {S57B_confirm_verf_stud} students on 0 (zero) directly verified applications
     in field 5-7:A and 5-7:B. Please correct that the numbers that are reported in
     fields 5-7:A and/or 5-7:B. Note: The difference in reference dates between the
     application and student fields (October 1st and 31st, respectively) in the Section
