@@ -1,4 +1,5 @@
 applications:
 - name: usda-fns-ingestor
+  stack: cflinuxfs3
   services:
    - usda-fns-ingestor-db
