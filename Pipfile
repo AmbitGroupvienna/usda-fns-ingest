@@ -8,7 +8,7 @@ django-data-ingest = {editable = true,git = "https://github.com/18F/django-data-
 
 [dev-packages]
 flake8 = "*"
-bandit = "*"
+bandit = "==1.5.1"
 parameterized = "*"
 coverage = "*"
 codecov = "*"
