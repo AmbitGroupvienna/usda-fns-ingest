@@ -7,6 +7,12 @@
       "description": "State ID"
     },
     {
+      "name": "type_sfa_private",
+      "title": "Type of SFA: Private/Nonprofit",
+      "type": "integer",
+      "description": "Type of SFA: Private/Nonprofit"
+    },
+    {
       "name": "school_year_from",
       "title": "School Year From",
       "type": "integer",
