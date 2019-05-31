@@ -3,7 +3,7 @@
 An experiment in ingesting data for the USDA's Food and Nutrition Service
 using [django-data-ingest](https://github.com/18F/django-data-ingest).
 
-Use [the webform](https://usda-fns-ingestor.app.cloud.gov/data_ingest) 
+Use [the webform](https://usda-fns-ingestor.app.cloud.gov/data_ingest/api/validate/) 
 to interactively upload files and see
 validation results, or the [API](api.md) to simply see the validation results.
 
