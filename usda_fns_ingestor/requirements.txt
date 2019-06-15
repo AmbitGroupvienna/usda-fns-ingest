@@ -1,10 +1,10 @@
 -i https://pypi.python.org/simple
--e git+https://github.com/18F/django-data-ingest.git@3086d3f514799fe30a1d507b7a6be90009c59411#egg=django-data-ingest
+-e git+https://github.com/18F/ReVAL.git@fa1d3d317e57799cef84a6c546a3a1f8f44e9c7e#egg=data-ingest
 attrs==19.1.0
 cchardet==2.1.4
 certifi==2019.3.9
 chardet==3.0.4
-click-default-group==1.2
+click-default-group==1.2.1
 click==7.0
 datapackage==1.6.2
 dj-database-url==0.5.0
@@ -23,7 +23,7 @@ jsonpointer==2.0
 jsonschema==3.0.1
 linear-tsv==1.1.0
 openpyxl==2.4.11
-psycopg2-binary==2.8.2
+psycopg2-binary==2.8.3
 pyrsistent==0.15.2
 python-dateutil==2.8.0
 pytz==2019.1
