@@ -4,7 +4,7 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-django-data-ingest = {editable = true,git = "https://github.com/18F/django-data-ingest.git",ref = "master"}
+data-ingest = {editable = true,git = "https://github.com/18F/ReVAL.git",ref = "v0.4.0"}
 
 [dev-packages]
 flake8 = "*"

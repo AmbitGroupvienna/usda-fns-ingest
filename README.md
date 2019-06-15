@@ -1,7 +1,7 @@
 # usda-fns-ingestor
 
 An experiment in ingesting data for the USDA's Food and Nutrition Service
-using [django-data-ingest](https://github.com/18F/django-data-ingest).
+using [ReVAL](https://github.com/18F/ReVAL).
 
 Use [the webform](https://usda-fns-ingestor.app.cloud.gov/data_ingest/api/validate/) 
 to interactively upload files and see
@@ -19,9 +19,9 @@ Install development dependencies using [Pipenv](http://docs.python-guide.org/en/
 
 	pipenv install --dev
 
-This tool makes use of the [django-data-ingest](https://github.com/18F/django-data-ingest) tool, if you also are developing that tool at the same time, you will need to have a local copy of it.  You can then install and point to the local copy so the changes you make there will reflect on this tool immediately.
+This tool makes use of the [ReVAL](https://github.com/18F/ReVAL) tool, if you also are developing that tool at the same time, you will need to have a local copy of it.  You can then install and point to the local copy so the changes you make there will reflect on this tool immediately.
 
-	pipenv install -d -e <path to django-data-ingest>
+	pipenv install -d -e <path to ReVAL>
 
 You can then activate the Python virtual environment:
 
