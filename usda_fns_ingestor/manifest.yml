@@ -1,5 +1,8 @@
+
 applications:
 - name: usda-fns-ingestor
   stack: cflinuxfs3
+  memory: 512mb
+  instances: 2
   services:
    - usda-fns-ingestor-db
