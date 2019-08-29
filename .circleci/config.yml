@@ -76,6 +76,7 @@ jobs:
             if [[ "${CIRCLE_BRANCH}" == "master" && -z "${CIRCLE_TAG}" ]]; then
               export PATH=$HOME/bin:$PATH
               cf login -a https://api.fr.cloud.gov -u $CF_USDA_FNS_STAGING_USER -p $CF_USDA_FNS_STAGING_PASS -o gsa-10x-prototyping -s usda_fns_staging
+              cd usda_fns_ingestor
               cf zero-downtime-push usda-fns-ingestor -f manifests/manifest_staging.yml
             else
               echo "Skipped"
@@ -86,6 +87,7 @@ jobs:
             if [[ -n "${CIRCLE_TAG}" ]]; then
               export PATH=$HOME/bin:$PATH
               cf login -a https://api.fr.cloud.gov -u $CF_USDA_FNS_PROD_USER -p $CF_USDA_FNS_PROD_PASS -o gsa-10x-prototyping -s usda_fns_prod
+              cd usda_fns_ingestor
               cf zero-downtime-push usda-fns-ingestor -f manifests/manifest_prod.yml
             else
               echo "Skipped"
