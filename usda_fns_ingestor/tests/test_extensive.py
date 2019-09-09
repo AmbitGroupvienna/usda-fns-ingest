@@ -45,11 +45,16 @@ def get_total_errors(results):
 
 
 class ExtensiveTests(APITestCase):
+
+    fixtures = ['test_data.json']
+
     @parameterized.expand(load_test_cases('csv'))
     def test_validate_csv(self, name, expected):
         print(name + expected)
         url = reverse('data_ingest:validate')
         data = load(name)
+        token = "this1s@t0k3n"
+        self.client.credentials(HTTP_AUTHORIZATION='Token ' + token)
         response = self.client.post(url, data, content_type='text/csv')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         err_resp = get_errors_only(response.data)
@@ -66,6 +71,8 @@ class ExtensiveTests(APITestCase):
         print(name + expected)
         url = reverse('data_ingest:validate')
         data = load(name)
+        token = "this1s@t0k3n"
+        self.client.credentials(HTTP_AUTHORIZATION='Token ' + token)
         response = self.client.post(url, data, content_type='application/json')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         err_resp = get_errors_only(response.data)
