@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "63baf44479cff607b92a23881a8d2442cfa044619477f5045d07035a4958d006"
+            "sha256": "f438269a014971174700ed2c1eca5dd7777cf07c9f46cc0dbd21cee0bc83c96b"
         },
         "pipfile-spec": 6,
         "requires": {},
@@ -72,21 +72,21 @@
         },
         "click-default-group": {
             "hashes": [
-                "sha256:31f6f22fcb3d558172badd51fde3c444af9c9d5af8480c5540b51db6805ffa29"
+                "sha256:d9560e8e8dfa44b3562fbc9425042a0fd6d21956fcc2db0077f63f34253ab904"
             ],
-            "version": "==1.2.1"
+            "version": "==1.2.2"
         },
         "data-ingest": {
             "editable": true,
             "git": "https://github.com/18F/ReVAL.git",
-            "ref": "73177442216b60d751cb2924af0144c94ad9a7ae"
+            "ref": "07d7e4cf8e922b249d2cebeaa7e00bccf4ecf15d"
         },
         "datapackage": {
             "hashes": [
-                "sha256:d08e9c21865c99a0bb3f469c36c5fd5c00c7abc391a484494475ecf8773f2405",
-                "sha256:d4691774ec41e3b643ed863d8f051b10737d3b3bf995dc9449983271418c1c41"
+                "sha256:0781ce8f203e962cdc0d9440f16940b36aafbce57b6a1c64bcb0f81ce48d87fb",
+                "sha256:b78e02ec0976e8a965329ecb5b0ebafbde07ece901e2db37064a68a888970a88"
             ],
-            "version": "==1.7.0"
+            "version": "==1.9.0"
         },
         "dj-database-url": {
             "hashes": [
@@ -97,17 +97,17 @@
         },
         "django": {
             "hashes": [
-                "sha256:52a66d7f8b036d02da0a4472359e8be1727424fc1e4b4f5c684ef97de7b569e1",
-                "sha256:c85b8c95366e187ca0581d45a6e508107ca4bd38cb45c24aa09d3572074c523d"
+                "sha256:215c27453f775b6b1add83a185f76c2e2ab711d17786a6704bd62eabd93f89e3",
+                "sha256:ffd89b89a2ee860ee521f054225044f52676825be4b61168d2842d44fcf457d3"
             ],
-            "version": "==1.11.23"
+            "version": "==1.11.24"
         },
         "djangorestframework": {
             "hashes": [
-                "sha256:42979bd5441bb4d8fd69d0f385024a114c3cae7df0f110600b718751250f6929",
-                "sha256:aedb48010ebfab9651aaab1df5fd3b4848eb4182afc909852a2110c24f89a359"
+                "sha256:5488aed8f8df5ec1d70f04b2114abc52ae6729748a176c453313834a9ee179c8",
+                "sha256:dc81cbf9775c6898a580f6f1f387c4777d12bd87abf0f5406018d32ccae71090"
             ],
-            "version": "==3.10.2"
+            "version": "==3.10.3"
         },
         "docutils": {
             "hashes": [
@@ -369,9 +369,9 @@
         },
         "sqlalchemy": {
             "hashes": [
-                "sha256:0459bf0ea6478f3e904de074d65769a11d74cdc34438ab3159250c96d089aef0"
+                "sha256:2f8ff566a4d3a92246d367f2e9cd6ed3edeef670dcd6dda6dfdc9efed88bcd80"
             ],
-            "version": "==1.3.7"
+            "version": "==1.3.8"
         },
         "statistics": {
             "hashes": [
@@ -381,17 +381,17 @@
         },
         "tableschema": {
             "hashes": [
-                "sha256:04975fa0fa7c5d817417764b11231db06cedb798fdf1f35845b5926da197a0d8",
-                "sha256:ac75b847634bc3c0b21013f11dfd9db71bb4cc44be4ce2e6b8e3a7ab6839bc58"
+                "sha256:a55747eee03fd7fcd01d21cc0b8680124c8fa9d91685dbc674370970b20476cb",
+                "sha256:ef8745197a2d74b87d0f4358d9d1b3877b55e70e88d4649f9011b9e45835b528"
             ],
-            "version": "==1.6.0"
+            "version": "==1.7.0"
         },
         "tabulator": {
             "hashes": [
-                "sha256:48b8d0facfb9cdb2f030c634248b1a4f9533ca08e630ab33fafdaff44f8e0475",
-                "sha256:a7a9b7d60a6e042b200b3821ecfdfbde82dab54c9b04dc7fc83a9184aa2065d0"
+                "sha256:7c923ebdf007dbc8269d065014487c1692b7a092427cca1343353a842d37f0c1",
+                "sha256:b69c14dcfb46fc7965fb3d5f88f058dc12e2b8dc58a3e6aa2f408750fa2d83bf"
             ],
-            "version": "==1.24.1"
+            "version": "==1.24.2"
         },
         "unicodecsv": {
             "hashes": [
@@ -544,10 +544,10 @@
         },
         "pbr": {
             "hashes": [
-                "sha256:56e52299170b9492513c64be44736d27a512fa7e606f21942160b68ce510b4bc",
-                "sha256:9b321c204a88d8ab5082699469f52cc94c5da45c51f114113d01b3d993c24cdf"
+                "sha256:2c8e420cd4ed4cec4e7999ee47409e876af575d4c35a45840d59e8b5f3155ab8",
+                "sha256:b32c8ccaac7b1a20c0ce00ce317642e6cf231cf038f9875e0280e28af5bf7ac9"
             ],
-            "version": "==5.4.2"
+            "version": "==5.4.3"
         },
         "pycodestyle": {
             "hashes": [
@@ -604,10 +604,10 @@
         },
         "stevedore": {
             "hashes": [
-                "sha256:7be098ff53d87f23d798a7ce7ae5c31f094f3deb92ba18059b1aeb1ca9fec0a0",
-                "sha256:7d1ce610a87d26f53c087da61f06f9b7f7e552efad2a7f6d2322632b5f932ea2"
+                "sha256:01d9f4beecf0fbd070ddb18e5efb10567801ba7ef3ddab0074f54e3cd4e91730",
+                "sha256:e0739f9739a681c7a1fda76a102b65295e96a144ccdb552f2ae03c5f0abe8a14"
             ],
-            "version": "==1.30.1"
+            "version": "==1.31.0"
         },
         "urllib3": {
             "hashes": [
