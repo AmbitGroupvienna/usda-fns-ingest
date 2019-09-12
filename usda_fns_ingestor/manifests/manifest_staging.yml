@@ -9,3 +9,5 @@ applications:
   instances: 1
   services:
    - usda-fns-ingestor-db
+  env:
+    DJANGO_SETTINGS_MODULE: usda_fns_ingestor.settings.cloud
