@@ -1,10 +1,11 @@
-import os
 from .base import *  # noqa
 
 
-SECRET_KEY = "Secret key to be changed"
+# SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = 'Just a simple secret key for test'
 
-DEBUG = False
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = True
 
 LOGGING = {
     'version': 1,
@@ -21,7 +22,7 @@ LOGGING = {
     },
     'handlers': {
         'console': {
-            'level': 'INFO',
+            'level': 'DEBUG',
             'class': 'logging.StreamHandler',
             'formatter': 'verbose',
         },
@@ -29,11 +30,13 @@ LOGGING = {
     'loggers': {
         '': {
             'handlers': ['console'],
-            'level': os.getenv('DJANGO_LOG_LEVEL', 'INFO'),
+            'propagate': True,
+            'level': os.getenv('DJANGO_LOG_LEVEL', 'DEBUG'),
         },
         'django': {
             'handlers': ['console'],
-            'level': os.getenv('DJANGO_LOG_LEVEL', 'INFO'),
+            'propagate': True,
+            'level': os.getenv('DJANGO_LOG_LEVEL', 'DEBUG'),
         },
         'django.template': {
             'handlers': ['console'],
