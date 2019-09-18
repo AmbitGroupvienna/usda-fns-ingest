@@ -8,6 +8,7 @@ data-ingest = {editable = true,git = "https://github.com/18F/ReVAL.git",ref = "v
 gunicorn = "*"
 gevent = "*"
 whitenoise = "*"
+cfenv = "*"
 
 [dev-packages]
 flake8 = "*"
