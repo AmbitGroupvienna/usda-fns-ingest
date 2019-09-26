@@ -18,7 +18,8 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          key: v1-py-cache-{{ .Branch }}-{{ checksum "Pipfile" }}-{{ checksum "Pipfile.lock" }}
+          keys:
+            - v1-py-cache-{{ .Branch }}-{{ checksum "Pipfile" }}-{{ checksum "Pipfile.lock" }}
             # fallback to using the latest cache if no exact match is found
             - v1-py-cache-
 
