@@ -41,7 +41,7 @@ jobs:
 
       - run:
           name: USDA FNS Ingestor test suite
-          command: cd usda_fns_ingestor && pipenv run coverage run ./manage.py test
+          command: cd usda_fns_ingestor && pipenv run coverage run ./manage.py test --settings=usda_fns_ingestor.settings.test
 
       - run:
           name: Build Coverage report
