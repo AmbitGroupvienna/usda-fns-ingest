@@ -3,15 +3,15 @@ import string
 import secrets
 
 
-def generate_secret(length):
-    secret = ''
+def generate_random_string(length):
+    output = ''
     choice = string.digits + string.ascii_letters + string.punctuation
     choice = choice.replace("'", "")
     choice = choice.replace('"', '')
     for i in range(length):
-        secret += secrets.choice(choice)
+        output += secrets.choice(choice)
 
-    return secret
+    return output
 
 
 if __name__ == '__main__':
@@ -20,4 +20,4 @@ if __name__ == '__main__':
     parser.add_argument("-l", "--length", help="Specify secret length", type=int, default=50)
 
     args = parser.parse_args()
-    print(generate_secret(args.length))
+    print(generate_random_string(args.length))
