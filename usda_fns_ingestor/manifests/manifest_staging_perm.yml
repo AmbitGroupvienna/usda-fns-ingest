@@ -5,9 +5,8 @@ applications:
   buildpack: python_buildpack
   memory: 512mb
   routes:
-    - route: usda-fns-dvs.app.cloud.gov
-    - route: usda-dvs.app.cloud.gov
-  instances: 2
+    - route: usda-dvs-staging.app.cloud.gov
+  instances: 1
   services:
    - usda-fns-ingestor-db
   env:

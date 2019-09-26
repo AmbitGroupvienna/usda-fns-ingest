@@ -60,33 +60,66 @@ jobs:
           command: cd usda_fns_ingestor && pipenv run codecov
 
       - run:
-          name: Deploy to dev
+          name: Deploy to dev (Temporary)
           command: |
             if [[ -n "${CIRCLE_BRANCH}" && "${CIRCLE_BRANCH}" != "master" ]]; then
               export PATH=$HOME/bin:$PATH
               cf login -a https://api.fr.cloud.gov -u $CF_USDA_FNS_DEV_USER -p $CF_USDA_FNS_DEV_PASS -o gsa-10x-prototyping -s dev
               cd usda_fns_ingestor
-              cf zero-downtime-push usda-fns-ingestor -f manifests/manifest_dev.yml
+              cf zero-downtime-push usda-fns-ingestor -f manifests/manifest_dev_temp.yml
             else
               echo "Skipped"
             fi
       - run:
-          name: Deploy to staging
+          name: Deploy to dev (Permanent)
+          command: |
+            if [[ -n "${CIRCLE_BRANCH}" && "${CIRCLE_BRANCH}" != "master" ]]; then
+              export PATH=$HOME/bin:$PATH
+              cf login -a https://api.fr.cloud.gov -u $NEW_CF_USDA_FNS_DEV_USER -p $NEW_CF_USDA_FNS_DEV_PASS -o usda-fns -s dev
+              cd usda_fns_ingestor
+              cf zero-downtime-push usda-fns-ingestor -f manifests/manifest_dev_perm.yml
+            else
+              echo "Skipped"
+            fi
+      - run:
+          name: Deploy to staging (Temporary)
           command: |
             if [[ "${CIRCLE_BRANCH}" == "master" && -z "${CIRCLE_TAG}" ]]; then
               export PATH=$HOME/bin:$PATH
               cf login -a https://api.fr.cloud.gov -u $CF_USDA_FNS_STAGING_USER -p $CF_USDA_FNS_STAGING_PASS -o gsa-10x-prototyping -s usda_fns_staging
               cd usda_fns_ingestor
-              cf zero-downtime-push usda-fns-ingestor -f manifests/manifest_staging.yml
+              cf zero-downtime-push usda-fns-ingestor -f manifests/manifest_staging_temp.yml
             else
               echo "Skipped"
             fi
       - run:
-          name: Deploy to prod
+          name: Deploy to staging (Permanent)
+          command: |
+            if [[ "${CIRCLE_BRANCH}" == "master" && -z "${CIRCLE_TAG}" ]]; then
+              export PATH=$HOME/bin:$PATH
+              cf login -a https://api.fr.cloud.gov -u $NEW_CF_USDA_FNS_STAGING_USER -p $NEW_CF_USDA_FNS_STAGING_PASS -o usda-fns -s staging
+              cd usda_fns_ingestor
+              cf zero-downtime-push usda-fns-ingestor -f manifests/manifest_staging_perm.yml
+            else
+              echo "Skipped"
+            fi
+      - run:
+          name: Deploy to prod (Temporary)
           command: |
             if [[ -n "${CIRCLE_TAG}" ]]; then
               export PATH=$HOME/bin:$PATH
               cf login -a https://api.fr.cloud.gov -u $CF_USDA_FNS_PROD_USER -p $CF_USDA_FNS_PROD_PASS -o gsa-10x-prototyping -s usda_fns_prod
+              cd usda_fns_ingestor
+              cf zero-downtime-push usda-fns-ingestor -f manifests/manifest_prod.yml
+            else
+              echo "Skipped"
+            fi
+      - run:
+          name: Deploy to prod (Permanent)
+          command: |
+            if [[ -n "${CIRCLE_TAG}" ]]; then
+              export PATH=$HOME/bin:$PATH
+              cf login -a https://api.fr.cloud.gov -u $NEW_CF_USDA_FNS_PROD_USER -p $NEW_CF_USDA_FNS_PROD_PASS -o usda-fns -s prod
               cd usda_fns_ingestor
               cf zero-downtime-push usda-fns-ingestor -f manifests/manifest_prod.yml
             else
