@@ -1,9 +1,11 @@
 import os
 from .base import *  # noqa
+from .env import env
+from secret import generate_random_string
 
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'Just a simple secret key for development'
+SECRET_KEY = env.get_credential('APP_SECRET_KEY', generate_random_string(50))
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True

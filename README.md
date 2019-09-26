@@ -23,6 +23,8 @@ This tool makes use of the [ReVAL](https://github.com/18F/ReVAL) tool, if you al
 
 	pipenv install -d -e <path to ReVAL>
 
+Copy `.env_sample` to `.env` and update the variables according to cloud.gov `env`.
+
 You can then activate the Python virtual environment:
 
 	pipenv shell
