@@ -1,0 +1,15 @@
+# This is to be used with ReVAL v0.3.0 in the testing environment
+---
+applications:
+- name: usda-fns-ingestor-test
+  stack: cflinuxfs3
+  buildpack: python_buildpack
+  memory: 512mb
+  routes:
+    - route: usda-dvs-test.app.cloud.gov
+  instances: 1
+  services:
+   - usda-fns-ingestor-db-test
+   - DJANGO_TEST
+  env:
+    DJANGO_SETTINGS_MODULE: usda_fns_ingestor.settings
