@@ -4,11 +4,12 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-data-ingest = {editable = true,git = "https://github.com/18F/ReVAL.git",ref = "v0.6.0"}
+data-ingest = {editable = true,git = "https://github.com/18F/ReVAL.git",ref = "v0.6.1"}
 gunicorn = "*"
 gevent = "*"
 whitenoise = "*"
 cfenv = "*"
+django-audit-log = "*"
 
 [dev-packages]
 flake8 = "*"
