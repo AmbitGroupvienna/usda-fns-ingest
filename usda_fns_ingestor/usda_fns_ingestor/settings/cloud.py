@@ -11,8 +11,6 @@ SECRET_KEY = env.get_credential('APP_SECRET_KEY', generate_random_string(50))
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-# Get to the base directory above the current app directory.  In cloud.gov, HOME is /home/vcap/app.
-# Going one level above to /home/vcap
 BASE_DIR = Path(os.getenv("HOME"))
 LOGS_DIR = Path(BASE_DIR).joinpath('logs')
 LOGS_DIR.mkdir(exist_ok=True)

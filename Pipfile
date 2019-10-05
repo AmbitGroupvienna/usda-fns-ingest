@@ -9,7 +9,6 @@ gunicorn = "*"
 gevent = "*"
 whitenoise = "*"
 cfenv = "*"
-django-audit-log = "*"
 
 [dev-packages]
 flake8 = "*"

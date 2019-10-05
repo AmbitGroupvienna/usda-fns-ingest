@@ -11,7 +11,6 @@ click-default-group==1.2.2
 click==7.0
 datapackage==1.9.2
 dj-database-url==0.5.0
-django-audit-log==0.7.0
 django==1.11.25
 djangorestframework==3.10.3
 docutils==0.15.2
