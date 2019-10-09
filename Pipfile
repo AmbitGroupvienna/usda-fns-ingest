@@ -9,6 +9,7 @@ gunicorn = "*"
 gevent = "*"
 whitenoise = "*"
 cfenv = "*"
+django-cors-headers = "*"
 
 [dev-packages]
 flake8 = "*"
