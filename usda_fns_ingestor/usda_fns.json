@@ -4,512 +4,439 @@
       "name": "state_id",
       "title": "State ID",
       "type": "string",
-      "description": "State ID",
-      "number": "state_id"
+      "description": "State ID"
     },
     {
       "name": "type_sfa_private",
       "title": "Type of SFA: Private/Nonprofit",
       "type": "integer",
-      "description": "Type of SFA: Private/Nonprofit",
-      "number": "type_sfa_private"
+      "description": "Type of SFA: Private/Nonprofit"
     },
     {
       "name": "school_year_from",
       "title": "School Year From",
       "type": "integer",
-      "description": "School Year From",
-      "number": "school_year_from"
+      "description": "School Year From"
     },
     {
       "name": "school_year_to",
       "title": "School Year To",
       "type": "integer",
-      "description": "School Year To",
-      "number": "school_year_to"
+      "description": "School Year To"
     },
     {
       "name": "S11A_non_rcci_schl",
       "title": "1-1. Total Schools (Do not include RCCIs) A. Number of Schools OR Institutions",
       "type": "integer",
-      "description": "1-1. Total Schools (Do not include RCCIs) A. Number of Schools OR Institutions",
-      "number": "1-1A"
+      "description": "1-1. Total Schools (Do not include RCCIs) A. Number of Schools OR Institutions"
     },
     {
       "name": "S11B_non_rcci_stud",
       "title": "1-1. Total Schools (Do not include RCCIs) B. Number of Students",
       "type": "integer",
-      "description": "1-1. Total Schools (Do not include RCCIs) B. Number of Students",
-      "number": "1-1B"
+      "description": "1-1. Total Schools (Do not include RCCIs) B. Number of Students"
     },
     {
       "name": "S12A_rcci_schl",
       "title": "1-2. Total RCCIs (Do not include schools counted in 1-1) A. Number of Schools OR Institutions",
       "type": "integer",
-      "description": "1-2. Total RCCIs (Do not include schools counted in 1-1) A. Number of Schools OR Institutions",
-      "number": "1-2A"
+      "description": "1-2. Total RCCIs (Do not include schools counted in 1-1) A. Number of Schools OR Institutions"
     },
     {
       "name": "S12B_rcci_stud",
       "title": "1-2. Total RCCIs (Do not include schools counted in 1-1) B. Number of Students",
       "type": "integer",
-      "description": "1-2. Total RCCIs (Do not include schools counted in 1-1) B. Number of Students",
-      "number": "1-2B"
+      "description": "1-2. Total RCCIs (Do not include schools counted in 1-1) B. Number of Students"
     },
     {
       "name": "S12aA_rcci_day_schl",
       "title": "1-2a. RCCIs with day students (Report ONLY day students in 1-2aB) A. Number of Schools OR Institutions",
       "type": "integer",
-      "description": "1-2a. RCCIs with day students (Report ONLY day students in 1-2aB) A. Number of Schools OR Institutions",
-      "number": "1-2aA"
+      "description": "1-2a. RCCIs with day students (Report ONLY day students in 1-2aB) A. Number of Schools OR Institutions"
     },
     {
       "name": "S12aB_rcci_day_stud",
       "title": "1-2a. RCCIs with day students (Report ONLY day students in 1-2aB) B. Number of Students",
       "type": "integer",
-      "description": "1-2a. RCCIs with day students (Report ONLY day students in 1-2aB) B. Number of Students",
-      "number": "1-2aB"
+      "description": "1-2a. RCCIs with day students (Report ONLY day students in 1-2aB) B. Number of Students"
     },
     {
       "name": "S12bA_rcci_non_day_schl",
       "title": "1-2b. RCCIs with NO day students A. Number of Schools OR Institutions",
       "type": "integer",
-      "description": "1-2b. RCCIs with NO day students A. Number of Schools OR Institutions",
-      "number": "1-2bA"
+      "description": "1-2b. RCCIs with NO day students A. Number of Schools OR Institutions"
     },
     {
       "name": "S12bB_rcci_non_day_stud",
       "title": "1-2b. RCCIs with NO day students B. Number of Students",
       "type": "integer",
-      "description": "1-2b. RCCIs with NO day students B. Number of Students",
-      "number": "1-2bB"
+      "description": "1-2b. RCCIs with NO day students B. Number of Students"
     },
     {
       "name": "S21A_base_23_schl",
       "title": "2-1. Operating Provision 2/3 in a BASE year for NSLP and SBP A. Number of Schools AND Institutions",
       "type": "integer",
-      "description": "2-1. Operating Provision 2/3 in a BASE year for NSLP and SBP A. Number of Schools AND Institutions",
-      "number": "2-1A"
+      "description": "2-1. Operating Provision 2/3 in a BASE year for NSLP and SBP A. Number of Schools AND Institutions"
     },
     {
       "name": "S21B_base_23_stud",
       "title": "2-1. Operating Provision 2/3 in a BASE year for NSLP and SBP B. Number of Students",
       "type": "integer",
-      "description": "2-1. Operating Provision 2/3 in a BASE year for NSLP and SBP B. Number of Students",
-      "number": "2-1B"
+      "description": "2-1. Operating Provision 2/3 in a BASE year for NSLP and SBP B. Number of Students"
     },
     {
       "name": "S22A_non_base_23_schl",
       "title": "2-2. Operating Provision 2/3 in a NON BASE year for NSLP and SBP A. Number of Schools AND Institutions",
       "type": "integer",
-      "description": "2-2. Operating Provision 2/3 in a NON BASE year for NSLP and SBP A. Number of Schools AND Institutions",
-      "number": "2-2A"
+      "description": "2-2. Operating Provision 2/3 in a NON BASE year for NSLP and SBP A. Number of Schools AND Institutions"
     },
     {
       "name": "S22B_non_base_23_stud",
       "title": "2-2. Operating Provision 2/3 in a NON BASE year for NSLP and SBP B. Number of Students",
       "type": "integer",
-      "description": "2-2. Operating Provision 2/3 in a NON BASE year for NSLP and SBP B. Number of Students",
-      "number": "2-2B"
+      "description": "2-2. Operating Provision 2/3 in a NON BASE year for NSLP and SBP B. Number of Students"
     },
     {
       "name": "S22aB_non_base_23_free_stud",
       "title": "2-2a. Provision 2/3 students reported as FREE in a NON BASE year B. Number of Students",
       "type": "integer",
-      "description": "2-2a. Provision 2/3 students reported as FREE in a NON BASE year B. Number of Students",
-      "number": "2-2aB"
+      "description": "2-2a. Provision 2/3 students reported as FREE in a NON BASE year B. Number of Students"
     },
     {
       "name": "S22bB_non_base_23_rp_stud",
       "title": "2-2b. Provision 2/3 students reported as REDUCED PRICE in a NON BASE year B. Number of Students",
       "type": "integer",
-      "description": "2-2b. Provision 2/3 students reported as REDUCED PRICE in a NON BASE year B. Number of Students",
-      "number": "2-2bB"
+      "description": "2-2b. Provision 2/3 students reported as REDUCED PRICE in a NON BASE year B. Number of Students"
     },
     {
       "name": "S23A_cep_schl",
       "title": "2-3. Operating the Community Eligibility Option A. Number of Schools AND Institutions",
       "type": "integer",
-      "description": "2-3. Operating the Community Eligibility Option A. Number of Schools AND Institutions",
-      "number": "2-3A"
+      "description": "2-3. Operating the Community Eligibility Option A. Number of Schools AND Institutions"
     },
     {
       "name": "S23B_cep_stud",
       "title": "2-3. Operating the Community Eligibility Option B. Number of Students",
       "type": "integer",
-      "description": "2-3. Operating the Community Eligibility Option B. Number of Students",
-      "number": "2-3B"
+      "description": "2-3. Operating the Community Eligibility Option B. Number of Students"
     },
     {
       "name": "S24A_alt_both_schl",
       "title": "2-4. Operating other alternatives for NSLP and SBP A. Number of Schools AND Institutions",
       "type": "integer",
-      "description": "2-4. Operating other alternatives for NSLP and SBP A. Number of Schools AND Institutions",
-      "number": "2-4A"
+      "description": "2-4. Operating other alternatives for NSLP and SBP A. Number of Schools AND Institutions"
     },
     {
       "name": "S24B_alt_both_stud",
       "title": "2-4. Operating other alternatives for NSLP and SBP B. Number of Students",
       "type": "integer",
-      "description": "2-4. Operating other alternatives for NSLP and SBP B. Number of Students",
-      "number": "2-4B"
+      "description": "2-4. Operating other alternatives for NSLP and SBP B. Number of Students"
     },
     {
       "name": "S25A_alt_one_only_schl",
       "title": "2-5. Operating an alternate provision(s) for only SBP or only NSLP A. Number of Schools AND Institutions",
       "type": "integer",
-      "description": "2-5. Operating an alternate provision(s) for only SBP or only NSLP A. Number of Schools AND Institutions",
-      "number": "2-5A"
+      "description": "2-5. Operating an alternate provision(s) for only SBP or only NSLP A. Number of Schools AND Institutions"
     },
     {
       "name": "S25B_alt_one_only_stud",
       "title": "2-5. Operating an alternate provision(s) for only SBP or only NSLP B. Number of Students",
       "type": "integer",
-      "description": "2-5. Operating an alternate provision(s) for only SBP or only NSLP B. Number of Students",
-      "number": "2-5B"
+      "description": "2-5. Operating an alternate provision(s) for only SBP or only NSLP B. Number of Students"
     },
     {
       "name": "S31_dc_not_required",
       "title": "3-1. Enter a \"1\" only if all schools and/or RCCIs in the SFA were not required to perform direct certification with SNAP (i.e. NON BASE year Provision 2/3 for all schools), otherwise enter a \"0\"",
       "type": "integer",
-      "description": "3-1. Enter a \"1\" only if all schools and/or RCCIs in the SFA were not required to perform direct certification with SNAP (i.e. NON BASE year Provision 2/3 for all schools), otherwise enter a \"0\"",
-      "number": "3-1"
+      "description": "3-1. Enter a \"1\" only if all schools and/or RCCIs in the SFA were not required to perform direct certification with SNAP (i.e. NON BASE year Provision 2/3 for all schools), otherwise enter a \"0\""
     },
     {
       "name": "S32B_dc_snap_stud",
       "title": "3-2. Students directly certified through Supplemental Nutrition Assistance Program (SNAP): Do not include students certified with SNAP through the letter method B. Number of FREE Students",
       "type": "integer",
-      "description": "3-2. Students directly certified through Supplemental Nutrition Assistance Program (SNAP): Do not include students certified with SNAP through the letter method B. Number of FREE Students",
-      "number": "3-2B"
+      "description": "3-2. Students directly certified through Supplemental Nutrition Assistance Program (SNAP): Do not include students certified with SNAP through the letter method B. Number of FREE Students"
     },
     {
       "name": "S33B_dc_other_stud",
       "title": "3-3. Students directly certified through other programs: Include those directly certified through Temporary Assistance for Needy Families (TANF), Food Distribution Program on Indian Reservations (FDPIR), or Medicaid (if applicable); those documented as homeless, migrant, runaway, foster, Head Start, Pre-K Even Start, or non-applicant but approved by local officials. DO NOT include SNAP students already reported in 3-2 B. Number of FREE Students",
       "type": "integer",
-      "description": "3-3. Students directly certified through other programs: Include those directly certified through Temporary Assistance for Needy Families (TANF), Food Distribution Program on Indian Reservations (FDPIR), or Medicaid (if applicable); those documented as homeless, migrant, runaway, foster, Head Start, Pre-K Even Start, or non-applicant but approved by local officials. DO NOT include SNAP students already reported in 3-2 B. Number of FREE Students",
-      "number": "3-3B"
+      "description": "3-3. Students directly certified through other programs: Include those directly certified through Temporary Assistance for Needy Families (TANF), Food Distribution Program on Indian Reservations (FDPIR), or Medicaid (if applicable); those documented as homeless, migrant, runaway, foster, Head Start, Pre-K Even Start, or non-applicant but approved by local officials. DO NOT include SNAP students already reported in 3-2 B. Number of FREE Students"
     },
     {
       "name": "S34B_free_snap_letter_stud",
       "title": "3-4. Students certified categorically FREE eligible through SNAP letter method: Include students certified for free meals through the family providing a letter from the SNAP agency B. Number of FREE Students",
       "type": "integer",
-      "description": "3-4. Students certified categorically FREE eligible through SNAP letter method: Include students certified for free meals through the family providing a letter from the SNAP agency B. Number of FREE Students",
-      "number": "3-4B"
+      "description": "3-4. Students certified categorically FREE eligible through SNAP letter method: Include students certified for free meals through the family providing a letter from the SNAP agency B. Number of FREE Students"
     },
     {
       "name": "S41A_free_doc_apps",
       "title": "4-1. Approved as categorically FREE Eligible: Based on those providing documentation (e.g. a case number for SNAP, TANF, FDPIR on an application) A. Number of Applications",
       "type": "integer",
-      "description": "4-1. Approved as categorically FREE Eligible: Based on those providing documentation (e.g. a case number for SNAP, TANF, FDPIR on an application) A. Number of Applications",
-      "number": "4-1A"
+      "description": "4-1. Approved as categorically FREE Eligible: Based on those providing documentation (e.g. a case number for SNAP, TANF, FDPIR on an application) A. Number of Applications"
     },
     {
       "name": "S41B_free_doc_stud",
       "title": "4-1. Approved as categorically FREE Eligible: Based on those providing documentation (e.g. a case number for SNAP, TANF, FDPIR on an application) B. Number of Students",
       "type": "integer",
-      "description": "4-1. Approved as categorically FREE Eligible: Based on those providing documentation (e.g. a case number for SNAP, TANF, FDPIR on an application) B. Number of Students",
-      "number": "4-1B"
+      "description": "4-1. Approved as categorically FREE Eligible: Based on those providing documentation (e.g. a case number for SNAP, TANF, FDPIR on an application) B. Number of Students"
     },
     {
       "name": "S42A_free_inc_apps",
       "title": "4-2. Approved as FREE eligible: Based on household size and income information A. Number of Applications",
       "type": "integer",
-      "description": "4-2. Approved as FREE eligible: Based on household size and income information A. Number of Applications",
-      "number": "4-2A"
+      "description": "4-2. Approved as FREE eligible: Based on household size and income information A. Number of Applications"
     },
     {
       "name": "S42B_free_inc_stud",
       "title": "4-2. Approved as FREE eligible: Based on household size and income information B. Number of Students",
       "type": "integer",
-      "description": "4-2. Approved as FREE eligible: Based on household size and income information B. Number of Students",
-      "number": "4-2B"
+      "description": "4-2. Approved as FREE eligible: Based on household size and income information B. Number of Students"
     },
     {
       "name": "S43A_rp_inc_apps",
       "title": "4-3. Approved as REDUCED PRICE eligible: Based on household size and income information A. Number of Applications",
       "type": "integer",
-      "description": "4-3. Approved as REDUCED PRICE eligible: Based on household size and income information A. Number of Applications",
-      "number": "4-3A"
+      "description": "4-3. Approved as REDUCED PRICE eligible: Based on household size and income information A. Number of Applications"
     },
     {
       "name": "S43B_rp_inc_stud",
       "title": "4-3. Approved as REDUCED PRICE eligible: Based on household size and income information B. Number of Students",
       "type": "integer",
-      "description": "4-3. Approved as REDUCED PRICE eligible: Based on household size and income information B. Number of Students",
-      "number": "4-3B"
+      "description": "4-3. Approved as REDUCED PRICE eligible: Based on household size and income information B. Number of Students"
     },
     {
       "name": "T1_tot_free",
       "title": "T-1. Total FREE Eligible Students Reported (3-2B) + (3-3B) + (3-4B) + (4-1B) + (4-2B) + (2-2aB, if applicable)",
       "type": "integer",
-      "description": "T-1. Total FREE Eligible Students Reported (3-2B) + (3-3B) + (3-4B) + (4-1B) + (4-2B) + (2-2aB, if applicable)",
-      "number": "T-1"
+      "description": "T-1. Total FREE Eligible Students Reported (3-2B) + (3-3B) + (3-4B) + (4-1B) + (4-2B) + (2-2aB, if applicable)"
     },
     {
       "name": "T2_tot_rp",
       "title": "T-2. Total REDUCED PRICE Eligible Students Reported (4-3B) + (2-2bB, if applicable)",
       "type": "integer",
-      "description": "T-2. Total REDUCED PRICE Eligible Students Reported (4-3B) + (2-2bB, if applicable)",
-      "number": "T-2"
+      "description": "T-2. Total REDUCED PRICE Eligible Students Reported (4-3B) + (2-2bB, if applicable)"
     },
     {
       "name": "S51_exempt",
       "title": "5-1. Enter a \"1\", if ALL schools and/or RCCIs are exempt from verification, otherwise enter a \"0\"",
       "type": "integer",
-      "description": "5-1. Enter a \"1\", if ALL schools and/or RCCIs are exempt from verification, otherwise enter a \"0\"",
-      "number": "5-1"
+      "description": "5-1. Enter a \"1\", if ALL schools and/or RCCIs are exempt from verification, otherwise enter a \"0\""
     },
     {
       "name": "S52_yes_by_verif",
       "title": "5-2. Was verification performed and completed? Enter a \"1\" if Yes, completed by November 15th, otherwise enter a \"0\"",
       "type": "integer",
-      "description": "5-2. Was verification performed and completed? Enter a \"1\" if Yes, completed by November 15th, otherwise enter a \"0\"",
-      "number": "5-2-yes-by"
+      "description": "5-2. Was verification performed and completed? Enter a \"1\" if Yes, completed by November 15th, otherwise enter a \"0\""
     },
     {
       "name": "S52_yes_after_verif",
       "title": "5-2. Was verification performed and completed? Enter a \"1\", if Yes completed after November 15th, otherwise enter a \"0\"",
       "type": "integer",
-      "description": "5-2. Was verification performed and completed? Enter a \"1\", if Yes completed after November 15th, otherwise enter a \"0\"",
-      "number": "5-2-yes-after"
+      "description": "5-2. Was verification performed and completed? Enter a \"1\", if Yes completed after November 15th, otherwise enter a \"0\""
     },
     {
       "name": "S52_no_verif",
       "title": "5-2. Was verification performed and completed? Enter a \"1\", if No, verification was NOT performed or the process was not completed, otherwise enter a \"0\"",
       "type": "integer",
-      "description": "5-2. Was verification performed and completed? Enter a \"1\", if No, verification was NOT performed or the process was not completed, otherwise enter a \"0\"",
-      "number": "5-2-no"
+      "description": "5-2. Was verification performed and completed? Enter a \"1\", if No, verification was NOT performed or the process was not completed, otherwise enter a \"0\""
     },
     {
       "name": "S531_verif_type_standard",
       "title": "5-3. Type of Verification process used: 1. Enter a \"1\", if Standard (Lesser of 3% or 3,000 error-prone), otherwise enter a \"0\"",
       "type": "integer",
-      "description": "5-3. Type of Verification process used: 1. Enter a \"1\", if Standard (Lesser of 3% or 3,000 error-prone), otherwise enter a \"0\"",
-      "number": "5-3-1"
+      "description": "5-3. Type of Verification process used: 1. Enter a \"1\", if Standard (Lesser of 3% or 3,000 error-prone), otherwise enter a \"0\""
     },
     {
       "name": "S532_verif_type_alt_1",
       "title": "5-3. Type of Verification process used: 2. Enter a \"1\", if Alternate one (Lesser of 3% or 3,000 selected randomly), otherwise enter a \"0\"",
       "type": "integer",
-      "description": "5-3. Type of Verification process used: 2. Enter a \"1\", if Alternate one (Lesser of 3% or 3,000 selected randomly), otherwise enter a \"0\"",
-      "number": "5-3-2"
+      "description": "5-3. Type of Verification process used: 2. Enter a \"1\", if Alternate one (Lesser of 3% or 3,000 selected randomly), otherwise enter a \"0\""
     },
     {
       "name": "S533_verif_type_alt_2",
       "title": "5-3. Type of Verification process used: 3. Enter a \"1\", if Alternate two (Lesser of 1% or 1,000 error prone applications PLUS lesser of one-half of one percent or 500 applications with SNAP/TANF/FDPIR case numbers), otherwise enter a \"0\"",
       "type": "integer",
-      "description": "5-3. Type of Verification process used: 3. Enter a \"1\", if Alternate two (Lesser of 1% or 1,000 error prone applications PLUS lesser of one-half of one percent or 500 applications with SNAP/TANF/FDPIR case numbers), otherwise enter a \"0\"",
-      "number": "5-3-3"
+      "description": "5-3. Type of Verification process used: 3. Enter a \"1\", if Alternate two (Lesser of 1% or 1,000 error prone applications PLUS lesser of one-half of one percent or 500 applications with SNAP/TANF/FDPIR case numbers), otherwise enter a \"0\""
     },
     {
       "name": "S54_error",
       "title": "5-4. Total ERROR PRONE applications: Report all applications as of October 1st considered error prone",
       "type": "integer",
-      "description": "5-4. Total ERROR PRONE applications: Report all applications as of October 1st considered error prone",
-      "number": "5-4"
+      "description": "5-4. Total ERROR PRONE applications: Report all applications as of October 1st considered error prone"
     },
     {
       "name": "S55_selected_apps",
       "title": "5-5. Number of applications selected for verification sample",
       "type": "integer",
-      "description": "5-5. Number of applications selected for verification sample",
-      "number": "5-5"
+      "description": "5-5. Number of applications selected for verification sample"
     },
     {
       "name": "S56_no_verif_sfa",
       "title": "5-6. Enter a \"1\", if direct verification was not conducted in the SFA, (i.e. not one of the schools and/or RCCIs in the SFA performed direct verification), otherwise enter a \"0\"",
       "type": "integer",
-      "description": "5-6. Enter a \"1\", if direct verification was not conducted in the SFA, (i.e. not one of the schools and/or RCCIs in the SFA performed direct verification), otherwise enter a \"0\"",
-      "number": "5-6"
+      "description": "5-6. Enter a \"1\", if direct verification was not conducted in the SFA, (i.e. not one of the schools and/or RCCIs in the SFA performed direct verification), otherwise enter a \"0\""
     },
     {
       "name": "S57A_confirm_verf_apps",
       "title": "5-7. Confirmed through direct verification A. Number of Applications",
       "type": "integer",
-      "description": "5-7. Confirmed through direct verification A. Number of Applications",
-      "number": "5-7A"
+      "description": "5-7. Confirmed through direct verification A. Number of Applications"
     },
     {
       "name": "S57B_confirm_verf_stud",
       "title": "5-7. Confirmed through direct verification B. Number of Students",
       "type": "integer",
-      "description": "5-7. Confirmed through direct verification B. Number of Students",
-      "number": "5-7B"
+      "description": "5-7. Confirmed through direct verification B. Number of Students"
     },
     {
       "name": "S58A1a_free_cat_r_nc_apps",
       "title": "5-8. Results of Verification by Original Benefit Type A. FREE-Categorically Eligible 1. Responded, NO CHANGE a. Applications",
       "type": "integer",
-      "description": "5-8. Results of Verification by Original Benefit Type A. FREE-Categorically Eligible 1. Responded, NO CHANGE a. Applications",
-      "number": "5-8-A1a"
+      "description": "5-8. Results of Verification by Original Benefit Type A. FREE-Categorically Eligible 1. Responded, NO CHANGE a. Applications"
     },
     {
       "name": "S58A1b_free_cat_r_nc_stud",
       "title": "5-8. Results of Verification by Original Benefit Type A. FREE-Categorically Eligible 1. Responded, NO CHANGE b. Students",
       "type": "integer",
-      "description": "5-8. Results of Verification by Original Benefit Type A. FREE-Categorically Eligible 1. Responded, NO CHANGE b. Students",
-      "number": "5-8-A1b"
+      "description": "5-8. Results of Verification by Original Benefit Type A. FREE-Categorically Eligible 1. Responded, NO CHANGE b. Students"
     },
     {
       "name": "S58A2a_free_cat_r_rp_apps",
       "title": "5-8. Results of Verification by Original Benefit Type A. FREE-Categorically Eligible 2. Responded, Changed to REDUCED PRICE a. Applications",
       "type": "integer",
-      "description": "5-8. Results of Verification by Original Benefit Type A. FREE-Categorically Eligible 2. Responded, Changed to REDUCED PRICE a. Applications",
-      "number": "5-8-A2a"
+      "description": "5-8. Results of Verification by Original Benefit Type A. FREE-Categorically Eligible 2. Responded, Changed to REDUCED PRICE a. Applications"
     },
     {
       "name": "S58A2b_free_cat_r_rp_stud",
       "title": "5-8. Results of Verification by Original Benefit Type A. FREE-Categorically Eligible 2. Responded, Changed to REDUCED PRICE b. Students",
       "type": "integer",
-      "description": "5-8. Results of Verification by Original Benefit Type A. FREE-Categorically Eligible 2. Responded, Changed to REDUCED PRICE b. Students",
-      "number": "5-8-A2b"
+      "description": "5-8. Results of Verification by Original Benefit Type A. FREE-Categorically Eligible 2. Responded, Changed to REDUCED PRICE b. Students"
     },
     {
       "name": "S58A3a_free_cat_r_paid_apps",
       "title": "5-8. Results of Verification by Original Benefit Type A. FREE-Categorically Eligible 3. Responded, Changed to PAID a. Applications",
       "type": "integer",
-      "description": "5-8. Results of Verification by Original Benefit Type A. FREE-Categorically Eligible 3. Responded, Changed to PAID a. Applications",
-      "number": "5-8-A3a"
+      "description": "5-8. Results of Verification by Original Benefit Type A. FREE-Categorically Eligible 3. Responded, Changed to PAID a. Applications"
     },
     {
       "name": "S58A3b_free_cat_r_paid_stud",
       "title": "5-8. Results of Verification by Original Benefit Type A. FREE-Categorically Eligible 3. Responded, Changed to PAID b. Students",
       "type": "integer",
-      "description": "5-8. Results of Verification by Original Benefit Type A. FREE-Categorically Eligible 3. Responded, Changed to PAID b. Students",
-      "number": "5-8-A3b"
+      "description": "5-8. Results of Verification by Original Benefit Type A. FREE-Categorically Eligible 3. Responded, Changed to PAID b. Students"
     },
     {
       "name": "S58A4a_free_cat_n_paid_apps",
       "title": "5-8. Results of Verification by Original Benefit Type A. FREE-Categorically Eligible 4. NOT Responded, Changed to PAID a. Applications",
       "type": "integer",
-      "description": "5-8. Results of Verification by Original Benefit Type A. FREE-Categorically Eligible 4. NOT Responded, Changed to PAID a. Applications",
-      "number": "5-8-A4a"
+      "description": "5-8. Results of Verification by Original Benefit Type A. FREE-Categorically Eligible 4. NOT Responded, Changed to PAID a. Applications"
     },
     {
       "name": "S58A4b_free_cat_n_paid_stud",
       "title": "5-8. Results of Verification by Original Benefit Type A. FREE-Categorically Eligible 4. NOT Responded, Changed to PAID b. Students",
       "type": "integer",
-      "description": "5-8. Results of Verification by Original Benefit Type A. FREE-Categorically Eligible 4. NOT Responded, Changed to PAID b. Students",
-      "number": "5-8-A4b"
+      "description": "5-8. Results of Verification by Original Benefit Type A. FREE-Categorically Eligible 4. NOT Responded, Changed to PAID b. Students"
     },
     {
       "name": "S58B1a_free_inc_r_nc_apps",
       "title": "5-8. Results of Verification by Original Benefit Type B. FREE-Income 1. Responded, NO CHANGE a. Applications",
       "type": "integer",
-      "description": "5-8. Results of Verification by Original Benefit Type B. FREE-Income 1. Responded, NO CHANGE a. Applications",
-      "number": "5-8-B1a"
+      "description": "5-8. Results of Verification by Original Benefit Type B. FREE-Income 1. Responded, NO CHANGE a. Applications"
     },
     {
       "name": "S58B1b_free_inc_r_nc_stud",
       "title": "5-8. Results of Verification by Original Benefit Type B. FREE-Income 1. Responded, NO CHANGE b. Students",
       "type": "integer",
-      "description": "5-8. Results of Verification by Original Benefit Type B. FREE-Income 1. Responded, NO CHANGE b. Students",
-      "number": "5-8-B1b"
+      "description": "5-8. Results of Verification by Original Benefit Type B. FREE-Income 1. Responded, NO CHANGE b. Students"
     },
     {
       "name": "S58B2a_free_inc_r_rp_apps",
       "title": "5-8. Results of Verification by Original Benefit Type B. FREE-Income 2. Responded, Changed to REDUCED PRICE a. Applications",
       "type": "integer",
-      "description": "5-8. Results of Verification by Original Benefit Type B. FREE-Income 2. Responded, Changed to REDUCED PRICE a. Applications",
-      "number": "5-8-B2a"
+      "description": "5-8. Results of Verification by Original Benefit Type B. FREE-Income 2. Responded, Changed to REDUCED PRICE a. Applications"
     },
     {
       "name": "S58B2b_free_inc_r_rp_stud",
       "title": "5-8. Results of Verification by Original Benefit Type B. FREE-Income 2. Responded, Changed to REDUCED PRICE b. Students",
       "type": "integer",
-      "description": "5-8. Results of Verification by Original Benefit Type B. FREE-Income 2. Responded, Changed to REDUCED PRICE b. Students",
-      "number": "5-8-B2b"
+      "description": "5-8. Results of Verification by Original Benefit Type B. FREE-Income 2. Responded, Changed to REDUCED PRICE b. Students"
     },
     {
       "name": "S58B3a_free_inc_r_paid_apps",
       "title": "5-8. Results of Verification by Original Benefit Type B. FREE-Income 3. Responded, Changed to PAID a. Applications",
       "type": "integer",
-      "description": "5-8. Results of Verification by Original Benefit Type B. FREE-Income 3. Responded, Changed to PAID a. Applications",
-      "number": "5-8-B3a"
+      "description": "5-8. Results of Verification by Original Benefit Type B. FREE-Income 3. Responded, Changed to PAID a. Applications"
     },
     {
       "name": "S58B3b_free_inc_r_paid_stud",
       "title": "5-8. Results of Verification by Original Benefit Type B. FREE-Income 3. Responded, Changed to PAID b. Students",
       "type": "integer",
-      "description": "5-8. Results of Verification by Original Benefit Type B. FREE-Income 3. Responded, Changed to PAID b. Students",
-      "number": "5-8-B3b"
+      "description": "5-8. Results of Verification by Original Benefit Type B. FREE-Income 3. Responded, Changed to PAID b. Students"
     },
     {
       "name": "S58B4a_free_inc_n_paid_apps",
       "title": "5-8. Results of Verification by Original Benefit Type B. FREE-Income 4. NOT Responded, Changed to PAID a. Applications",
       "type": "integer",
-      "description": "5-8. Results of Verification by Original Benefit Type B. FREE-Income 4. NOT Responded, Changed to PAID a. Applications",
-      "number": "5-8-B4a"
+      "description": "5-8. Results of Verification by Original Benefit Type B. FREE-Income 4. NOT Responded, Changed to PAID a. Applications"
     },
     {
       "name": "S58B4b_free_inc_n_paid_stud",
       "title": "5-8. Results of Verification by Original Benefit Type B. FREE-Income 4. NOT Responded, Changed to PAID b. Students",
       "type": "integer",
-      "description": "5-8. Results of Verification by Original Benefit Type B. FREE-Income 4. NOT Responded, Changed to PAID b. Students",
-      "number": "5-8-B4b"
+      "description": "5-8. Results of Verification by Original Benefit Type B. FREE-Income 4. NOT Responded, Changed to PAID b. Students"
     },
     {
       "name": "S58C1a_rp_r_nc_apps",
       "title": "5-8. Results of Verification by Original Benefit Type C. REDUCED PRICE-Income 1. Responded, NO CHANGE a. Applications",
       "type": "integer",
-      "description": "5-8. Results of Verification by Original Benefit Type C. REDUCED PRICE-Income 1. Responded, NO CHANGE a. Applications",
-      "number": "5-8-C1a"
+      "description": "5-8. Results of Verification by Original Benefit Type C. REDUCED PRICE-Income 1. Responded, NO CHANGE a. Applications"
     },
     {
       "name": "S58C1b_rp_r_nc_stud",
       "title": "5-8. Results of Verification by Original Benefit Type C. REDUCED PRICE-Income 1. Responded, NO CHANGE b. Students",
       "type": "integer",
-      "description": "5-8. Results of Verification by Original Benefit Type C. REDUCED PRICE-Income 1. Responded, NO CHANGE b. Students",
-      "number": "5-8-C1b"
+      "description": "5-8. Results of Verification by Original Benefit Type C. REDUCED PRICE-Income 1. Responded, NO CHANGE b. Students"
     },
     {
       "name": "S58C2a_rp_r_free_apps",
       "title": "5-8. Results of Verification by Original Benefit Type C. REDUCED PRICE-Income 2. Responded, Changed to FREE a. Applications",
       "type": "integer",
-      "description": "5-8. Results of Verification by Original Benefit Type C. REDUCED PRICE-Income 2. Responded, Changed to FREE a. Applications",
-      "number": "5-8-C2a"
+      "description": "5-8. Results of Verification by Original Benefit Type C. REDUCED PRICE-Income 2. Responded, Changed to FREE a. Applications"
     },
     {
       "name": "S58C2b_rp_r_free_stud",
       "title": "5-8. Results of Verification by Original Benefit Type C. REDUCED PRICE-Income 2. Responded, Changed to FREE b. Students",
       "type": "integer",
-      "description": "5-8. Results of Verification by Original Benefit Type C. REDUCED PRICE-Income 2. Responded, Changed to FREE b. Students",
-      "number": "5-8-C2b"
+      "description": "5-8. Results of Verification by Original Benefit Type C. REDUCED PRICE-Income 2. Responded, Changed to FREE b. Students"
     },
     {
       "name": "S58C3a_rp_r_paid_apps",
       "title": "5-8. Results of Verification by Original Benefit Type C. REDUCED PRICE-Income 3. Responded, Changed to PAID a. Applications",
       "type": "integer",
-      "description": "5-8. Results of Verification by Original Benefit Type C. REDUCED PRICE-Income 3. Responded, Changed to PAID a. Applications",
-      "number": "5-8-C3a"
+      "description": "5-8. Results of Verification by Original Benefit Type C. REDUCED PRICE-Income 3. Responded, Changed to PAID a. Applications"
     },
     {
       "name": "S58C3b_rp_r_paid_stud",
       "title": "5-8. Results of Verification by Original Benefit Type C. REDUCED PRICE-Income 3. Responded, Changed to PAID b. Students",
       "type": "integer",
-      "description": "5-8. Results of Verification by Original Benefit Type C. REDUCED PRICE-Income 3. Responded, Changed to PAID b. Students",
-      "number": "5-8-C3b"
+      "description": "5-8. Results of Verification by Original Benefit Type C. REDUCED PRICE-Income 3. Responded, Changed to PAID b. Students"
     },
     {
       "name": "S58C4a_rp_n_paid_apps",
       "title": "5-8. Results of Verification by Original Benefit Type C. REDUCED PRICE-Income 4. NOT Responded, Changed to PAID a. Applications",
       "type": "integer",
-      "description": "5-8. Results of Verification by Original Benefit Type C. REDUCED PRICE-Income 4. NOT Responded, Changed to PAID a. Applications",
-      "number": "5-8-C4a"
+      "description": "5-8. Results of Verification by Original Benefit Type C. REDUCED PRICE-Income 4. NOT Responded, Changed to PAID a. Applications"
     },
     {
       "name": "S58C4b_rp_n_paid_stud",
       "title": "5-8. Results of Verification by Original Benefit Type C. REDUCED PRICE-Income 4. NOT Responded, Changed to PAID b. Students",
       "type": "integer",
-      "description": "5-8. Results of Verification by Original Benefit Type C. REDUCED PRICE-Income 4. NOT Responded, Changed to PAID b. Students",
-      "number": "5-8-C4b"
+      "description": "5-8. Results of Verification by Original Benefit Type C. REDUCED PRICE-Income 4. NOT Responded, Changed to PAID b. Students"
     },
     {
       "name": "VC1_for_cause",
       "title": "VC-1. Total questionable applications verified for cause (Enter \"0\" if not applicable)",
       "type": "integer",
-      "description": "VC-1. Total questionable applications verified for cause (Enter \"0\" if not applicable)",
-      "number": "VC-1"
+      "description": "VC-1. Total questionable applications verified for cause (Enter \"0\" if not applicable)"
     }
   ]
 }
