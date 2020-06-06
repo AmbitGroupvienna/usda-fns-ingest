@@ -12,7 +12,7 @@ click==7.0
 datapackage==1.9.2
 dj-database-url==0.5.0
 django-cors-headers==3.1.1
-django==1.11.25
+django==1.11.29
 djangorestframework==3.10.3
 docutils==0.15.2
 et-xmlfile==1.0.1
