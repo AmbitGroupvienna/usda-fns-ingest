@@ -1186,7 +1186,7 @@
     and S54_error = (S42A_free_inc_apps + S43A_rp_inc_apps)
   columns: [S42A_free_inc_apps, S43A_rp_inc_apps, S54_error]
   message: 'The number of error prone applications equals the total number of income
-    applications in fields 4-2 and 4-3. Please correct the numbes reported in fields
+    applications in fields 4-2 and 4-3. Please correct the numbers reported in fields
     4-2, 4-3, and/or  5-4.'
   severity: Error
 - error_code: 110W
