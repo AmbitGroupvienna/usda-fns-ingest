@@ -23,13 +23,13 @@
     "fields": {
       "password": "password",
       "is_superuser": false,
-      "username": "ikrush",
-      "email": "ikrush@usda.gov.fake"
+      "username": "itestUser1",
+      "email": "itestUser1@usda.gov.fake"
     }
   },
   {
     "model": "authtoken.token",
-    "pk": "NowIsTheWinterOfOurDiscontent",
+    "pk": "[not-the-password]",
     "fields": {
       "user": 2,
       "created": "2019-08-31T06:44:46.152Z"
