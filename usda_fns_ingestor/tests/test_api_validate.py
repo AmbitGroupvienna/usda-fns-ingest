@@ -6,8 +6,8 @@ from django.conf import settings
 
 class ApiValidateTests(APITestCase):
 
-    fixtures = ['test_data.json']
-
+    fixtures = ['fixtures/test_data.json']
+    
     def test_api_validate_json_empty_no_token(self):
         """
         Ensure we can post to the API for validation.
@@ -47,3 +47,11 @@ class ApiValidateTests(APITestCase):
         self.client.credentials(HTTP_AUTHORIZATION='Token ' + token)
         response = self.client.post(url, data, content_type='text/csv')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
+        
+    def test_api_validate_109_error(self):
+      """
+      Verify output of 109 ArithmeticError
+      """
+      url = reverse('data_ingest:validate')
+      response = self.client.post(url, data, content_type='text/csv')
+      self.assertEqual(response.status_code, status.HTTP_200_OK)

@@ -35,6 +35,18 @@ def get_errors_only(response):
 
     return out
 
+def get_error_by_code(response):
+    out = []
+    results = response['tables'][0]
+    for row in results['rows']:
+        sfa_id = row['data']['sfa_id']
+        state_id = row['data']['state_id']
+        sfa_name = row['data']['sfa_name']
+        errors = [err['code'] for err in row['errors']]
+        out.append({'state_id': state_id, 'sfa_id': sfa_id,
+                    'sfa_name': sfa_name, 'errors': errors})
+
+    return out
 
 def get_total_errors(results):
     out = defaultdict(lambda: 0)
@@ -46,7 +58,7 @@ def get_total_errors(results):
 
 class ExtensiveTests(APITestCase):
 
-    fixtures = ['test_data.json']
+    fixtures = ['fixtures/test_data.json']
 
     @parameterized.expand(load_test_cases('csv'))
     def test_validate_csv(self, name, expected):
@@ -76,6 +88,9 @@ class ExtensiveTests(APITestCase):
         response = self.client.post(url, data, content_type='application/json')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         err_resp = get_errors_only(response.data)
+        print("START 109 Full Response")
+        print(response.data)
+        print("END 109  Full Response")
         total_err = (dict(get_total_errors(err_resp)))
         exp_data = json.loads(load(expected))
         print("exp_data")

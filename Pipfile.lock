@@ -98,10 +98,10 @@
             ],
             "version": "==1.2.2"
         },
-        "data-ingest": {
+        "reval": {
             "editable": true,
             "git": "https://github.com/18F/ReVAL.git",
-            "ref": "d33c7ede69bba383d655f1961755646038bdd90b"
+            "ref": "v0.6.1"
         },
         "datapackage": {
             "hashes": [
