@@ -50,5 +50,5 @@ LOGGING = {
 }
 
 DATABASES = {
-    'default': dj_database_url.config(default='postgres://postgres:Changeme2@localhost/usda_fns_ingestor')
+    'default': dj_database_url.config(default='postgres://postgres:NOPASSWD@localhost/usda_fns_ingestor')
 }
